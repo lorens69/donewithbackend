@@ -6,6 +6,7 @@ use App\Admin\Controllers\UserReservationController;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\GalleryController;
 
 use App\Http\Controllers\UserController;
 use Doctrine\DBAL\Logging\Middleware;
@@ -85,9 +86,8 @@ Route::get('/register', function () {
 })->name('register');
 
 
-Route::get('/gallery', function () {
-    return view('gallery');
-})->name('gallery');
+Route::get('/gallery', [GalleryController::class,'showGallery'])->name('gallery');
+
 
 Route::get('/contact', function () {
     return view('contact');
@@ -109,6 +109,7 @@ Route::get('/purchasehistory', function(){
 Route::get('login', function () {
     return view('Login');
 });
+
 
 Route::get('/book', function () {
     return view('book');
