@@ -81,15 +81,39 @@
     .service-card .card{
         border: 1px solid #FF6000;
     }
+
+    .textStyle {
+    font-size: 34px;
+    font-weight: 600;
+    }
+    .btnStyle{
+        width:150px;
+        background-color: #FF6000;
+    }
+    .btnStyle:hover{
+        color:white;
+        background-color: #FFA559;
+        border-color: #FF6000;
+    }
 </style>
 <div class="container-fluid mt-5" style="width:90%;">
-    <h1 class="text-start text-uppercase" name="title">Car Accessories</h1>
-    <label for="title" style="width: 120px;border-bottom: solid 3px #FFA559;"></label>
-
-    <div class="container-fluid w-100 d-flex justify-content-end mt-2">
-        <input type="text" class="w-25" style="border:1px solid #FF6000">
-        <button class="btn btn-sm text-uppercase text-white"
-            style="background-color:#FF6000;padding:10px;width: 20%;border-radius: 0;">Search Service</button>
+    <div class="d-flex justify-content-between mt-2 ">
+        <div>
+            <span class="textStyle" name="title">CAR ACCESSORIES</span>
+        </div>
+       
+        
+            <div class="row d-flex align-items-center md-4 gap-0" style="padding-right:37px;s">
+                <div class="form-group col-md-8 pe-0">
+                  <input id="exampleFormControlInput5" type="email" placeholder="search service" class="form-control form-control-underlined">
+                </div>
+                <div class="form-group col-md-4 pe-0">
+                  <button type="submit" class="btn btnStyle rounded-pill btn-block shadow-sm">Search</button>
+                </div>
+            </div>
+            {{-- <input type="text" class="w-15" style="border:1px solid #FF6000">
+            <button class="btn btn-sm text-uppercase text-white text-base" style="background-color:#FF6000;padding:10px;width: 100px;border-radius: 0;">Search Service</button> --}}
+    
     </div>
     <br>
     @if ($errors->any())
