@@ -31,7 +31,7 @@
                     <h5 class="text-center mb-4">CAR SERVICE REQUEST FORM</h5>
                     <form action="{{ route('userrequest.post') }}" method="POST">
 
-                        <div class="container">
+                        {{-- <div class="container">
                             <div class="mt-5">
                                 @if ($errors->any())
                                     <div class="col-12">
@@ -52,7 +52,9 @@
                                 @csrf
 
                             </div>
-                        </div>
+                        </div> --}}
+
+                        @csrf 
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
@@ -119,7 +121,7 @@
                     <h5 class="text-center mb-4">CAR SERVICE REQUEST FORM</h5>
                     <form action="{{ route('request.post') }}" method="POST">
 
-                        <div class="container">
+                        {{-- <div class="container">
                             <div class="mt-5">
                                 @if ($errors->any())
                                     <div class="col-12">
@@ -140,7 +142,9 @@
                                 @csrf
 
                             </div>
-                        </div>
+                        </div> --}}
+
+                        @csrf
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
@@ -211,6 +215,7 @@
         </div>
     </div>
 
+    @include('sweetalert::alert')
 
 </body>
 </html>

@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bayon&family=Raleway:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;700&display=swap');
 body {
@@ -11,40 +10,59 @@ body {
 
 .Loginpage {
     display: flex;
+    justify-content: center;
     top: 50%;
     left: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 58vw;
     height: 82vh;
 }
 .Registerpage {
     display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 69vw;
-    height: 100vh;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 58vw;
+    height: 82vh; 
 }
 .logo {
     background-color: #454545;
-    width: 331px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border-color:#FF6000;
+    border-width: 1px solid;
+    border-radius: 10px;
 }
 .registerlogo {
     background-color: #454545;
-    width: 432px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border-color:#FF6000;
+    border-width: 1px solid;
+    border-radius: 10px;
 }
 .login{
     color: #FF6000;
     font-weight:bolder;
     font-size: xxx-large;
+    letter-spacing: 1px;
+}
+.registermaincon{
+  display: flex;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.loginmaincon{
+  display: flex;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 .welcomeback {
     background-color: #FBEBE2;
@@ -53,15 +71,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-color:#FF6000;
+    border-width: 1px solid;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 
 }
+.welcomeback label{
+  font-family: 'Bayon', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-left: 9px;
+}
 .welcomeback h1{
+  letter-spacing: 1px;
     color: #FF6000;
     font-weight:bolder;
     font-size: 35px;
 }
 .welcomeback input{
-    font-family: 'Poppins';
+  font-family: 'Raleway', sans-serif;
     font-weight:normal;
     padding: 8px;
     width: 263px;
@@ -73,7 +103,7 @@ body {
 
 }
 .welcomeback button{
-  font-family: 'Poppins';
+  font-family: 'Raleway', sans-serif;
   font-weight:normal;
   padding: 12px;
   width: 263px;
@@ -82,6 +112,11 @@ body {
   background-color: #FF6000;
   color: #FBEBE2;
   border-radius: 5px;
+}
+.welcomeback button:hover{
+  color: #FBEBE2;
+  background-color: #f68b4e;
+  border-color:#FF6000;
 }
 .welcomeback h3{
     color: #FF6000;
@@ -96,11 +131,12 @@ body {
   margin-bottom: 0
 }
 
-
 .welcomeback p{
     margin-top:0
 }
-
+.welcomeback a:link{
+  text-decoration: none;
+}
 
 /*--------------------------------------------------------------
 # Partners
@@ -544,3 +580,166 @@ body {
   color:#FF6000;
 }
 
+/*--------------------------------------------------------------
+# PRODUCTS PAGE
+--------------------------------------------------------------*/
+.pagination>li>a,
+.pagination>li>span {
+    padding: 6px 12px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #333;
+    border-radius: 3px;
+    background-color: #FFE6C7;
+    /* Add the background color for pagination items */
+}
+
+.pagination .page-item {
+    margin: 0px 5px;
+}
+
+.pagination .page-item:not(.active) .page-link {
+    border: none;
+}
+
+.pagination>.active>a,
+.pagination>.active>span {
+    color: black;
+    border-color: #FF6000;
+}
+
+.page-link.active,
+.active>.page-link {
+    background-color: #FFE6C7;
+    /* Add the background color for pagination items */
+    color: black;
+}
+
+/* Hide the "Next" and "Previous" links */
+.pagination .disabled,
+.pagination .page-link[rel="next"],
+.pagination .page-link[rel="prev"] {
+    display: none;
+}
+
+
+.accordion-button {
+    border: 1px solid #FF6000;
+    font-size: larger;
+    color: black;
+}
+
+.accordion-body {
+    background-color: #FFE6C7;
+    padding: 0px;
+}
+
+.accordion-body label {
+    font-weight: bolder;
+    font-size: large;
+    margin-left: 10px;
+}
+
+.accordion-body input {
+    border: 1px solid black;
+}
+
+.form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+    height:40px;
+}
+.form-check:link{
+    text-decoration: none;
+    color:white;
+}
+.form-check:hover {
+    background-color: #FFA559;
+    border: #ddd 1px solid;
+    border-radius: 4px;
+    border-bottom: #333 1px solid;
+}
+.form-check * {
+    margin: 15px;
+}
+.service-card .card{
+    border: 1px solid #FF6000;
+}
+
+.textStyle {
+    font-size: 34px;
+    font-weight: 600;
+}
+.btnStyle{
+    width:150px;
+    background-color: #FF6000;
+}
+.btnStyle:hover{
+    color:white;
+    background-color: #FFA559;
+    border-color: #FF6000;
+}
+.filterTextStyle{
+    font-size: 18px;
+    font-weight: 400;  
+    letter-spacing: 1px;
+}
+
+.product-item {
+    margin: 4px;
+    width: 179px;
+    height: 241px;
+    border: 1px solid;
+    border-color: #FF6000;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: column;
+}
+
+.product-item img {
+    object-fit: cover;
+    border-radius: 10px;
+    max-height: 133px;
+    color: white;
+    background-color: #FBD3BB;
+}
+.product-item .infos {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: black;
+}
+.product-item .infos .item-info{
+    width: 58%;
+}
+
+.product-item .infos .icons{
+    width: 30%;
+    background-color: #FF6000;
+    border-radius: 5px;
+}
+
+.product-item .infos .item-info .title {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-top: 5px;
+}
+
+.product-item .infos .item-info .description {
+    font-size: 12px;
+    color: black;
+}
+
+.product-item .infos .item-info .price {
+    font-size: 14px;
+    font-weight: bold;
+    color: orangered;
+}

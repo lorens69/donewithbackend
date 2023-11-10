@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class AuthManager extends Controller
 {
@@ -26,6 +28,8 @@ function loginPost(Request $request) {
         'email'=> 'required',
         'password'=> 'required'
     ]);
+
+    Alert::success('Log In Successfully', 'Success Message');
 
     $credentials = $request->only('email','password');
 

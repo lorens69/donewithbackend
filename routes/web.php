@@ -12,6 +12,8 @@ use App\Http\Controllers\UserController;
 use Doctrine\DBAL\Logging\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,7 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/login', function () {
+    Alert::success("Hello");
     return view('login');
 })->name('login');
 
