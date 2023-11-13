@@ -30,17 +30,13 @@
         <div class="container phistory">
             <div class="container-fluid phistory1">
                 <div class="row row-cols-12 phistory2">
-                    <div class="col d-flex justify-content-end text-center pe-5 py-2 fw-bold" style="justify-content:left">Date: </div>
-                    <div class="col-md-4 align-self-center text-center fw-bold">Total: ₱ {{$orderstotal}} </div>
-                     <div class="col d-flex justify-content-end text-center pe-5 py-2 fw-bold">Order No: <span class="mx-2" style="font-size: 16px; font-weight:bold; color:orangered"> -- </span>
-                        <span class="text-sm sm:hidden 2sm:hidden 3sm:hidden pe-2"> | </span>
-                        Status: <span class="mx-2" style="font-size: 16px; font-weight:bold; color:orangered"> -- </span>
+                    <div style="margin:20px;font-size:20px">Total: ₱ {{$orderstotal}} </div>
                     </div>
                 </div>
                 @foreach ( $orders as $order)
                 @csrf
-                <div class="row row-cols-12 phistory3">
-                    <div class="row mt-10">
+                <div style="margin:20px" class="row row-cols-12 phistory3">
+                    <div  style="margin:10px" class="row mt-10">
                         <div class="d-flex col-md-4">
                             <div class="col-md-6 align-self-center text-center">
                                 <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:50px; height:50px;">
@@ -50,8 +46,9 @@
                                 <div class="col-md-12 fw-bold">MOP: COD</div>
                                 <div class="col-md-12 fw-bold">Price: {{$order->price}}</div>
                                 <div class="col-md-12 fw-bold">DATE: {{$order->created_at}}</div>
-
+                                <div>{{$order->status}}</div>
                             </div>
+
                         </div>
                         <div class="col-md-4 align-self-center text-center fw-bold">Description: askdjaskjd kasjdkas jkasjdkasjd aksjd kajasd</div>
 

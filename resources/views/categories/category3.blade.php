@@ -144,19 +144,19 @@
             </div>
 
             <div class="service-card card d-flex flex-row mt-5 justify-content-start flex-wrap w-75 row p-4 gap-3" >
-                @foreach($showproduct as $product)
+                @foreach($sort3 as $product)
 
                 <article class="product-item">
                         <img src="{{asset('upload/'.$product->image)}}" width="100%" height="100%" alt="fiksur">
                     <div class="infos">
                         <div class="item-info">
-                            <h3 class="title">{{ $product['name'] }}</h3>
-                            <p class="price">Price: Php {{ number_format($product['price']) }}</p>
+                            <h3 class="title">{{ $product->name }}</h3>
+                            <p class="price">Price: Php {{ number_format($product->price) }}</p>
                         </div>
                         <div class="icons text-center">
                             <form action="/addtocart" method="POST" style="margin-top: 11px;">
                                 @csrf
-                                <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
 
                                 @auth
                                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">

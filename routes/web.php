@@ -70,6 +70,10 @@ Route::group(['middleware' => 'auth'], function() {
 
 });
 
+Route::get('/sortby1', [ProductController::class, 'sortby1'])->name('sortby1');
+Route::get('/sortby2', [ProductController::class, 'sortby2'])->name('sortby2');
+Route::get('/sortby3', [ProductController::class, 'sortby3'])->name('sortby3');
+
 Route::get('/service', [ServiceController::class, 'showServices'])->name('service');
 Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
 // Route::get('/showproduct', [Products::class, 'showproducts'])->name('show.product');
