@@ -1,5 +1,5 @@
 
-<footer class="footer text-light bottom-0 d-flex justify-content-around "
+<footer class="footer text-light bottom-0 d-flex justify-content-around"
   style="background-color: #1E1B1B;height: 30vh;">
 
   <div class="container w-25 h-100  d-flex flex-column justify-content-center mt-auto mb-auto  ">

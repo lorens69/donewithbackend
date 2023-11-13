@@ -32,7 +32,8 @@ class UserController extends Controller
         $profile->contact = $request->input('updatecontact');
         $profile->current_address = $request->input('updateaddress');
         $profile->update();
-
+        // Set a flag in the session to indicate success
+        session()->flash('profileUpdated', true);
         return redirect('/userdetails');
      }
 

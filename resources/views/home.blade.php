@@ -17,7 +17,7 @@
     
 </head>
 <body>
-<div class="container-fluid p-0 " style="height: auto;">
+<div class="container-fluid p-0 " style="min-height: 100vh;">
     @include('partials._header')
 
     <div class="h-50 mt-5 ms-5 me-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">
@@ -275,7 +275,7 @@
     <!-- ------------------------------------------------------------------------------------------ -->
 
     <!-- START of Clients Love Section --> 
-    <section class="container">
+    <section class="container" style="margin-bottom:100px">
     <span class="text-uppercase fs-4">Clients Love</span>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
         <div class="container testimonial-inner">
@@ -327,9 +327,10 @@
 
 
 </div>
+@include('partials._footer')
+
 
 </body>
 
 </html>
-@include('partials._footer')
 @endsection

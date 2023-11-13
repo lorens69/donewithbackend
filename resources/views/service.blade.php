@@ -42,7 +42,7 @@ border: none;
 
 
 </style>
-<div class="container-fluid mt-5" style="width:80vw;">
+<div class="container-fluid mt-5" style="width:80vw;min-height:53vh;">
     <h1 class="text-start text-uppercase" name="title">Car Services</h1>
     <label for="title" style="width: 120px;border-bottom: solid 3px #FFA559;"></label>
 
@@ -71,6 +71,7 @@ border: none;
         {{ $services->links() }}
     </div>
     </div>
+   
 
 </div> <br><br>
 @include('partials._footer')

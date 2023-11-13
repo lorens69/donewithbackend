@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="Css/style.css">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>Log In</title>
 
 </head>
 <body>
     @include('partials._header')
-    <div class="container profileinfo">
+    <div class="container profileinfo" style="margin-bottom:50px">
 
         <div class="d-flex btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
             <button type="button" class="btn forbutton active ">PROFILE</button>
@@ -40,7 +40,8 @@
                 <h2 style="padding-left: 40px; ">Account Data</h2>
                 <div class="row show-grid justify-content-center">
                     <div class="col-md-10 col-sm-6">
-                    <form action="{{ url('/updateprofile/'.$userdetails[0]->id) }}" method="PUT">
+
+                    <form action="{{ url('/updateprofile/'.$userdetails[0]->id) }}" method="PUT" id="updateProfileForm">
                         @csrf
                         <label>Username:</label>
                         <div class="editinfo p-1 bg-light rounded rounded-pill shadow-sm mb-4">
@@ -92,10 +93,31 @@
         </div>
 
     </div>
+  
+    @include('partials._footer')
 
 </body>
 
 </html>
+<script>
+    $(document).ready(function () {
+        // Check for the session flag
+    var profileUpdated = {{ session('profileUpdated', false) ? 'true' : 'false' }};
+    
+    // Clear the session flag
+    @if(session('profileUpdated'))
+        {{ session()->forget('profileUpdated') }}
+    @endif
 
-@include('partials._footer')
+    // Trigger SweetAlert if the flag is present
+    if (profileUpdated) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Profile Updated!',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+    });
+</script>
 @endsection

@@ -16,7 +16,7 @@
 </head>
 <body>
     @include('partials._header')
-    <div class="container profileinfo">
+    <div class="container profileinfo"  style="min-height:62vh">
 
         <div class="d-flex btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
             <button type="button" class="btn forbutton" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
@@ -37,27 +37,31 @@
                         Status: <span class="mx-2" style="font-size: 16px; font-weight:bold; color:orangered"> -- </span>
                     </div>
                 </div>
-                @foreach ( $orders as $order)
-                @csrf
-                <div class="row row-cols-12 phistory3">
-                    <div class="row mt-10">
-                        <div class="d-flex col-md-4">
-                            <div class="col-md-6 align-self-center text-center">
-                                <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:50px; height:50px;">
-                            </div>
-                            <div class="col-md-6 align-self-center ">
-                                <div class="col-md-12 fw-bold">PRODUCT NAME: {{$order->name}}</div>
-                                <div class="col-md-12 fw-bold">MOP: COD</div>
-                                <div class="col-md-12 fw-bold">Price: {{$order->price}}</div>
-                                <div class="col-md-12 fw-bold">DATE: {{$order->created_at}}</div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4 align-self-center text-center fw-bold">Description: askdjaskjd kasjdkas jkasjdkasjd aksjd kajasd</div>
-
+                <div class="container-fluid phistory3">
+    @if(count($orders) > 0)
+        @foreach($orders as $order)
+            <div class="row row-cols-12 mt-10">
+                <div class="col-md-4 d-flex">
+                    <div class="col-md-6 align-self-center text-center">
+                        <img src="{{ asset('upload/'.$order->image) }}" alt="" style="width: 50px; height: 50px;">
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <div class="col-md-12 fw-bold">PRODUCT NAME: {{$order->name}}</div>
+                        <div class="col-md-12 fw-bold">MOP: COD</div>
+                        <div class="col-md-12 fw-bold">Price: {{$order->price}}</div>
+                        <div class="col-md-12 fw-bold">DATE: {{$order->created_at}}</div>
                     </div>
                 </div>
-                @endforeach
+                <div class="col-md-4 align-self-center text-center fw-bold">Description: {{$order->description}}</div>
+            </div>
+        @endforeach
+    @else
+        <div class="text-center mt-5">
+            <p style="font-size: 18px; font-weight: bold;">No orders yet.</p>
+        </div>
+    @endif
+</div>
+
             </div>
         </div>
 
@@ -66,7 +70,8 @@
 
 </body>
 
+@include('partials._footer')
+
 </html>
 
-@include('partials._footer')
 @endsection
