@@ -1,3 +1,5 @@
+#!/bin/bash
+
 composer install
 npm install
 composer require realrashid/sweet-alert
