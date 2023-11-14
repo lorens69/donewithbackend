@@ -64,12 +64,14 @@
                             </div>
                         </div>
 
+                        
+
                         <label>Contact Number:</label>
                         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                             <div class="input-group">
                               <input type="search" value="{{$userdetails[0]->contact}}" name="updatecontact" aria-describedby="button-addon1" class="form-control border-0 bg-light">
                               <div class="input-group-append editinfo">
-                                {{-- <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="bi bi-pencil"></i></i></button> --}}
+                                
                               </div>
                             </div>
                         </div>
@@ -79,7 +81,7 @@
                             <div class="input-group">
                               <input type="search" value="{{$userdetails[0]->current_address}}" name="updateaddress" aria-describedby="button-addon1" class="form-control border-0 bg-light">
                               <div class="input-group-append editinfo">
-                                {{-- <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="bi bi-pencil"></i></i></button> --}}
+                               
                               </div>
                             </div>
                         </div>

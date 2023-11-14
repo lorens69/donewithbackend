@@ -71,6 +71,88 @@ class ProductController extends Controller
         return view('product', ['products' => $pagination])->with('showproduct', $showproduct);
     }
 
+    ################### SORT BY CATEGORY FUNCTION #########################
+
+    function sortby1 () {
+        $catid = 1;
+        $sort1 = DB::table('products')->where('category_id', $catid)->get();
+        $perPage = 9;
+
+    // Create a new collection from the services array
+    $servicesCollection = new Collection($sort1);
+
+    // Get the current page from the request query string
+    $currentPage = Paginator::resolveCurrentPage();
+
+    // Slice the collection to get the items for the current page
+    $currentPageItems = $servicesCollection->slice(($currentPage - 1) * $perPage, $perPage);
+
+    // Create a new LengthAwarePaginator instance
+    $pagination = new LengthAwarePaginator($currentPageItems, $servicesCollection->count(), $perPage, $currentPage, [
+        'path' => Paginator::resolveCurrentPath(),
+    ]);
+
+    // Use Paginator::useBootstrap() to apply Bootstrap styling to the pagination links
+    Paginator::useBootstrap();
+
+        return view('categories.category1', ['products' => $pagination])->with('sort1', $sort1);
+
+
+    }
+
+    function sortby2 () {
+        $catid = 2;
+        $sort2 = DB::table('products')->where('category_id', $catid)->get();
+        $perPage = 9;
+
+    // Create a new collection from the services array
+    $servicesCollection = new Collection($sort2);
+
+    // Get the current page from the request query string
+    $currentPage = Paginator::resolveCurrentPage();
+
+    // Slice the collection to get the items for the current page
+    $currentPageItems = $servicesCollection->slice(($currentPage - 1) * $perPage, $perPage);
+
+    // Create a new LengthAwarePaginator instance
+    $pagination = new LengthAwarePaginator($currentPageItems, $servicesCollection->count(), $perPage, $currentPage, [
+        'path' => Paginator::resolveCurrentPath(),
+    ]);
+
+    // Use Paginator::useBootstrap() to apply Bootstrap styling to the pagination links
+    Paginator::useBootstrap();
+
+        return view('categories.category2', ['products' => $pagination])->with('sort2', $sort2);
+
+
+    }
+
+    function sortby3 () {
+        $catid = 3;
+        $sort3 = DB::table('products')->where('category_id', $catid)->get();
+        $perPage = 9;
+
+    // Create a new collection from the services array
+    $servicesCollection = new Collection($sort3);
+
+    // Get the current page from the request query string
+    $currentPage = Paginator::resolveCurrentPage();
+
+    // Slice the collection to get the items for the current page
+    $currentPageItems = $servicesCollection->slice(($currentPage - 1) * $perPage, $perPage);
+
+    // Create a new LengthAwarePaginator instance
+    $pagination = new LengthAwarePaginator($currentPageItems, $servicesCollection->count(), $perPage, $currentPage, [
+        'path' => Paginator::resolveCurrentPath(),
+    ]);
+
+    // Use Paginator::useBootstrap() to apply Bootstrap styling to the pagination links
+    Paginator::useBootstrap();
+
+        return view('categories.category3', ['products' => $pagination])->with('sort3', $sort3);
+
+
+    }
 
     ############ ADD TO CART FUNCTION ###################
 

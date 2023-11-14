@@ -1,6 +1,6 @@
 
-<footer class="footer text-light bottom-0 d-flex justify-content-around"
-  style="background-color: #1E1B1B;height: 30vh;">
+<footer class="footer text-light bottom-0 d-flex justify-content-around "
+style="background-color: #1E1B1B;height: 30vh; font-family: 'Raleway', sans-serif;">
 
   <div class="container w-25 h-100  d-flex flex-column justify-content-center mt-auto mb-auto  ">
     <div class="d-flex position-relative justify-content-center  ">

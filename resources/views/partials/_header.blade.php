@@ -10,7 +10,7 @@
     margin-bottom: -4px;
   }
 </style>
-<header style="background-color: #1E1B1B;position: sticky;top: 0;z-index: 5;">
+<header  style="background-color: #1E1B1B;position: sticky;top: 0;z-index: 5; font-family: 'Raleway', sans-serif;">
   <nav class="navbar navbar-expand-lg navbar-dark  m-0  " >
     <div class="container-fluid me-5 ms-5">
       <a class="navbar-brand" href="#"><img src="./img/bertologylogo.png" alt="" width="70px" height="50px" style="margin-left: -30px;">

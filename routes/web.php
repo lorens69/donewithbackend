@@ -12,6 +12,8 @@ use App\Http\Controllers\UserController;
 use Doctrine\DBAL\Logging\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,7 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/login', function () {
+    Alert::success("Hello");
     return view('login');
 })->name('login');
 
@@ -66,6 +69,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/updateprofile/{id}', [UserController::class, 'updateprofile']);
 
 });
+
+Route::get('/sortby1', [ProductController::class, 'sortby1'])->name('sortby1');
+Route::get('/sortby2', [ProductController::class, 'sortby2'])->name('sortby2');
+Route::get('/sortby3', [ProductController::class, 'sortby3'])->name('sortby3');
 
 Route::get('/service', [ServiceController::class, 'showServices'])->name('service');
 Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
