@@ -158,7 +158,7 @@
             <div class="col-md-2 fw-semibold">{{ number_format($cart->price) }}</div>
             <div class="d-flex col-md-2 justify-content-center ">
                 <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i>
-                <span class="col-md-4 fw-semibold text-center">2</span>
+                <span class="col-md-4 fw-semibold text-center">0</span>
                 <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i>
             </div>
             <div class="col-md-2 fw-semibold">0</div>
