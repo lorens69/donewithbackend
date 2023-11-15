@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    
+
 </head>
 
 <style>
@@ -171,18 +171,18 @@
                 <span style="color: black;">ITEM(S): <span style="color: #FF6000;">-</span></span>
             </div>
             <div class="p-2 flex-fill fw-bold">
-                <span style="color: black;">TOTAL PRICE: <span style="color: #F24E1E;">-</span></span>
+                <span style="color: black;">TOTAL PRICE: {{$total}} <span style="color: #F24E1E;">-</span></span>
             </div>
             <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
             </div>
         </div>
-        
+
 
     </div>
-        
+
     <!-- Trigger/Open The Modal -->
-    {{-- <button id="myBtn">Open Modal</button> --}}  
+    {{-- <button id="myBtn">Open Modal</button> --}}
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
@@ -238,8 +238,8 @@
           }
         }
         </script>
-      
-        
+
+
 </body>
 </html>
 @include('partials._footer')
