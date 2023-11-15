@@ -17,15 +17,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    
 </head>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
-body {
-  font-family: 'Manrope', sans-serif;
-  background:#eee;
-}
 
 .size span {
   font-size: 11px;
@@ -133,110 +130,114 @@ body {
   background-color: #5cb85c;
   color: white;
 }
-
-
 </style>
 <body>
     @include('partials._header')
-    <div class="container-fluid px-1 py-5 mx-auto">
-        <h1 class="text-center">To be Continued</h1>
-    </div>
-
-        <div class="container mt-5 mb-5">
-            <div class="d-flex justify-content-center row">
-                <div class="col-md-8">
-                    <div class="p-2">
-                        <h4>Shopping cart</h4>
-
-                        {{-- @auth
-                        <input type="text" name="user_id" value="{{auth()->user()->id}}">
-                        @endauth --}}
-                        {{-- <div class="d-flex flex-row align-items-center pull-right"><span class="mr-1">Sort by:</span><span class="mr-1 font-weight-bold">Price</span><i class="fa fa-angle-down"></i></div> --}}
-                    </div>
-                    @foreach($products as $cart)
-                        <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                            <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70"></div>
-                            <div class="d-flex flex-column align-items-center product-details">{{ $cart->name }}<span class="font-weight-bold"></span>
-                                <div class="d-flex flex-row product-desc">
-                                    {{-- <div class="size mr-1"><span class="text-grey">Size:</span><span class="font-weight-bold">&nbsp;M</span></div> --}}
-                                    {{-- <div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div> --}}
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
-                                <h5 class="text-grey mt-1 mr-1 ml-1"></h5><i class="fa fa-plus text-success"></i></div>
-                            <div>
-                                <h5 class="text-grey"> PHP {{ number_format($cart->price) }} </h5>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <a href="/removecart/{{$cart->cart_id}}"><i class="fa fa-trash mb-1 text-danger"></i></a>
-                            </div>
-                        </div>
-
-                    @endforeach
-                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" id="myBtn">Proceed to Pay</button></div>
-
-            </div>
+    <div class="container shopcart">
+        <div class="ms-5 mt-3">
+            <h6 style="font-size: 20px;">Shopping Cart</h6>
+            <hr class="hr" style= "width: 100px; background-color:#FF6000; opacity:100%; border-width: 5px;">
         </div>
-    </div>
 
+        <div class="d-flex shopheaders col-12 text-center">
+            <div class="col-md-2 fw-semibold"></div>
+            <div class="col-md-2 fw-semibold">Product Name</div>
+            <div class="col-md-2 fw-semibold">Unit Price</div>
+            <div class="col-md-2 fw-semibold">Quantity</div>
+            <div class="col-md-2 fw-semibold">Total Price</div>
+        </div>
+
+        @foreach($products as $cart)
+        <div class="d-flex shopitems col-12 text-center align-items-center">
+            <div class="col-md-2">
+              <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70" height="70"></div>
+            </div>
+            <div class="col-md-2 align-items-center">
+                <span class="p-2 flex-fil fw-semibold" style="font-size: 14px;">{{ $cart->name }}</span>
+            </div>
+            <div class="col-md-2 fw-semibold">{{ number_format($cart->price) }}</div>
+            <div class="d-flex col-md-2 justify-content-center ">
+                <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i>
+                <span class="col-md-4 fw-semibold text-center">2</span>
+                <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i>
+            </div>
+            <div class="col-md-2 fw-semibold">0</div>
+            <div class="col-md-2"><a href="/removecart/{{$cart->cart_id}}"><i class="fa-solid fa-trash" style="font-size: 20px;color: #F24E1E;"></i></a></div>
+        </div>
+        @endforeach
+
+        <div class="d-flex shoptotal text-center">
+            <div class="p-2 flex-fill fw-bold">
+                <span style="color: black;">ITEM(S): <span style="color: #FF6000;">-</span></span>
+            </div>
+            <div class="p-2 flex-fill fw-bold">
+                <span style="color: black;">TOTAL PRICE: <span style="color: #F24E1E;">-</span></span>
+            </div>
+            <div class="p-2 flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">CHECKOUT</div>
+        </div>
+        
+
+    </div>
+        
     <!-- Trigger/Open The Modal -->
-{{-- <button id="myBtn">Open Modal</button> --}}
-<!-- The Modal -->
-<div id="myModal" class="modal">
+    {{-- <button id="myBtn">Open Modal</button> --}}
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-        <h1>ORDER SUMMARY</h1>
-      <span class="close">&times;</span>
-      {{-- <h2>Modal Header</h2> --}}
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1>ORDER SUMMARY</h1>
+          <span class="close">&times;</span>
+          {{-- <h2>Modal Header</h2> --}}
+        </div>
+
+        <form action="/ordernow" method="POST">
+            @csrf
+        <div class="modal-body">
+          <h1>TOTAL AMOUNT: {{$total}}</h1>
+          <p>Some other text...</p>
+        </div>
+        <button type="submit">ORDER NOW</button>
+        </form>
+
+        <div class="modal-footer">
+          {{-- <h3>Modal Footer</h3> --}}
+          <p>some footer here</p>
+        </div>
+      </div>
+
     </div>
 
-    <form action="/ordernow" method="POST">
-        @csrf
-    <div class="modal-body">
-      <h1>TOTAL AMOUNT: {{$total}}</h1>
-      <p>Some other text...</p>
-    </div>
-    <button type="submit">ORDER NOW</button>
-    </form>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
 
-    <div class="modal-footer">
-      {{-- <h3>Modal Footer</h3> --}}
-      <p>some footer here</p>
-    </div>
-  </div>
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
 
-</div>
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-    </script>
-
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+      
+        
 </body>
 </html>
 @include('partials._footer')
