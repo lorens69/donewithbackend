@@ -168,7 +168,7 @@
 
         <div class="d-flex shoptotal text-center">
             <div class="p-2 flex-fill fw-bold">
-                <span style="color: black;">ITEM(S): <span style="color: #FF6000;">-</span></span>
+                <span style="color: black;">ITEM(S): {{ $totalitem }} <span style="color: #FF6000;">-</span></span>
             </div>
             <div class="p-2 flex-fill fw-bold">
                 <span style="color: black;">TOTAL PRICE: {{$total}} <span style="color: #F24E1E;">-</span></span>

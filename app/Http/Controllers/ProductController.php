@@ -197,7 +197,9 @@ class ProductController extends Controller
             ->where('cart.user_id', $user_id)
             ->sum('products.price');
 
-            return view('cart', ['products'=>$products, 'total' =>$total])->with('products', $products);
+            $totalitem = DB::table('cart')->where('user_id', $user_id)->count();
+
+            return view('cart', ['products'=>$products, 'total' =>$total, 'totalitem'=>$totalitem])->with('products', $products);
 
             } else {
                 return redirect('/maglogin');
@@ -249,4 +251,5 @@ class ProductController extends Controller
 
             return view('profile._purchasehistory', ['orders' =>$orders, 'orderstotal' =>$orderstotal])->with('orders', $orders);
     }
+
 }
