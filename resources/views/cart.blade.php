@@ -173,14 +173,16 @@
             <div class="p-2 flex-fill fw-bold">
                 <span style="color: black;">TOTAL PRICE: <span style="color: #F24E1E;">-</span></span>
             </div>
-            <div class="p-2 flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">CHECKOUT</div>
+            <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
+              <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
+            </div>
         </div>
         
 
     </div>
         
     <!-- Trigger/Open The Modal -->
-    {{-- <button id="myBtn">Open Modal</button> --}}
+    {{-- <button id="myBtn">Open Modal</button> --}}  
     <!-- The Modal -->
     <div id="myModal" class="modal">
 

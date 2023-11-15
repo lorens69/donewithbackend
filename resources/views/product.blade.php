@@ -40,23 +40,9 @@
 
         </div>
         <br>
-        @if ($errors->any())
-                                        <div class="col-12">
-                                            @foreach ($errors->all() as $error)
-                                                <div class="alert alert-danger">{{$error}}</div>
-                                            @endforeach
-                                        </div>
-                                    @endif
+       
 
-                                    @if (session()->has('error'))
-                                        <div class="alert alert-danger">{{session('error')}}</div>
-                                    @endif
-
-                                    @if (session()->has('success'))
-                                        <div class="alert alert-success">{{session('success')}}</div>
-                                    @endif
-
-                                    @csrf
+        @csrf
 
         <div class="d-flex w-100 justify-content-between" style="margin-bottom:31px; margin-top:-40px;">
             <div class="accordion mt-5 me-5 w-25" id="accordionExample">
@@ -154,7 +140,7 @@
                             <p class="price">Price: Php {{ number_format($product['price']) }}</p>
                         </div>
                         <div class="icons text-center">
-                            <form action="/addtocart" method="POST" style="margin-top: 11px;">
+                            <form action="/addtocart" method="POST">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product['id'] }}">
 
@@ -162,7 +148,7 @@
                                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
                                 @endauth
 
-                                <button><i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;padding-top:2px;"></i></button>
+                                <button class="btn btn-block"><i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i></button>
                             </form>
                         </div>
                     </div>
@@ -178,7 +164,10 @@
             </div>
         </div>
 
-    </div> <br><br>
+    </div>  
+    <br><br>
+    @include('sweetalert::alert')
+
     @include('partials._footer')
     @endsection
 
