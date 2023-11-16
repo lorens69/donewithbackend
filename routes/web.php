@@ -64,13 +64,19 @@ Route::group(['middleware' => 'auth'], function() {
         return view('profile._profileinfo');
     })->name('profileinfo');
 
-    Route::post('/addtocart', [ProductController::class, 'addToCart'])->name('addToCart');
+    // Route::post('/addtocart', [ProductController::class, 'addToCart'])->name('addToCart');
+    Route::post('/products/{productId}/add-to-cart', [ProductController::class, 'addToCart'])->name('addToCart');
     Route::get('/cart', [ProductController::class, 'cartList'])->name('carts');
     Route::get('/removecart/{id}', [ProductController::class, 'removeCart'])->name('removeCart');
     Route::post('/ordernow', [ProductController::class, 'orderNow'])->name('ordernow');
     Route::get('/myorder', [ProductController::class, 'myOrders'])->name('myOrders');
     Route::get('/userdetails', [UserController::class, 'showuserdetails'])->name('mydetails');
     Route::get('/updateprofile/{id}', [UserController::class, 'updateprofile']);
+    // routes/web.php
+
+Route::post('/cart/{cartId}/increase', [ProductController::class, 'increaseQuantity'])->name('cart.increase');
+Route::post('/cart/{cartId}/decrease', [ProductController::class, 'decreaseQuantity'])->name('cart.decrease');
+
 
 });
 

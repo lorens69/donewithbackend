@@ -40,7 +40,7 @@
 
         </div>
         <br>
-       
+
 
         @csrf
 
@@ -140,9 +140,9 @@
                             <p class="price">Price: Php {{ number_format($product['price']) }}</p>
                         </div>
                         <div class="icons text-center">
-                            <form action="/addtocart" method="POST">
+                            <form action="{{ route('addToCart', ['productId' => $product->id]) }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                                {{-- <input type="hidden" name="product_id" value="{{ $product['id'] }}"> --}}
 
                                 @auth
                                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
@@ -164,7 +164,7 @@
             </div>
         </div>
 
-    </div>  
+    </div>
     <br><br>
     @include('sweetalert::alert')
 

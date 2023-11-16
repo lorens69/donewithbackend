@@ -33,7 +33,7 @@
     .pagination .page-item:not(.active) .page-link{
     border: none;
     }
-    
+
     .pagination > .active > a,
     .pagination > .active > span {
         color: black;
@@ -43,7 +43,7 @@
         background-color: #FFE6C7; /* Add the background color for pagination items */
         color: black;
     }
-    
+
     /* Hide the "Next" and "Previous" links */
     .pagination .disabled,
     .pagination .page-link[rel="next"],
@@ -67,7 +67,7 @@
         border-style: solid;
         border-color: black;
         border-width: 2px;
-    
+
     }
     .cardtitle{
         font-size: 13px;
@@ -76,26 +76,26 @@
         padding-left: 14px;
         padding-right: 5px;
         padding-bottom: 5px;
-    
+
     }
     .buttonText{
         font-size: 13px;
         width: 180px;
         padding: 8px;
     }
-    
+
     </style>
 <body>
     @include('partials._header')
 
     <div class="container-fluid mt-5" style="width:80vw;">
-    
+
         <div class="d-flex justify-content-between mt-2 ">
             <div>
                 <span class="textStyle" name="title">CAR SERVICES</span>
             </div>
-           
-            
+
+
                 <div class="row d-flex align-items-center md-4 gap-0" style="padding-right:37px;s">
                     <div class="form-group col-md-8 pe-0">
                       <input id="exampleFormControlInput5" type="email" placeholder="search service" class="form-control form-control-underlined">
@@ -106,17 +106,17 @@
                 </div>
                 {{-- <input type="text" class="w-15" style="border:1px solid #FF6000">
                 <button class="btn btn-sm text-uppercase text-white text-base" style="background-color:#FF6000;padding:10px;width: 100px;border-radius: 0;">Search Service</button> --}}
-        
+
         </div>
-    
+
         <div class=" d-flex mt-3 justify-content-between flex-wrap  w-100">
             @foreach($services as $service)
             <div class=" cardStyle col-lg-3 m-4 p-0">
                 <div class="card-body d-flex  align-items-start flex-column pt-0 ps-0 pe-0 ">
-                    <img src="./img/services/CarAlarmInstallation.png" alt="" class="img-fluid" style="border-radius:10px; display: inline-block; width:210px; height:150px; margin-bottom:7px;"/>
+                    <img src="{{asset('upload/'.$service->image)}}" alt="" class="img-fluid" style="border-radius:10px; display: inline-block; width:210px; height:150px; margin-bottom:7px;"/>
                     <h5 class="cardtitle text-start" >{{ $service['serviceName'] }}</h5>
                     <p class="cardtitle text-start " style="color: #FF6000;">Price: Php {{ number_format($service['servicePrice']) }}</p>
-                   
+
                     <div class="d-flex justify-content-center" style="flex-wrap:wrap; align-self: center">
                         <button class="btn d-flex justify-content-center align-items-center buttonText text-white fw-bold mt-3 mb-3" style="background-color: #FF6000;">BOOK APPOINTMENT</button>
                     </div>
@@ -130,10 +130,10 @@
             {{ $services->links() }}
         </div>
         </div>
-        
+
     </div> <br><br>
     @include('partials._footer')
     @endsection
-    
+
 </body>
 </html>

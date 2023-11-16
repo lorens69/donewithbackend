@@ -157,26 +157,37 @@ class ProductController extends Controller
 
     ############ ADD TO CART FUNCTION ###################
 
-   function addToCart(Request $req) {
+   function addToCart($productId) {
 
         if(Auth::check()){
 
-        $cart['user_id'] = $req->user_id;
-        $cart['product_id'] = $req->product_id;
+            $user_id = Auth::id();
 
-        $form = Cart::create($cart);
+            $existingCartItem = DB::table('cart')
+            ->where('user_id', $user_id)
+            ->where('product_id', $productId)
+            ->first();
 
-            if(!$form){
-
-                return redirect()->back()->with('error', 'Not logged in.');
-
+            if ($existingCartItem) {
+                // If the item is already in the cart, increase the quantity
+                DB::table('cart')
+                    ->where('id', $existingCartItem->id)
+                    ->increment('quantity');
             } else {
-
-                return redirect()->back()->with('success', 'Orders added to cart');
+                // If the item is not in the cart, add it with a quantity of 1
+                DB::table('cart')->insert([
+                    'user_id' => $user_id,
+                    'product_id' => $productId,
+                    'quantity' => 1,
+                ]);
             }
 
+            return redirect()->back()->with('success', 'Orders added to cart');
+
         } else {
+            // return redirect('/maglogin');
             return redirect('/maglogin');
+                // return redirect()->back()->with('success', 'Orders added to cart');
         }
 
     }
@@ -189,7 +200,7 @@ class ProductController extends Controller
             $products = DB::table('cart')
             ->join('products', 'cart.product_id', '=', 'products.id')
             ->where('cart.user_id', $user_id)
-            ->select('products.*', 'cart.id as cart_id')
+            ->select('products.*', 'cart.id as cart_id','cart.quantity')
             ->get();
 
             $total = DB::table('cart')
@@ -197,9 +208,14 @@ class ProductController extends Controller
             ->where('cart.user_id', $user_id)
             ->sum('products.price');
 
-            $totalitem = DB::table('cart')->where('user_id', $user_id)->count();
+            $totalValue = 0;
 
-            return view('cart', ['products'=>$products, 'total' =>$total, 'totalitem'=>$totalitem])->with('products', $products);
+            foreach ($products as $product) {
+                $totalValue += $product->price * $product->quantity;
+            }
+            $totalitem = DB::table('cart')->where('user_id', $user_id)->sum('quantity');
+
+            return view('cart', ['products'=>$products, 'total' =>$total, 'totalitem'=>$totalitem, 'totalValue'=>$totalValue])->with('products', $products);
 
             } else {
                 return redirect('/maglogin');
@@ -250,6 +266,19 @@ class ProductController extends Controller
         //     ->get();
 
             return view('profile._purchasehistory', ['orders' =>$orders, 'orderstotal' =>$orderstotal])->with('orders', $orders);
+    }
+
+    public function increaseQuantity($cartId)
+    {
+        DB::table('cart')->where('id', $cartId)->increment('quantity');
+        return redirect('/cart');
+    }
+
+    public function decreaseQuantity($cartId)
+    {
+        // Add validation to ensure quantity doesn't go below 1
+        DB::table('cart')->where('id', $cartId)->decrement('quantity');
+        return redirect('/cart');
     }
 
 }

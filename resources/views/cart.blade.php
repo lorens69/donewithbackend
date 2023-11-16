@@ -157,9 +157,17 @@
             </div>
             <div class="col-md-2 fw-semibold">{{ number_format($cart->price) }}</div>
             <div class="d-flex col-md-2 justify-content-center ">
-                <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i>
-                <span class="col-md-4 fw-semibold text-center">0</span>
-                <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i>
+                {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
+                <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
+                    @csrf
+                    <button type="submit">Increase</button>
+                </form>
+                <span class="col-md-4 fw-semibold text-center">qty{{$cart->quantity}}</span>
+                <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
+                    @csrf
+                    <button type="submit">Decrease</button>
+                </form>
+                {{-- <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i> --}}
             </div>
             <div class="col-md-2 fw-semibold">0</div>
             <div class="col-md-2"><a href="/removecart/{{$cart->cart_id}}"><i class="fa-solid fa-trash" style="font-size: 20px;color: #F24E1E;"></i></a></div>
@@ -171,7 +179,7 @@
                 <span style="color: black;">ITEM(S): {{ $totalitem }} <span style="color: #FF6000;">-</span></span>
             </div>
             <div class="p-2 flex-fill fw-bold">
-                <span style="color: black;">TOTAL PRICE: {{$total}} <span style="color: #F24E1E;">-</span></span>
+                <span style="color: black;">TOTAL PRICE: {{$totalValue}} <span style="color: #F24E1E;">-</span></span>
             </div>
             <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
