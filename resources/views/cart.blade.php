@@ -119,15 +119,17 @@
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color:#F24E1E;
   color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 0px 16px;
+}
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #F24E1E;
   color: white;
 }
 </style>
@@ -148,7 +150,7 @@
         </div>
 
         @foreach($products as $cart)
-        <div class="d-flex shopitems col-12 text-center align-items-center">
+        <div class="d-flex col-12 text-center align-items-center mt-2">
             <div class="col-md-2">
               <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70" height="70"></div>
             </div>
@@ -181,7 +183,7 @@
             <div class="p-2 flex-fill fw-bold">
                 <span style="color: black;">TOTAL PRICE: {{$totalValue}} <span style="color: #F24E1E;">-</span></span>
             </div>
-            <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
+            <div class="p-2 flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
             </div>
         </div>
@@ -196,8 +198,8 @@
 
       <!-- Modal content -->
       <div class="modal-content">
-        <div class="modal-header">
-            <h1>ORDER SUMMARY</h1>
+        <div class="modal-header" style="padding:20px;">
+            <span style="font-family: 'Raleway', sans-serif; font-size: 24px;">ORDER SUMMARY</span>
           <span class="close">&times;</span>
           {{-- <h2>Modal Header</h2> --}}
         </div>
@@ -205,8 +207,43 @@
         <form action="/ordernow" method="POST">
             @csrf
         <div class="modal-body">
-          <h1>TOTAL AMOUNT: {{$total}}</h1>
-          <p>Some other text...</p>
+          {{-- <h1>TOTAL AMOUNT: {{$total}}</h1> --}}
+          <div style="margin: 10px;">
+            <span style="font-family: 'Raleway', sans-serif; font-size: 20px;">Thank you for your order!</span>
+          </div>
+          @foreach($products as $cart)
+          <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px;">
+              <div class="col-md-2">
+                <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70" height="70"></div>
+              </div>
+              <div class="d-flex col-md-2 align-items-center">
+                <span class="col-md-4 fw-semibold">2(quantity)</span>
+            </div>
+              <div class="col-md-2 align-items-center">
+                  <span class="p-2 flex-fil fw-semibold" style="font-size: 14px;">{{ $cart->name }}</span>
+              </div>
+              <div class="col-md-2 ms-auto fw-semibold">{{ number_format($cart->price) }}</div>
+          </div>
+          @endforeach
+          <div class="mt-4 mb-4 d-flex" style="gap: 60px;">
+            <div class="me-auto d-flex flex-column">
+              <span class="">Billed To:</span>
+              <span class="fw-bold">(FullName)</span>
+              <span class="fw-bold">(Address)</span>
+
+            </div>
+            <div class="d-flex flex-column align-items-end">
+              <span class="fw-semibold">Total Quantity:</span>
+              <span class="fw-semibold">Mode of Payment:</span>
+              <span class="fw-bold fs-5">Total Amount:</span>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+              <span class="fw-semibold">0</span>
+              <span class="fw-semibold">Cash On delivery (COD)</span>
+              <span class="fw-bold fs-5">{{$total}}</span>
+            </div>
+
+          </div>
         </div>
         <button type="submit">ORDER NOW</button>
         </form>
