@@ -170,15 +170,16 @@
             <div class="col-md-2 fw-semibold">{{ number_format($cart->price) }}</div>
             <div class="d-flex col-md-2 justify-content-center ">
                 {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
-                <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
-                    @csrf
-                    <button type="submit">+</button>
-                </form>
-                <span class="col-md-4 fw-semibold text-center">{{$cart->quantity}}</span>
                 <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
-                    @csrf
-                    <button type="submit">-</button>
-                </form>
+                  @csrf
+                  <button style="background-color: #d85d38; border: 4px double #cccccc; border-radius:5px" type="submit"><i class="fa-solid fa-minus"></i></button>
+              </form>
+                <span class="col-md-4 fw-semibold text-center">{{$cart->quantity}}</span>
+
+                <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
+                  @csrf
+                  <button style="background-color: #d85d38; border: 4px double #cccccc; border-radius:5px" type="submit"><i class="fa-solid fa-plus"></i></button>
+              </form>
                 {{-- <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i> --}}
             </div>
             <div class="col-md-2 fw-semibold">{{$cart->price * $cart->quantity}}</div>
@@ -238,12 +239,13 @@
           <div class="mt-4 mb-4 d-flex" style="gap: 60px;">
             <div class="me-auto d-flex flex-column">
               <span class="">Billed To:</span>
-              <span class="fw-bold">(FullName)</span>
-              <span class="fw-bold">(Address)</span>
+              <span class="fw-bold">FullName: {{auth()->user()->name}}</span>
+              <span class="fw-bold">Address: {{auth()->user()->current_address}}</span>
+              <span class="fw-bold">Contact: {{auth()->user()->contact}}</span>
 
             </div>
             <div class="d-flex flex-column align-items-end">
-              <span class="fw-semibold">Total Quantity: </span>
+              <span class="fw-semibold">Total Items: </span>
               <span class="fw-semibold">Mode of Payment:</span>
               <span class="fw-bold fs-5">Total Amount: </span>
             </div>
@@ -257,9 +259,9 @@
         </div>
         <div class="d-flex justify-content-evenly m-5">
           <button type="submit" class="btn w-25 ordersummarybtn">CONFIRM</button>
-          <button type="submit" class="btn w-25 ordersummarybtn">BUY AGAIN</button>
+          <button type="button" class="btn w-25 ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>
         </div>
-        
+
         </form>
 
         <div class="modal-footer">
