@@ -132,6 +132,16 @@
   background-color: #F24E1E;
   color: white;
 }
+.ordersummarybtn{
+  background-color:#de704f;
+  color: white;
+}
+.ordersummarybtn:hover{
+  background-color: #F24E1E;
+  color: white;
+  border: #342f2f 1px solid;
+}
+
 </style>
 <body>
     @include('partials._header')
@@ -162,16 +172,16 @@
                 {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
                 <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
                     @csrf
-                    <button type="submit">Increase</button>
+                    <button type="submit">+</button>
                 </form>
-                <span class="col-md-4 fw-semibold text-center">qty{{$cart->quantity}}</span>
+                <span class="col-md-4 fw-semibold text-center">{{$cart->quantity}}</span>
                 <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                     @csrf
-                    <button type="submit">Decrease</button>
+                    <button type="submit">-</button>
                 </form>
                 {{-- <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i> --}}
             </div>
-            <div class="col-md-2 fw-semibold">0</div>
+            <div class="col-md-2 fw-semibold">{{$cart->price * $cart->quantity}}</div>
             <div class="col-md-2"><a href="/removecart/{{$cart->cart_id}}"><i class="fa-solid fa-trash" style="font-size: 20px;color: #F24E1E;"></i></a></div>
         </div>
         @endforeach
@@ -183,7 +193,7 @@
             <div class="p-2 flex-fill fw-bold">
                 <span style="color: black;">TOTAL PRICE: {{$totalValue}} <span style="color: #F24E1E;">-</span></span>
             </div>
-            <div class="p-2 flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
+            <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
             </div>
         </div>
@@ -217,12 +227,12 @@
                 <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70" height="70"></div>
               </div>
               <div class="d-flex col-md-2 align-items-center">
-                <span class="col-md-4 fw-semibold">2(quantity)</span>
+                <span class="col-md-4 fw-semibold">{{$cart->quantity}}</span>
             </div>
               <div class="col-md-2 align-items-center">
                   <span class="p-2 flex-fil fw-semibold" style="font-size: 14px;">{{ $cart->name }}</span>
               </div>
-              <div class="col-md-2 ms-auto fw-semibold">{{ number_format($cart->price) }}</div>
+              <div class="col-md-2 ms-auto fw-semibold">{{$cart->price * $cart->quantity}}</div>
           </div>
           @endforeach
           <div class="mt-4 mb-4 d-flex" style="gap: 60px;">
@@ -233,24 +243,28 @@
 
             </div>
             <div class="d-flex flex-column align-items-end">
-              <span class="fw-semibold">Total Quantity:</span>
+              <span class="fw-semibold">Total Quantity: </span>
               <span class="fw-semibold">Mode of Payment:</span>
-              <span class="fw-bold fs-5">Total Amount:</span>
+              <span class="fw-bold fs-5">Total Amount: </span>
             </div>
             <div class="d-flex flex-column align-items-end">
-              <span class="fw-semibold">0</span>
+              <span class="fw-semibold">{{ $totalitem }}</span>
               <span class="fw-semibold">Cash On delivery (COD)</span>
-              <span class="fw-bold fs-5">{{$total}}</span>
+              <span class="fw-bold fs-5">{{$totalValue}}</span>
             </div>
 
           </div>
         </div>
-        <button type="submit">ORDER NOW</button>
+        <div class="d-flex justify-content-evenly m-5">
+          <button type="submit" class="btn w-25 ordersummarybtn">CONFIRM</button>
+          <button type="submit" class="btn w-25 ordersummarybtn">BUY AGAIN</button>
+        </div>
+        
         </form>
 
         <div class="modal-footer">
           {{-- <h3>Modal Footer</h3> --}}
-          <p>some footer here</p>
+          <p>BERTOLOGY</p>
         </div>
       </div>
 
