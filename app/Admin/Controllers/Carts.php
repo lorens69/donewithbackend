@@ -29,6 +29,7 @@ class Carts extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('product_id', __('Product id'));
         $grid->column('user_id', __('User id'));
+        $grid->column('quantity', __('Quantity'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -48,6 +49,7 @@ class Carts extends AdminController
         $show->field('id', __('Id'));
         $show->field('product_id', __('Product id'));
         $show->field('user_id', __('User id'));
+        $show->field('quantity', __('Quantity'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -65,6 +67,7 @@ class Carts extends AdminController
 
         $form->text('product_id', __('Product id'));
         $form->text('user_id', __('User id'));
+        $form->number('quantity', __('Quantity'));
 
         return $form;
     }

@@ -17,6 +17,7 @@ class CreateCartTable extends Migration
             $table->increments('id');
             $table->string('product_id')->nullable();
             $table->string('user_id')->nullable();
+            $table->integer('quantity')->nullable();
             $table->timestamps();
         });
     }
