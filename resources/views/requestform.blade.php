@@ -54,7 +54,7 @@
                             </div>
                         </div> --}}
 
-                        @csrf 
+                        @csrf
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
@@ -103,7 +103,7 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"for="specialrequest">Special requests and instructions:<span class="text-danger"> *</span></label> <input type="text" id="specialrequest" name="specialrequest" placeholder="" onblur="validate(9)">
+                                <label class="form-control-label px-3"for="specialrequest">Special requests and instructions:<span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
                             </div>
                         </div>
                         <div class="row justify-content-end">
@@ -199,7 +199,7 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"for="specialrequest">Special requests and instructions:<span class="text-danger"> *</span></label> <input type="text" id="specialrequest" name="specialrequest" placeholder="" onblur="validate(9)">
+                                <label class="form-control-label px-3"for="specialrequest">Special requests and instructions:<span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
                             </div>
                         </div>
                         <div class="row justify-content-end">

@@ -112,7 +112,7 @@ class Reservation extends AdminController
         $data['yom'] = $request->yom;
         $data['service'] = $request->service;
         $data['date'] = $request->date;
-        $data['special_instructions'] = $request->specialrequest;
+        $data['special_instructions'] = $request->special_instructions;
         $form = Reservations::create($data);
 
         if(!$form){

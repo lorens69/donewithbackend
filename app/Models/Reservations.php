@@ -16,7 +16,7 @@ class Reservations extends Model
         'yom',
         'service',
         'date',
-        'specialrequest',
+        'special_instructions',
     ];
 
 }
