@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->bigInteger('product_id')->nullable();
             $table->bigInteger('user_id')->nullable();
+            $table->integer('quantity')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });
