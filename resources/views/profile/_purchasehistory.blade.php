@@ -36,36 +36,25 @@
                 @if(count($orders) > 0)
                 @foreach ( $orders as $order)
                 @csrf
-                <div style="margin:20px" class="row row-cols-12 phistory3">
+                <div style="margin:20px" class="row phistory3">
                     <div>
                         <i class="bi bi-circle-fill"></i>
                         <span >Tracker (sample: Arrive tomorrow)</span>
                     </div>
-                    <div  style="margin:10px" class="row mt-10">
-                        
-                        <div class="d-flex col-md-4" style="background-color: white;">
-                            <div class="col-md-6 align-self-center text-center">
+                    <div  style="margin:10px">
+                        <div class="d-flex flex-row d-flex justify-content-evenly" style="background-color: aliceblue;">
+                            <div class="">
                                 <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:50px; height:50px;">
                             </div>
-                            <div class="col-md-6 align-self-center ">
-                                <div class="col-md-12 fw-bold">PRODUCT NAME: {{$order->name}}</div>
-                                <div class="col-md-12 fw-bold">Quantity: {{$order->quantity}}</div>
-                                <div class="col-md-12 fw-bold">MOP: COD</div>
-                                <div class="col-md-12 fw-bold">Price: {{$order->price}}</div>
-                                <div class="col-md-12 fw-bold">Total Price: {{$order->price * $order->quantity}}</div>
-                                <div class="col-md-12 fw-bold">DATE: {{$order->created_at}}</div>
-                                <div>{{$order->status}}</div>
+
+                            <div class="d-flex align-self-center" fw-bold">{{$order->name}}</div>
+                            <div class="d-flex align-self-center" fw-bold">{{$order->price}}</div>
+                            <div class="d-flex align-self-center" fw-bold">{{$order->quantity}}</div>
+                            <div class="d-flex align-self-center" fw-bold">{{$order->price * $order->quantity}}</div>
+                            <div class="d-flex align-self-center" fw-bold">{{$order->created_at}}</div>
+                            <div class="d-flex align-self-center">
+                                <button type="button" class="btn btn-block p-2" style="width:150px; color:orangered;background-color:white;border: 1px solid; border-color:orangered;">{{$order->status}}</button>
                             </div>
-
-                        </div>
-                        <div class="col-md-4 align-self-center text-center fw-bold">Description: askdjaskjd kasjdka</div>
-
-                        <div class="d-flex col-md-4" style="background-color: white;">
-                            <div class="align-self-center text-center">
-                                <button class="btn btn-block p-2 w-25">{{$order->status}}</button>
-                            </div>
-                            
-
                         </div>
                     </div>
                 </div>
