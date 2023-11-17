@@ -30,7 +30,7 @@
         <div class="container phistory">
             <div class="container-fluid phistory1">
                 <div class="row row-cols-12 phistory2">
-                    <div style="margin:20px;font-size:20px">Total: ₱ {{$orderstotal}} </div>
+                    <div style="font-size:20px;text-align:right; padding:10px">Total Payables: ₱ {{$orderstotal}} </div>
                     </div>
                 </div>
                 @foreach ( $orders as $order)
@@ -43,8 +43,10 @@
                             </div>
                             <div class="col-md-6 align-self-center ">
                                 <div class="col-md-12 fw-bold">PRODUCT NAME: {{$order->name}}</div>
+                                <div class="col-md-12 fw-bold">Quantity: {{$order->quantity}}</div>
                                 <div class="col-md-12 fw-bold">MOP: COD</div>
                                 <div class="col-md-12 fw-bold">Price: {{$order->price}}</div>
+                                <div class="col-md-12 fw-bold">Total Price: {{$order->price * $order->quantity}}</div>
                                 <div class="col-md-12 fw-bold">DATE: {{$order->created_at}}</div>
                                 <div>{{$order->status}}</div>
                             </div>

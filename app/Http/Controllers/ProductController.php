@@ -239,11 +239,12 @@ class ProductController extends Controller
             $order->product_id = $cart['product_id'];
             $order->user_id = $cart['user_id'];
             $order->status="pending";
+            $order->quantity= $cart["quantity"];
             $order->save();
             Cart::where('user_id',$user_id)->delete();
         }
 
-        return redirect ('product');
+        return redirect ('product')->with('success','Orders complete, find out more accessories!');
     }
 
     function myOrders() {
