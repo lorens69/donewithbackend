@@ -52,7 +52,7 @@
                             </div>
 
                         </div>
-                        <div class="col-md-4 align-self-center text-center fw-bold">Description: askdjaskjd kasjdkas jkasjdkasjd aksjd kajasd</div>
+                        <div class="col-md-4 align-self-center text-center fw-bold">Description: askdjaskjd kasjdka</div>
 
                     </div>
                 </div>
