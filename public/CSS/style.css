@@ -490,10 +490,10 @@ body {
 .profileinfo .phistory{
   height:auto;
   margin-top: 20px;
-  border-radius: 10px;
+  /* border-radius: 10px;
   border: 1px solid #000;
   background: rgba(252, 243, 236, 0.00);
-  
+   */
 }
 .profileinfo .phistory1{
   width: auto;
@@ -510,9 +510,10 @@ body {
 .profileinfo .phistory3{
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid;
-  border-color:#FF6000;
-  border-radius: 10px;
+  /* border: 1px solid;
+  border-color:#FF6000; */
+  background-color: rgba(211, 192, 182, 0.487);
+
 }
 .profileinfo .phistory3 img{
   margin-top: 10px;
