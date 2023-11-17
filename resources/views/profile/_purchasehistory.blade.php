@@ -33,11 +33,17 @@
                     <div style="font-size:20px;text-align:right; padding:10px">Total Payables: ₱ {{$orderstotal}} </div>
                     </div>
                 </div>
+                @if(count($orders) > 0)
                 @foreach ( $orders as $order)
                 @csrf
                 <div style="margin:20px" class="row row-cols-12 phistory3">
+                    <div>
+                        <i class="bi bi-circle-fill"></i>
+                        <span >Tracker (sample: Arrive tomorrow)</span>
+                    </div>
                     <div  style="margin:10px" class="row mt-10">
-                        <div class="d-flex col-md-4">
+                        
+                        <div class="d-flex col-md-4" style="background-color: white;">
                             <div class="col-md-6 align-self-center text-center">
                                 <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:50px; height:50px;">
                             </div>
@@ -54,9 +60,21 @@
                         </div>
                         <div class="col-md-4 align-self-center text-center fw-bold">Description: askdjaskjd kasjdka</div>
 
+                        <div class="d-flex col-md-4" style="background-color: white;">
+                            <div class="align-self-center text-center">
+                                <button class="btn btn-block p-2 w-25">{{$order->status}}</button>
+                            </div>
+                            
+
+                        </div>
                     </div>
                 </div>
                 @endforeach
+                @else
+                    <div class="text-center mt-5">
+                        <p style="font-size: 18px; font-weight: bold;">No orders yet.</p>
+                    </div>
+                @endif
             </div>
         </div>
 

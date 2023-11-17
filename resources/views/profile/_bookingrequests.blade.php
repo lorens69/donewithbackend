@@ -27,6 +27,7 @@
 
         <div class="container brequest">
             <div class="container-fluid brequest1">
+                @if(count($reservations) > 0)
                 @foreach($reservations as $reservation)
                 <div class="container-fluid brequest2">
                     <div class="row row-cols-2">
@@ -44,11 +45,17 @@
                                 @elseif($reservation->status === 'accepted')
                                     <p>Booking has been accepted. Cancellation not allowed.</p>
                             @endif
+                        
                     </div>
 
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div class="text-center mt-5">
+                    <p style="font-size: 18px; font-weight: bold;">No reservations or booking requests yet.</p>
+                </div>
+                @endif
 
             </div>
 
