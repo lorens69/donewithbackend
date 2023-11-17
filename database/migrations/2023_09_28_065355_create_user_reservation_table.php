@@ -23,7 +23,7 @@ class CreateUserReservationTable extends Migration
             $table->string('service_name')->nullable();
             $table->string('status')->nullable();
             $table->date('date')->nullable();
-            $table->string('instructions')->nullable();
+            $table->string('special_instructions')->nullable();
             $table->timestamps();
         });
     }

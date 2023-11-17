@@ -17,6 +17,6 @@ class UserReservation extends Model
         'service_name',
         'status',
         'date',
-        'instructions',
+        'special_instructions',
     ];
 }

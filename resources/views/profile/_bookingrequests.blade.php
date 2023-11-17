@@ -32,7 +32,7 @@
                 <div class="container-fluid brequest2">
                     <div class="row row-cols-2">
                       <div class="col d-flex justify-content-start text-center ps-4 mt-4"><span style="font-size: 16px; font-weight:bold;">SERVICE NAME: {{$reservation->service_name}}</span></div>
-                      <div class="col d-flex justify-content-start text-center ps-4 mt-4"><span style="font-size: 16px; font-weight:bold;">Special Instructions: {{$reservation->instructions}}</span></div>
+                      <div class="col d-flex justify-content-start text-center ps-4 mt-4"><span style="font-size: 16px; font-weight:bold;">Special Instructions: {{$reservation->special_instructions}}</span></div>
                       <div class="col d-flex justify-content-end text-center pe-5 mt-4"><button type="button" class="btn btn-md btn-primary btnrequest1" disabled>{{ $reservation->status }}</button></div>
                       <div class="col d-flex justify-content-start text-end ps-4 my-2 fw-bold"><span style="font-size: 14px;">DATE AND TIME: {{$reservation->created_at}}</span></div>
                       <div class="col d-flex justify-content-end text-center pe-5 my-2 mb-4 ">

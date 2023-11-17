@@ -37,7 +37,7 @@ class UserReservationController extends AdminController
         $grid->column('yom', __('Yom'));
         $grid->column('service_name', __('Service name'));
         $grid->column('date', __('Date'));
-        $grid->column('instructions', __('Instructions'));
+        $grid->column('special_instructions', __('Instructions'));
         $grid->column('status', __('Status'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -63,7 +63,7 @@ class UserReservationController extends AdminController
         $show->field('yom', __('Yom'));
         $show->field('service_name', __('Service name'));
         $show->field('date', __('Date'));
-        $show->field('instructions', __('Instructions'));
+        $show->field('special_instructions', __('Instructions'));
         $show->field('status', __('Status'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -88,7 +88,7 @@ class UserReservationController extends AdminController
         $form->text('service_name', __('Service name'));
         $form->text('status', __('Status'));
         $form->date('date', __('Date'))->default(date('Y-m-d'));
-        $form->text('instructions', __('Instructions'));
+        $form->text('special_instructions', __('Instructions'));
 
         return $form;
     }
@@ -112,7 +112,7 @@ class UserReservationController extends AdminController
         $data['service_name'] = $request->service;
         $data['status'] = "pending";
         $data['date'] = $request->date;
-        $data['instructions'] = $request->specialrequest;
+        $data['special_instructions'] = $request->special_instructions;
         $form = UserReservation::create($data);
 
         if(!$form){
