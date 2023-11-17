@@ -110,7 +110,7 @@ class UserReservationController extends AdminController
         $data['model'] = $request->model;
         $data['yom'] = $request->yom;
         $data['service_name'] = $request->service;
-        $data['status'] = "Pending";
+        $data['status'] = "pending";
         $data['date'] = $request->date;
         $data['instructions'] = $request->specialrequest;
         $form = UserReservation::create($data);
@@ -134,5 +134,11 @@ class UserReservationController extends AdminController
             ->get();
 
             return view('profile._bookingrequests', ['reservations'=>$reservations])->with('reservations', $reservations);
+    }
+
+    function cancel($id) {
+
+        UserReservation::destroy($id);
+        return redirect()->back()->with('success','Booking reservation cancelled.');
     }
 }

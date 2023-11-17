@@ -118,7 +118,7 @@
                     <p class="cardtitle text-start " style="color: #FF6000;">Price: Php {{ number_format($service['servicePrice']) }}</p>
 
                     <div class="d-flex justify-content-center" style="flex-wrap:wrap; align-self: center">
-                        <button class="btn d-flex justify-content-center align-items-center buttonText text-white fw-bold mt-3 mb-3" style="background-color: #FF6000;">BOOK APPOINTMENT</button>
+                        <button class="btn d-flex justify-content-center align-items-center buttonText text-white fw-bold mt-3 mb-3" style="background-color: #FF6000;" onclick="window.location.href='{{route('requestform')}}'">BOOK APPOINTMENT</button>
                     </div>
                 </div>
             </div>

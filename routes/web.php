@@ -57,6 +57,7 @@ Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 Route::post('/reservations', [Reservation::class, 'sendrequest'])->name('request.post');
 Route::post('/userreservations', [UserReservationController::class, 'usersendrequest'])->name('userrequest.post');
 Route::get('/showuserreservations', [UserReservationController::class, 'showreservations'])->name('showuserreservations');
+Route::post('/showuserreservations/{id}/cancel', [UserReservationController::class, 'cancel'])->name('showuserreservations.cancel');
 
 Route::group(['middleware' => 'auth'], function() {
 
