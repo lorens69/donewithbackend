@@ -13,6 +13,7 @@ use Doctrine\DBAL\Logging\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Services;
 
 
 /*
@@ -138,5 +139,7 @@ Route::get('/book', function () {
 // })->name('carts');
 
 Route::get('/requestform', function () {
-    return view('requestform');
+    $services = Services::all(); // Retrieve all services from the database
+
+    return view('requestform', ['services' => $services]);
 })->name('requestform');
