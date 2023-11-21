@@ -13,15 +13,33 @@
 
     <title>Purchase History</title>
 
+    <style>
+        .item-container {
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        @media (max-width: 768px) {
+            .item-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                height: 350px;
+            }
+        }
+    </style>
+
 </head>
 <body>
     @include('partials._header')
     <div class="container profileinfo">
 
-        <div class="d-flex btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
-            <button type="button" class="btn forbutton" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
-            <button type="button" class="btn forbutton" onclick="window.location.href='{{route('showuserreservations')}}'">BOOKING REQUESTS</button>
-            <button type="button" class="btn forbutton active">ORDERS AND PURCHASES</button>
+        <div class="d-flex flex-column flex-sm-row btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
+            <button type="button" class="btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
+            <button type="button" class="btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('showuserreservations')}}'">BOOKING REQUESTS</button>
+            <button type="button" class="btn forbutton active mb-2 mb-sm-0 me-sm-2">ORDERS AND PURCHASES </button>
         </div>
 
 
@@ -29,10 +47,7 @@
 
         <div class="container phistory">
             <div class="container-fluid phistory1">
-                <div class="row row-cols-12 phistory2">
-                    <div style="font-size:20px;text-align:right; padding:10px">Total Payables: ₱ {{$orderstotal}} </div>
-                    </div>
-                </div>
+
                 @if(count($orders) > 0)
                 @foreach ( $orders as $order)
                 @csrf
@@ -41,20 +56,19 @@
                         <i class="bi bi-circle-fill"></i>
                         <span >Tracker (sample: Arrive tomorrow)</span>
                     </div>
-                    <div  style="margin:10px">
-                        <div class="d-flex flex-row d-flex justify-content-evenly" style="background-color: aliceblue;">
-                            <div class="">
-                                <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:50px; height:50px;">
-                            </div>
 
-                            <div class="d-flex align-self-center" fw-bold">{{$order->name}}</div>
-                            <div class="d-flex align-self-center" fw-bold">{{$order->price}}</div>
-                            <div class="d-flex align-self-center" fw-bold">{{$order->quantity}}</div>
-                            <div class="d-flex align-self-center" fw-bold">{{$order->price * $order->quantity}}</div>
-                            <div class="d-flex align-self-center" fw-bold">{{$order->created_at}}</div>
-                            <div class="d-flex align-self-center">
-                                <button type="button" class="btn btn-block p-2" style="width:150px; color:orangered;background-color:white;border: 1px solid; border-color:orangered;">{{$order->status}}</button>
-                            </div>
+                    <div class="item-container d-flex flex-row justify-content-evenly" id="item-container" name="item-container">
+                        <div class="">
+                            <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:100px; height:100px;">
+                        </div>
+
+                        <div class="d-flex align-self-center fw-bold">Product: {{$order->name}}</div>
+                        <div class="d-flex align-self-center fw-bold">Price: {{$order->price}}</div>
+                        <div class="d-flex align-self-center fw-bold">Qty: {{$order->quantity}}</div>
+                        <div class="d-flex align-self-center fw-bold">Item Total: {{$order->price * $order->quantity}}</div>
+                        <div class="d-flex align-self-center fw-bold">Date: {{$order->created_at}}</div>
+                        <div class="d-flex align-self-center">
+                            <button type="button" class="btn btn-block p-2" style="width:150px; color:orangered;background-color:white;border: 1px solid; border-color:orangered;">{{$order->status}}</button>
                         </div>
                     </div>
                 </div>
@@ -64,13 +78,42 @@
                         <p style="font-size: 18px; font-weight: bold;">No orders yet.</p>
                     </div>
                 @endif
-            </div>
+            </>
         </div>
 
 
     </div>
 
 </body>
+
+<script>
+    function updateContainerClass() {
+    var itemContainers = document.querySelectorAll('.item-container');
+    var screenWidth = window.innerWidth;
+
+    itemContainers.forEach(function(itemContainer) {
+        // Check if the screen width is less than or equal to 768 pixels
+        if (screenWidth <= 768) {
+            // Remove the original class when the screen size is small
+            itemContainer.classList.remove('d-flex', 'flex-row', 'justify-content-evenly');
+
+            // Add a new class or apply styles directly if needed
+            itemContainer.classList.add('new-class'); // Replace 'new-class' with your desired class name
+        } else {
+            // If the screen width is greater than 768 pixels, add back the original class
+            itemContainer.classList.remove('new-class'); // Remove the added class
+            itemContainer.classList.add('d-flex', 'flex-row', 'justify-content-evenly');
+        }
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', updateContainerClass);
+
+// Listen for window resize events
+window.addEventListener('resize', updateContainerClass);
+
+</script>
 
 </html>
 

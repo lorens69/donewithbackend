@@ -27,14 +27,14 @@
             </div>
 
 
-                <div class="row d-flex align-items-center md-4 gap-0" style="padding-right:37px;s">
+                {{-- <div class="row d-flex align-items-center md-4 gap-0" style="padding-right:37px;s">
                     <div class="form-group col-md-8 pe-0">
                       <input id="exampleFormControlInput5" type="email" placeholder="search product" class="form-control form-control-underlined">
                     </div>
                     <div class="form-group col-md-4 pe-0">
                       <button type="submit" class="btn btnStyle rounded-pill btn-block shadow-sm">Search</button>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <input type="text" class="w-15" style="border:1px solid #FF6000">
                 <button class="btn btn-sm text-uppercase text-white text-base" style="background-color:#FF6000;padding:10px;width: 100px;border-radius: 0;">Search Service</button> --}}
 
@@ -88,44 +88,8 @@
                     </div>
                 </div>
                 <div class="accordion-item ">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="filterTextStyle p-2 accordion-button bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            Sort By
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <form>
-                                <a href="" class="form-check">
-                                    <label class="ms-3 m-1" for="alphabetical" style="font-size: 14px; font-weight:200; letter-spacing:1px;color:#333;">
-                                        Alphabetically
-                                    </label>
-                                </a>
-                                <a href="" class="form-check">
-                                    <label class="ms-3 m-1" for="lowtohigh" style="font-size: 14px; font-weight:200; letter-spacing:1px;color:#333;">
-                                        Price (Low to High)
-                                    </label>
-                                </a>
-                                <a href="" class="form-check">
-                                    <label class="ms-3 m-1" for="hightolow" style="font-size: 14px; font-weight:200; letter-spacing:1px;color:#333;">
-                                        Price (High to Low)
-                                    </label>
-                                </a>
-                                <a href="" class="form-check">
-                                    <label class="ms-3 m-1" for="recentproducts" style="font-size: 14px; font-weight:200; letter-spacing:1px;color:#333;">
-                                        Recently Added
-                                    </label>
-                                </a>
-                                <a href="" class="form-check">
-                                    <label class="ms-3 m-1" for="bestsellers" style="font-size: 14px; font-weight:200; letter-spacing:1px;color:#333;">
-                                        Best Sellers
-                                    </label>
-                                </a>
-                            </form>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
 
@@ -134,6 +98,7 @@
 
                 <article class="product-item">
                         <img src="{{asset('upload/'.$product->image)}}" width="100%" height="100%" alt="fiksur">
+                        <br>
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{ $product['name'] }}</h3>

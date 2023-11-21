@@ -20,42 +20,18 @@
                 <h1 class="login">Log In</h1>
                 <img src="img/car-service.png" width="240px" height="50%">
             </div>
-    
+
             <div class="welcomeback">
-                {{-- <h1>Welcome Back!</h1>
-                <input type="text " placeholder="Email Address">
-                <input type="password"  placeholder= "Password"  >
-                <button>Sign In</button> --}}
-    
+
+
                 <form action="{{ route('login.post') }}" method="POST">
-    
-                    {{-- <div class="container">
-                        <div class="mt-5">
-                            @if ($errors->any())
-                                <div class="col-12">
-                                    @foreach ($errors->all() as $error)
-                                        <div class="alert alert-danger">{{$error}}</div>
-                                    @endforeach
-                                </div>
-                            @endif
-    
-                            @if (session()->has('error'))
-                                <div class="alert alert-danger">{{session('error')}}</div>
-                            @endif
-    
-                            @if (session()->has('success'))
-                                <div class="alert alert-success">{{session('success')}}</div>
-                            @endif
-    
-                        </div>
-                    </div> --}}
-    
+
                     @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" name="email" >
                           </div>
-    
+
                           <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" name="password">
@@ -66,13 +42,30 @@
                 <p>Don't have an account yet? <img src="img/ask.png" height="30px" width="30px" style="transform:rotate(30deg);"> </p>
             </div>
         </div>
-        
+
     </div>
 
     @include('sweetalert::alert')
 
 
 </body>
+
+<style>
+    @media (max-width: 768px) {
+        .logo {
+            display: none;
+        }
+
+        .welcomeback {
+            width: 300px;
+            height: auto;
+        }
+
+        .loginmaincon {
+            height: 70%;
+        }
+    }
+</style>
 
 </html>
 @include('partials._footer')

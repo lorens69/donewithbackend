@@ -18,51 +18,55 @@
     @include('partials._header')
     <div class="container profileinfo">
 
-        <div class="d-flex btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
-            <button type="button" class="btn forbutton" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
-            <button type="button" class="btn forbutton active">BOOKING REQUESTS</button>
-            <button type="button" class="btn forbutton" onclick="window.location.href='{{route('myOrders')}}'">ORDERS AND PURCHASES</button>
+        <div class="d-flex flex-column flex-sm-row btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
+            <button type="button" class="btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
+            <button type="button" class="btn forbutton active mb-2 mb-sm-0 me-sm-2">BOOKING REQUESTS</button>
+            <button type="button" class="btn forbutton mb-2 mb-sm-0" onclick="window.location.href='{{route('myOrders')}}'">ORDERS AND PURCHASES</button>
         </div>
 
 
         <div class="container brequest">
-            <div class="container-fluid brequest1">
+
+            <div class="container-fluid brequest1" style="padding:20px">
                 @if(count($reservations) > 0)
-                @foreach($reservations as $reservation)
-                <div class="container-fluid brequest2">
-                    <div class="row row-cols-2">
-                      <div class="col d-flex justify-content-start text-center ps-4 mt-4"><span style="font-size: 16px; font-weight:bold;">SERVICE NAME: {{$reservation->service_name}}</span></div>
-                      <div class="col d-flex justify-content-start text-center ps-4 mt-4"><span style="font-size: 16px; font-weight:bold;">Special Instructions: {{$reservation->special_instructions}}</span></div>
-                      <div class="col d-flex justify-content-end text-center pe-5 mt-4"><button type="button" class="btn btn-md btn-primary btnrequest1" disabled>{{ $reservation->status }}</button></div>
-                      <div class="col d-flex justify-content-start text-end ps-4 my-2 fw-bold"><span style="font-size: 14px;">DATE AND TIME: {{$reservation->created_at}}</span></div>
-                      <div class="col d-flex justify-content-end text-center pe-5 my-2 mb-4 ">
-                        {{-- <button type="button" class="btn btn-md btn-warning btnrequest2">Cancel</button> --}}
-                        @if($reservation->status === 'pending')
-                                <form action="{{ route('showuserreservations.cancel', $reservation->id) }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="btn btn-md btn-warning btnrequest2">Cancel Booking</button>
-                                </form>
-                                @elseif($reservation->status === 'accepted')
-                                    <p>Booking has been accepted. Cancellation not allowed.</p>
-                            @endif
-                        
-                    </div>
-
-                    </div>
-                </div>
-                @endforeach
+                    @foreach($reservations as $reservation)
+                        <div class="container-fluid brequest2">
+                            <div class="row row-cols-1 row-cols-md-2">
+                                <div class="col text-center mb-4">
+                                    <span style="font-size: 16px; font-weight:bold;">SERVICE NAME: {{$reservation->service_name}}</span>
+                                </div>
+                                <div class="col text-center mb-4">
+                                    <span style="font-size: 16px; font-weight:bold;">Special Instructions: {{$reservation->special_instructions}}</span>
+                                </div>
+                                <div class="col text-center mb-4">
+                                    <button type="button" class="btn btn-md btn-primary btnrequest1" disabled>{{ $reservation->status }}</button>
+                                </div>
+                                <div class="col text-center mb-4">
+                                    <span style="font-size: 14px;">DATE AND TIME: {{$reservation->created_at}}</span>
+                                </div>
+                                <div class="col text-center mb-4">
+                                    @if($reservation->status === 'pending')
+                                        <form action="{{ route('showuserreservations.cancel', $reservation->id) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-md btn-warning btnrequest2">Cancel Booking</button>
+                                        </form>
+                                    @elseif($reservation->status === 'accepted')
+                                        <p>Booking has been accepted. Cancellation not allowed.</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 @else
-                <div class="text-center mt-5">
-                    <p style="font-size: 18px; font-weight: bold;">No reservations or booking requests yet.</p>
-                </div>
+                    <div class="text-center mt-5">
+                        <p style="font-size: 18px; font-weight: bold;">No reservations or booking requests yet.</p>
+                    </div>
                 @endif
-
             </div>
-
-
         </div>
-
     </div>
+
+    @include('sweetalert::alert')
 
 </body>
 

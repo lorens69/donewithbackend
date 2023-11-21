@@ -26,7 +26,7 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 58vw;
-    height: 82vh; 
+    height: 82vh;
 }
 .logo {
     background-color: #454545;
@@ -162,7 +162,7 @@ body {
     padding-bottom: 10px;
 }
 .partners img {
-  margin: auto;    
+  margin: auto;
   display: block;
 }
 
@@ -203,7 +203,7 @@ body {
 }
 .servicesOffered .card{
   width: 18rem;
-  padding-top:12px; 
+  padding-top:12px;
   padding-bottom:12px;
   border-width: 2px;
   border-radius: 0px;
@@ -366,7 +366,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.testimonial-pos { 
+.testimonial-pos {
   position: relative;
   top: 24px
 }
@@ -459,7 +459,7 @@ body {
   border-radius: 10px;
   border: 2px solid #000;
   background: rgba(252, 243, 236, 0.00);
-  
+
 }
 .profileinfo .brequest1{
   width: auto;
@@ -499,7 +499,7 @@ body {
   width: auto;
   height: auto;
   margin:30px;
-  
+
 }
 .profileinfo .phistory2{
   margin-top: 10px;
@@ -518,7 +518,7 @@ body {
 .profileinfo .phistory3 img{
   margin-top: 10px;
   margin-bottom: 10px;
-  
+
 }
 .profileinfo .btnrequest1{
   width: 165px;
@@ -537,7 +537,7 @@ body {
 # Shopping Cart
 --------------------------------------------------------------*/
 .shopcart{
-  
+
   margin: 50px 50px 50px 50px;
   height: auto;
   padding-bottom: 20px;
@@ -684,13 +684,13 @@ body {
 }
 .filterTextStyle{
     font-size: 18px;
-    font-weight: 400;  
+    font-weight: 400;
     letter-spacing: 1px;
 }
 
 .product-item {
     margin: 4px;
-    width: 179px;
+    width: 219px;
     height: 241px;
     border: 1px solid;
     border-color: #FF6000;

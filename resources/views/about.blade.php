@@ -30,8 +30,8 @@
                 style="position:unset;display:grid; align-items:center;">
 
             </div>
-            
-        </div>   
+
+        </div>
     </div>
 
     {{-- Our Mission --}}
@@ -64,7 +64,7 @@
                 <label for="Nilbert" class="text-uppercase text-center fw-bolder mt-3" style="color: #FF6000;padding:6px; background-color:white;border-color:black; border-width:2px; border-style:solid; border-radius:5px;">Nilbert M.
                     Umaran / Head technician</label>
             </div>
-            
+
             <h5 class="me-5 lh-base" style="color: #FF6000;text-align: justify;width: 40%;">Nilbert Umaran, the visionary founder of Bertology, serves as our esteemed Head Technician. His expertise and dedication have been instrumental in shaping Bertology into a premier destination for automotive enthusiasts. With a keen understanding of modern car enthusiasts' needs, Nilbert Umaran is the driving force behind our commitment to excellence and innovation.</h5>
         </div>
     </div>
