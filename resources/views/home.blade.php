@@ -14,7 +14,7 @@
  <script src="\resources\js\app.js"></script>    
 </head>
 <body>
-<div class="container-fluid p-0 " style="height: auto;">
+<div class="container-fluid p-0 homecontainer1">
     @include('partials._header')
 
     <div class="h-50 mt-5 ms-5 me-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">

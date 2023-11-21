@@ -137,6 +137,17 @@ body {
 .welcomeback a:link{
   text-decoration: none;
 }
+/*--------------------------------------------------------------
+# Home header
+--------------------------------------------------------------*/
+.homecontainer1{
+  height: auto;
+}
+.homebackground{
+  background: url(./img/landingpage.jpg);
+  background-size: cover;
+  background-position: center;
+}
 
 /*--------------------------------------------------------------
 # Partners
@@ -403,7 +414,7 @@ body {
 --------------------------------------------------------------*/
 .profileinfo{
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .profileinfo .forbutton {
@@ -461,11 +472,21 @@ body {
   background: rgba(252, 243, 236, 0.00);
   
 }
-.profileinfo .brequest1{
-  width: auto;
-  height: auto;
-  margin:30px;
-  padding:20px;
+@media (min-width: 320px) and (max-width:425px) {
+  .profileinfo .brequest1 {
+    background-color: #007bff;
+    margin: 0px;
+  }
+}
+
+@media (min-width: 426px) {
+  .profileinfo .brequest1 {
+    background-color: rgba(211, 192, 182, 0.487);
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding:20px;
+  }
 }
 .profileinfo .brequest2{
   margin-top: 10px;
