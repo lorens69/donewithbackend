@@ -33,7 +33,7 @@ class UserController extends Controller
         $profile->current_address = $request->input('updateaddress');
         $profile->update();
 
-        return redirect('/userdetails');
+        return redirect()->back()->with('sucess', 'Profile updated!');
      }
 
 

@@ -6,8 +6,8 @@ style="background-color: #1E1B1B;height: 30vh; font-family: 'Raleway', sans-seri
     <div class="d-flex position-relative justify-content-center  ">
       <img src="/img/ShineMasters.png" height="80px" width="100px">
       <span
-        style="border-right: 1px solid white;margin-left: 20px;margin-right: 20px;border-right-width: 2px;display: block; height: 100px;"></span>
-      <h2 class="text-uppercase mt-auto mb-auto">maelstorm </h2><img src="/img/maelstorm.png" width="100px"
+        style="border-right: 1px solid white;margin-left: 20px;margin-right: 20px;border-right-width: 2px; height: 100px;" id="standingline" name="standingline"></span>
+      <h2 class="text-uppercase mt-auto mb-auto" id="mael" name="mael">maelstorm </h2><img src="/img/maelstorm.png" id="mael2" name="mael2" width="100px"
         height="80px" style="position: absolute;right: 0;">
 
     </div>
@@ -34,6 +34,44 @@ style="background-color: #1E1B1B;height: 30vh; font-family: 'Raleway', sans-seri
     </div>
 
   </div>
+
+  <style>
+        @media (max-width: 768px) {
+            .footer {
+                text-align: center;
+            }
+
+            .footer img {
+                width: 80%;
+                max-width: 150px;
+            }
+
+            .footer h2 {
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+
+            .footer h5 {
+                font-size: 0.9rem;
+            }
+
+            .footer h3 {
+                font-size: 1.2rem;
+            }
+
+            #mael {
+                display: none;
+            }
+
+            #mael2 {
+                display: none;
+            }
+
+            #standingline {
+                display: none;
+            }
+        }
+    </style>
 
 
 </footer>

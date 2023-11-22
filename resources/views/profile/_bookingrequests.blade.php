@@ -18,14 +18,16 @@
     @include('partials._header')
     <div class="container profileinfo">
 
-        <div class="d-flex btn-group btn-group-lg bd-highlight mt-4" role="group" aria-label="Basic example">
-            <button type="button" class="btn forbutton" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
-            <button type="button" class="btn forbutton active">BOOKING REQUESTS</button>
-            <button type="button" class="btn forbutton" onclick="window.location.href='{{route('myOrders')}}'">ORDERS AND PURCHASES</button>
+        <div class="d-flex flex-column flex-sm-row btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
+            <button type="button" class="btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
+            <button type="button" class="btn forbutton active mb-2 mb-sm-0 me-sm-2">BOOKING REQUESTS</button>
+            <button type="button" class="btn forbutton mb-2 mb-sm-0" onclick="window.location.href='{{route('myOrders')}}'">ORDERS AND PURCHASES</button>
         </div>
 
 
-            <div class="container brequest1">
+        <div class="container brequest">
+
+            <div class="container-fluid brequest1" style="padding:20px">
                 @if(count($reservations) > 0)
                 @foreach($reservations as $reservation)  
                     <div class="container-fluid request2 d-flex flex-row justify-content-between" >
@@ -56,12 +58,16 @@
             </div>
                 @endforeach
                 @else
-                <div class="text-center mt-5">
-                    <p style="font-size: 18px; font-weight: bold;">No reservations or booking requests yet.</p>
-                </div>
+                    <div class="text-center mt-5">
+                        <p style="font-size: 18px; font-weight: bold;">No reservations or booking requests yet.</p>
+                    </div>
                 @endif
+            </div>
+        </div>
+    </div>
 
-           
+    @include('sweetalert::alert')
+
 </body>
 
 </html>
