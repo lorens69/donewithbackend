@@ -12,6 +12,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
@@ -281,5 +282,14 @@ class ProductController extends Controller
         DB::table('cart')->where('id', $cartId)->decrement('quantity');
         return redirect('/cart');
     }
+
+    public function popularitems()
+    {
+        $randomItems = DB::table('products')->inRandomOrder()->limit(7)->get();
+
+        return view('home')->with('randomItems', $randomItems);
+
+    }
+
 
 }

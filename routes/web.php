@@ -52,6 +52,7 @@ Route::get('/login', function () {
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+Route::get('/', [ProductController::class, 'popularitems'])->name('home');
 Route::get('/maglogin', [AuthManager::class, 'maglogin'])->name('maglogin');
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 // Route::post('/bookingrequests', [RequestForm::class, 'formPost'])->name('form.post');
