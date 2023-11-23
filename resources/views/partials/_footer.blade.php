@@ -36,6 +36,7 @@ style="background-color: #1E1B1B;height: 30vh; font-family: 'Raleway', sans-seri
   </div>
 
   <style>
+
         @media (max-width: 768px) {
             .footer {
                 text-align: center;
@@ -70,6 +71,7 @@ style="background-color: #1E1B1B;height: 30vh; font-family: 'Raleway', sans-seri
             #standingline {
                 display: none;
             }
+
         }
     </style>
 

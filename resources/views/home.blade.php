@@ -11,7 +11,7 @@
  <link rel="stylesheet" href="Css/style.css">
  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- <script src="\resources\js\app.js"></script>    
+ <script src="\resources\js\app.js"></script>
 </head>
 <body>
 <div class="container-fluid p-0 homecontainer1">
@@ -19,10 +19,10 @@
 
     <div class="h-50 mt-5 ms-5 me-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">
         <div class="container bg-white h-50 w-75  bg-opacity-25 me-0 ms-5 mt-5 text-uppercase text-white d-flex  flex-column justify-content-evenly" style="border-radius:10px;letter-spacing:1px;">
-           <h4 style="padding-top:14px;">We offer you </h3> 
+           <h4 style="padding-top:14px;">We offer you </h3>
             <h1 class="fw-bolder" style="font-size:64px;"><span style="color: #FF6000;"> trustworthy </span>auto refurbishing</h1>
            <h4>let us be your trusted partner in maintaining <br> <br>
-            the health and reliability of your vehicle  </h3> 
+            the health and reliability of your vehicle  </h3>
         </div>
         <div class="container h-50 w-75 me-0 ms-5   d-flex align-items-start justify-content-start ">
             <div class="btn w-25 m-5 p-2" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
@@ -54,12 +54,12 @@
             <div class="col-md-2 align-middle">
                 <img src="./img/home/6thBrand.png">
             </div>
-            
+
         </div>
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
 
-    <!-- START of Why Choose Us Section --> 
+    <!-- START of Why Choose Us Section -->
     <section class="container chooseUs position-relative" >
     <span class="text-uppercase"  style="font-size: 26px;">Why Choose Us</span>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
@@ -75,7 +75,7 @@
                                 <div><h6 class="fw-bold text-uppercase" style="font-size: 22px;">Experienced <span style="color: #FF6000;">Mechanics</span></h6></div>
                                 <div><h6 class="label" style="font-family: 'Cabin Condensed', sans-serif; font-weight:700;">We have our mechanics on standby to aid your need and offer service</h6></div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="row col-lg-6">
                         <div class="row">
@@ -121,14 +121,14 @@
             <div class="row">
                 <div class="col-md-2">
                     <img class="techimg" src="./img/technician.png" alt="">
-                </div> 
+                </div>
             </div>
         </div>
 
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
 
-    <!-- START of Services We Provide Section --> 
+    <!-- START of Services We Provide Section -->
     <section class="servicesOffered">
         <div class=" ms-5 me-5 mb-3 d-flex flex-column" style="background: url(./img/usephoto4.png); background-size: cover;background-position: top; height: 180px;">
             <div class="container" style="padding-top:20px;">
@@ -143,7 +143,7 @@
                     <div class="card-body">
                     <h5 class="card-title text-uppercase">Free Installation</h5>
                     <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700;text-align:left;">We have our mechanics on standby to aid your need and offer service.</p>
-                    
+
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;padding-top:12px; padding-bottom:12px;">
@@ -151,7 +151,7 @@
                     <div class="card-body">
                     <h5 class="card-title text-uppercase">Troubleshooting</h5>
                     <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700; text-align:left;">For any car or electronics issue, make Bertology your first call. We specialize in troubleshooting and resolving problems swiftly and effectively.</p>
-                    
+
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;padding-top:12px; padding-bottom:12px;">
@@ -159,19 +159,19 @@
                     <div class="card-body">
                     <h5 class="card-title text-uppercase">Maintenance</h5>
                     <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700; text-align:left;">At Bertology, each valued customer enjoys exclusive discounted pricing for regular maintenance. When it comes to managing your car's financial well-being, Bertology is your go-to solution.</p>
-                    
+
                     </div>
                 </div>
             </div>
-    
+
         </div>
 
         </div>
-        
+
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
 
-    <!-- START of Popular Items Section --> 
+    <!-- START of Popular Items Section -->
     <section class="container popularItems">
     <span class="text-uppercase" style="font-size: 26px;">Popular Items</span>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
@@ -181,91 +181,28 @@
 
             <div id="carousel-vp">
             <div id="cCarousel-inner">
+                @foreach($randomItems as $items)
 
-                <article class="cCarousel-item">
-                <img src="./img/product1.png">
-                <div class="infos">
-                    <div class="item-info">
-                        <h3 class="title">ITEM PRICE</h3>
-                        <p class="price">Php 214.00</p>
+                    <article class="cCarousel-item">
+                    <img src="./img/product1.png">
+                    <div class="infos">
+                        <div class="item-info">
+                            <h3 class="title">{{$items->name}}</h3>
+                            <p class="price">{{$items->price}}</p>
+                        </div>
+                        <div class="icons text-center">
+                        <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
                     </div>
-                    <div class="icons text-center">
-                    <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
-                    </div>
-                </div>
-                </article>
-
-                <article class="cCarousel-item">
-                <img src="./img/product1.png">
-                <div class="infos">
-                    <div class="item-info">
-                        <h3 class="title">ITEM PRICE</h3>
-                        <span class="price">Php 214.00</span>
-                    </div>
-                    <div class="icons text-center">
-                    <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
-                    </div>
-                </div>
-                </article>
-
-                <article class="cCarousel-item">
-                <img src="./img/product1.png">
-                <div class="infos">
-                    <div class="item-info">
-                        <h3 class="title">ITEM PRICE</h3>
-                        <span class="price">Php 214.00</span>
-                    </div>
-                    <div class="icons text-center" >
-                    <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
-                    </div>
-                </div>
-                </article>
-
-                <article class="cCarousel-item">
-                <img src="./img/product1.png">
-                <div class="infos">
-                    <div class="item-info">
-                        <h3 class="title">ITEM PRICE</h3>
-                        <span class="price">Php 214.00</span>
-                    </div>
-                    <div class="icons text-center">
-                    <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
-                    </div>
-                </div>
-                </article>
-
-                <article class="cCarousel-item">
-                <img src="./img/product1.png">
-                <div class="infos">
-                    <div class="item-info">
-                        <h3 class="title">ITEM PRICE</h3>
-                        <span class="price">Php 214.00</span>
-                    </div>
-                    <div class="icons text-center">
-                    <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
-                    </div>
-                </div>
-                </article>
-
-                <article class="cCarousel-item">
-                <img src="./img/product1.png">
-                <div class="infos">
-                    <div class="item-info">
-                        <h3 class="title">ITEM PRICE</h3>
-                        <span class="price">Php 214.00</span>s
-                    </div>
-                    <div class="icons text-center">
-                    <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
-                    </div>
-                </div>
-                </article>
+                    </article>
+                @endforeach
             </div>
             </div>
         </div>
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
 
-    <!-- START of Clients Love Section --> 
+    <!-- START of Clients Love Section -->
     <section class="container">
     <span class="text-uppercase" style="font-size: 26px;">Clients Love</span>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
@@ -301,15 +238,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
             </div>
-        </div>                        
-        
+        </div>
+
 
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
 
-    
+
 
 
 

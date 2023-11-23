@@ -172,7 +172,7 @@
                 {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
                 <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                   @csrf
-                  <button style="background-color: #d85d38; border: 4px double #cccccc; border-radius:5px" type="submit"><i class="fa-solid fa-minus"></i></button>
+                  <button style="background-color: #d85d38; border: 4px double #cccccc; border-radius:5px" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
               </form>
                 <span class="col-md-4 fw-semibold text-center">{{$cart->quantity}}</span>
 
