@@ -17,42 +17,41 @@
 <div class="container-fluid p-0 homecontainer1">
     @include('partials._header')
 
-    <div class="h-50 mt-5 ms-5 me-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">
-        <div class="container bg-white h-50 w-75  bg-opacity-25 me-0 ms-5 mt-5 text-uppercase text-white d-flex  flex-column justify-content-evenly" style="border-radius:10px;letter-spacing:1px;">
+    <div class="h-50 mt-sm-5 ms-sm-5 me-sm-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">
+        <div class="container bg-white h-50 w-75 bg-opacity-25 ms-sm-5 mt-sm-5 my-5 pb-3 text-uppercase text-white d-flex  flex-column justify-content-evenly" style="border-radius:10px;letter-spacing:1px;">
            <h4 style="padding-top:14px;">We offer you </h3>
-            <h1 class="fw-bolder" style="font-size:64px;"><span style="color: #FF6000;"> trustworthy </span>auto refurbishing</h1>
-           <h4>let us be your trusted partner in maintaining <br> <br>
-            the health and reliability of your vehicle  </h3>
+            <h1 class="fw-bolder display-3"><span style="color: #FF6000;"> trustworthy </span>auto refurbishing</h1>
+           <h4 class="fs-5">let us be your trusted partner in maintaining the health and reliability of your vehicle </h4>
         </div>
-        <div class="container h-50 w-75 me-0 ms-5   d-flex align-items-start justify-content-start ">
-            <div class="btn w-25 m-5 p-2" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
-            <div class="btn w-25 m-5 p-2" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('product')}}'">Order Parts</div>
+        <div class="container h-50 w-75 me-0 ms-5 my-5 d-flex align-items-center justify-content-start gap-5">
+            <div class="btn w-sm-25" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
+            <div class="btn w-sm-25" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('product')}}'">Order Parts</div>
         </div>
     </div>
 
 
    <!-- START of Trusted Partners Section -->
     <section class="container partners" >
-    <span class="text-uppercase" style="font-size: 26px; margin-top:10px;">Our Trusted Brands</span>
-    <hr     class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%; border-width: 5px;">
-        <div class="row">
+    <h1 class="text-uppercase display-sm-3">Our Trusted Brands</h1>
+    <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%; border-width: 5px;">
+        <div class="row row-cols-auto" style="justify-content: space-evenly;">
             <div class="col-md-2 align-middle">
-                <img src="./img/home/1stBrand.png">
+                <img class="rounded-circle" src="./img/home/1stBrand.png">
             </div>
             <div class="col-md-2 align-middle">
-                <img src="./img/home/2ndBrand.png">
+                <img class="rounded-circle" src="./img/home/2ndBrand.png">
             </div>
             <div class="col-md-2 align-middle">
-                <img src="./img/home/3rdBrand.png">
+                <img class="rounded-circle" src="./img/home/3rdBrand.png">
             </div>
             <div class="col-md-2 align-middle">
-                <img src="./img/home/4thBrand.png">
+                <img class="rounded-circle" src="./img/home/4thBrand.png">
+            </div>  
+            <div class="col-md-2 align-middle">
+                <img class="rounded-circle" src="./img/home/5thBrand.png">
             </div>
             <div class="col-md-2 align-middle">
-                <img src="./img/home/5thBrand.png">
-            </div>
-            <div class="col-md-2 align-middle">
-                <img src="./img/home/6thBrand.png">
+                <img class="rounded-circle" src="./img/home/6thBrand.png">
             </div>
 
         </div>
@@ -68,7 +67,7 @@
                 <div class="row col-lg-12">
                     <div class="row col-lg-6">
                         <div class="row">
-                            <div class="col-md-4 text-center">
+                            <div class="col-md-4 text-center ">
                                 <img src="./img/mechanic_icon.png" alt="">
                             </div>
                             <div class="col-md-8">
@@ -130,43 +129,44 @@
 
     <!-- START of Services We Provide Section -->
     <section class="servicesOffered">
-        <div class=" ms-5 me-5 mb-3 d-flex flex-column" style="background: url(./img/usephoto4.png); background-size: cover;background-position: top; height: 180px;">
+        <div class="servBackground">
             <div class="container" style="padding-top:20px;">
-                <span class="text-uppercase" style="font-size: 26px; color:white;">Services We Provide</span>
+                <span class="text-uppercase headText">Services We Provide</span>
                 <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
             </div>
+        </div>
 
-            <div class="container servicesOffered1">
-                <div class="row">
-                <div class="card">
-                    <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title text-uppercase">Free Installation</h5>
-                    <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700;text-align:left;">We have our mechanics on standby to aid your need and offer service.</p>
+            <div class="servicesOffered1">
+                <div class="row row-cols-auto row-gap-2">
+                    <div class="col card">
+                        <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title cardTitle">Free Installation</h5>
+                        <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700;text-align:left;">We have our mechanics on standby to aid your need and offer service.</p>
 
+                        </div>
+                    </div>
+                    <div class="col card">
+                        <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title cardTitle text-uppercase">Troubleshooting</h5>
+                        <p class="card-text " style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700; text-align:left;">For any car or electronics issue, make Bertology your first call. We specialize in troubleshooting and resolving problems swiftly and effectively.</p>
+
+                        </div>
+                    </div>
+                    <div class="col card">
+                        <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title cardTitle text-uppercase">Maintenance</h5>
+                        <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700; text-align:left;">At Bertology, each valued customer enjoys exclusive discounted pricing for regular maintenance. When it comes to managing your car's financial well-being, Bertology is your go-to solution.</p>
+
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;padding-top:12px; padding-bottom:12px;">
-                    <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title text-uppercase">Troubleshooting</h5>
-                    <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700; text-align:left;">For any car or electronics issue, make Bertology your first call. We specialize in troubleshooting and resolving problems swiftly and effectively.</p>
 
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;padding-top:12px; padding-bottom:12px;">
-                    <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title text-uppercase">Maintenance</h5>
-                    <p class="card-text" style="font-size:14px; font-family: 'Cabin Condensed', sans-serif; font-weight:700; text-align:left;">At Bertology, each valued customer enjoys exclusive discounted pricing for regular maintenance. When it comes to managing your car's financial well-being, Bertology is your go-to solution.</p>
-
-                    </div>
-                </div>
             </div>
 
-        </div>
-
-        </div>
+        
 
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
@@ -207,7 +207,7 @@
     <span class="text-uppercase" style="font-size: 26px;">Clients Love</span>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
         <div class="container testimonial-inner">
-            <div class="row d-flex justify-content-center">
+            <div class="row row-cols-auto d-flex justify-content-center row-gap-2">
                             <div class="col-md-4 style-4">
                                 <div class="tour-item" >
                                     <div class="tour-desc bg-white">
