@@ -14,6 +14,9 @@
 </head>
 
 <style>
+    body{
+        height:100vh;
+    }
     .textStyle {
         font-size: 34px;
         font-weight: 600;
@@ -84,13 +87,32 @@
         padding: 8px;
     }
 
+    @media screen and (max-width:599px) {
+        .services-container {
+            width: 98%!important;
+
+        }
+        .services-container .services-header{
+            display:flex;
+            flex-direction: column;
+        }
+        .services-header .textStyle{
+            display: block;
+            text-align: center;
+        }
+        .services-header button{
+            display: block!important;
+            margin:25px auto;
+        }
+     
+    }
     </style>
 <body>
     @include('partials._header')
 
-    <div class="container-fluid mt-5" style="width:80vw;">
+    <div class="container-fluid mt-5 services-container" style="width:80vw;min-height:52.3vh">
 
-        <div class="d-flex justify-content-between mt-2 ">
+        <div class="d-flex justify-content-between mt-2 services-header">
             <div>
                 <span class="textStyle" name="title">CAR SERVICES</span>
             </div>
@@ -125,7 +147,7 @@
             @endforeach
         </div>
         <div class="d-flex align-items-center ">
-            <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%"> </span>
+           
         <div class="d-inline-flex justify-content-end mt-4">
             {{ $services->links() }}
         </div>
