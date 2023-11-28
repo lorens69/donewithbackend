@@ -78,42 +78,40 @@
                         <p style="font-size: 18px; font-weight: bold;">No orders yet.</p>
                     </div>
                 @endif
-            </>
-        </div>
-
-
+            </div>
+         </div>
     </div>
 
 </body>
 
-<script>
-    function updateContainerClass() {
-    var itemContainers = document.querySelectorAll('.item-container');
-    var screenWidth = window.innerWidth;
+        <script>
+            function updateContainerClass() {
+            var itemContainers = document.querySelectorAll('.item-container');
+            var screenWidth = window.innerWidth;
 
-    itemContainers.forEach(function(itemContainer) {
-        // Check if the screen width is less than or equal to 768 pixels
-        if (screenWidth <= 768) {
-            // Remove the original class when the screen size is small
-            itemContainer.classList.remove('d-flex', 'flex-row', 'justify-content-evenly');
+            itemContainers.forEach(function(itemContainer) {
+                // Check if the screen width is less than or equal to 768 pixels
+                if (screenWidth <= 768) {
+                    // Remove the original class when the screen size is small
+                    itemContainer.classList.remove('d-flex', 'flex-row', 'justify-content-evenly');
 
-            // Add a new class or apply styles directly if needed
-            itemContainer.classList.add('new-class'); // Replace 'new-class' with your desired class name
-        } else {
-            // If the screen width is greater than 768 pixels, add back the original class
-            itemContainer.classList.remove('new-class'); // Remove the added class
-            itemContainer.classList.add('d-flex', 'flex-row', 'justify-content-evenly');
+                    // Add a new class or apply styles directly if needed
+                    itemContainer.classList.add('new-class'); // Replace 'new-class' with your desired class name
+                } else {
+                    // If the screen width is greater than 768 pixels, add back the original class
+                    itemContainer.classList.remove('new-class'); // Remove the added class
+                    itemContainer.classList.add('d-flex', 'flex-row', 'justify-content-evenly');
+                }
+            });
         }
-    });
-}
 
-// Call the function when the page loads
-document.addEventListener('DOMContentLoaded', updateContainerClass);
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', updateContainerClass);
 
-// Listen for window resize events
-window.addEventListener('resize', updateContainerClass);
+        // Listen for window resize events
+        window.addEventListener('resize', updateContainerClass);
 
-</script>
+        </script>
 
 </html>
 
