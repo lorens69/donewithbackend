@@ -15,13 +15,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body>
+
+
+<style>
+    @media screen and (max-width:599px) {
+        .products-container{
+        width: 98%!important;
+        margin: auto;
+        }
+        .products-header{
+            display: flex;
+            flex-direction: column;
+        }
+        .products-header button{
+            display: block!important;
+            margin: 25px auto;
+        }
+        .textStyle{
+            display: block;
+            text-align: center;
+        }
+        .product-items-container{
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .accordion{
+            width:50%!important;
+            margin: 25px auto!important;
+        }
+        .service-card{
+            width: 90%;
+            margin: auto;
+        }
+        .product-item{
+            width:80%!important;
+            margin:auto;
+
+        }
+    }
+</style>
+<body style="min-height:52.3vh">
 
     @include('partials._header')
 
 
-    <div class="container-fluid mt-5" style="width:90%;">
-        <div class="d-flex justify-content-between mt-2 ">
+    <div class="container-fluid mt-5 products-container" style="width:90%;">
+        <div class="d-flex justify-content-between mt-2 products-header">
             <div>
                 <span class="textStyle" name="title">CAR ACCESSORIES</span>
             </div>
@@ -44,7 +84,7 @@
 
         @csrf
 
-        <div class="d-flex w-100 justify-content-between" style="margin-bottom:31px; margin-top:-40px;">
+        <div class="d-flex w-100 justify-content-between product-items-container" style="margin-bottom:31px; margin-top:-40px;">
             <div class="accordion mt-5 me-5 w-25" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
