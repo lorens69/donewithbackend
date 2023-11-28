@@ -151,47 +151,48 @@
         </div>
 
         <div class="d-flex shopheaders col-12 text-center">
-            <div class="col-md-2 fw-semibold"></div>
-            <div class="col-md-2 fw-semibold">Product Name</div>
-            <div class="col-md-2 fw-semibold">Unit Price</div>
-            <div class="col-md-2 fw-semibold">Quantity</div>
-            <div class="col-md-2 fw-semibold">Total Price</div>
+            <div class="col-md-2 p-0 cartheadertext"></div>
+            <div class="col-md-2 cartheadertext">Product Name</div>
+            <div class="col-md-2 cartheadertext">Unit Price</div>
+            <div class="col-md-2 cartheadertext">Quantity</div>
+            <div class="col-md-2 cartheadertext">Total Price</div>
+            <div class="col-md-2 p-0 cartheadertext"></div>
         </div>
 
         @foreach($products as $cart)
-        <div class="d-flex col-12 text-center align-items-center mt-2">
-            <div class="col-md-2">
-              <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70" height="70"></div>
+        <div class="d-flex col-12 text-center align-items-center mt-2 justify-content-evenly">
+            <div class="d-flex col-md-2 justify-content-center p-0">
+              <img class="rounded productimage" src="{{asset('upload/'.$cart->image)}}">
             </div>
-            <div class="col-md-2 align-items-center">
-                <span class="p-2 flex-fil fw-semibold" style="font-size: 14px;">{{ $cart->name }}</span>
+            <div class="d-flex col-md-2 align-items-center">
+                <span class="p-2 carttext">{{ $cart->name }}</span>
             </div>
-            <div class="col-md-2 fw-semibold">{{ number_format($cart->price) }}</div>
-            <div class="d-flex col-md-2 justify-content-center ">
+            <div class="d-flex col-md-2 carttext justify-content-center p-0">{{ number_format($cart->price) }}</div>
+            <div class="d-flex col-md-2 justify-content-center align-items-center">
                 {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
                 <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                   @csrf
-                  <button style="background-color: #d85d38; border: 4px double #cccccc; border-radius:5px" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
+                  <button class="d-flex cartquantitybutton text-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
               </form>
-                <span class="col-md-4 fw-semibold text-center">{{$cart->quantity}}</span>
+                <span class="d-flex carttext text-center p-2">{{$cart->quantity}}</span>
 
                 <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
                   @csrf
-                  <button style="background-color: #d85d38; border: 4px double #cccccc; border-radius:5px" type="submit"><i class="fa-solid fa-plus"></i></button>
+                  <button class="cartquantitybutton" type="submit"><i class="fa-solid fa-plus"></i></button>
               </form>
                 {{-- <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i> --}}
             </div>
-            <div class="col-md-2 fw-semibold">{{$cart->price * $cart->quantity}}</div>
-            <div class="col-md-2"><a href="/removecart/{{$cart->cart_id}}"><i class="fa-solid fa-trash" style="font-size: 20px;color: #F24E1E;"></i></a></div>
+            <div class="d-flex col-md-2 carttext justify-content-center">{{$cart->price * $cart->quantity}}</div>
+            <div class="d-flex col-md-2 p-0"><a href="/removecart/{{$cart->cart_id}}"><i class="fa-solid fa-trash" style="font-size: 20px;color: #F24E1E;"></i></a></div>
         </div>
         @endforeach
 
         <div class="d-flex shoptotal text-center">
-            <div class="p-2 flex-fill fw-bold">
-                <span style="color: black;">ITEM(S): {{ $totalitem }} <span style="color: #FF6000;">-</span></span>
+            <div class="p-2 flex-fill">
+                <span class="cartbottomtext">ITEM(S):<span class="cartbottomtext2"> {{ $totalitem }} </span></span>
             </div>
-            <div class="p-2 flex-fill fw-bold">
-                <span style="color: black;">TOTAL PRICE: {{$totalValue}} <span style="color: #F24E1E;">-</span></span>
+            <div class="p-2 flex-fill">
+                <span class="cartbottomtext">TOTAL PRICE:<span class="cartbottomtext2"> {{$totalValue}} </span></span>
             </div>
             <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
