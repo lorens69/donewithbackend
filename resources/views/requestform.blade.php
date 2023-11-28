@@ -28,72 +28,72 @@
             @if(Auth::user())
 
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <div class="requestform">
-                    <h5 class="text-center mb-4">CAR SERVICE REQUEST FORM</h5>
+                <div class="requestform"> <br>
+                    <h5 class="text-center mb-4" style="font-size: 30px;color: rgb(54, 49, 49)"> BERTOLOGY CAR SERVICE REQUEST FORM</h5>
                     <form action="{{ route('userrequest.post') }}" method="POST" >
 
                         @csrf
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3">CLIENT INFORMATION</label>
+                                <label class="form-control-label px-3"> <b style="color: rgb(54, 49, 49)">CLIENT INFORMATION </b> </label>
                             </div>
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="contact">Contact: <span class="text-danger"> *</span></label><input type="text" id="contact" name="contact" onblur="validate(2)">
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="address">Current Address:  <span class="text-danger"> *</span></label><input type="text" id="address" name="current_address" onblur="validate(4)">
+                                <label class="form-control-label px-3" for="contact"><b style="color: rgb(54, 49, 49)">Contact: </b> <span class="text-danger"> *</span></label><input type="text" id="contact" name="contact" onblur="validate(2)">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3">VEHICLE INFORMATION</label>
-                            </div>
-                        </div>
-                        <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3"for="model">Model of the Car:  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
-                            </div>
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="yom">Year of Manufacture:  <span class="text-danger"> *</span></label><input type="text" id="yom" name="yom" onblur="validate(6)">
+                                <label class="form-control-label px-3" for="address"> <b style="color: rgb(54, 49, 49)">Current Address: </b>  <span class="text-danger"> *</span></label><input type="text" id="address" name="current_address" onblur="validate(4)">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3">MAINTENANCE / SERVICE DETAIL</label>
+                                <label class="form-control-label px-3"><b style="color: rgb(54, 49, 49)">VEHICLE INFORMATION </b></label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3"for="model"> <b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3" for="yom"> <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>  <span class="text-danger"> *</span></label><input type="text" id="yom" name="yom" onblur="validate(6)">
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3"><b style="color: rgb(54, 49, 49)">MAINTENANCE / SERVICE DETAIL</b></label>
                             </div>
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 {{-- <label class="form-control-label px-3" for="service">Service Name: make this dropdown fls <span class="text-danger"> *</span></label> <input type="text" id="service" name="service" placeholder="" onblur="validate(7)"> --}}
-                                <label class="form-control-label px-3" for="service">Service Name: <span
+                                <label class="form-control-label px-3" for="service"><b style="color: rgb(54, 49, 49)">Service Name: </b><span
                                     class="text-danger"> *</span></label>
                             <select id="service" name="service" required class="select">
                                 @foreach($services as $service)
-                                <option value="{{ $service->name }}">{{ $service->name }}</option>
+                                <option value="{{ $service->name }}" > {{ $service->name }}</option>
                                 @endforeach
                             </select>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="date">Preferred Date and Time:  <span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
+                                <label class="form-control-label px-3" for="date"><b style="color: rgb(54, 49, 49)">Preferred Date and Time:</b><span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"for="specialrequest">Special requests and instructions:<span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
+                                <label class="form-control-label px-3"for="specialrequest"><b style="color: rgb(54, 49, 49)">Special requests and instructions:</b><span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
                             </div>
                         </div>
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6">
-                                <button type="submit" class="btn-block btn-primary">Submit Request</button>
+                                <button type="submit" class="btn-block btn-primary" style="background: rgba(235, 148, 97, 0.829);" ><b style="color: rgb(54, 49, 49)">Submit Request</b></button>
                             </div>
                         </div>
                     </form>
@@ -103,73 +103,74 @@
             @else
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
                 <div class="requestform">
-                    <h5 class="text-center mb-4">CAR SERVICE REQUEST FORM</h5>
+                    <h5 class="text-center mb-4" style="font-size: 30px;color: rgb(54, 49, 49)"> BERTOLOGY CAR SERVICE REQUEST FORM</h5>
                     <form action="{{ route('request.post') }}" method="POST">
                         @csrf
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3">CLIENT INFORMATION</label>
-                            </div>
+                                <label class="form-control-label px-3"> <b style="color: rgb(54, 49, 49)">CLIENT INFORMATION </b> </label>                            </div>
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="name">Full Name: <span class="text-danger"> *</span></label><input type="text" id="name" name="name" onblur="validate(1)">
+                                <label class="form-control-label px-3" for="name"><b style="color: rgb(54, 49, 49)">Full Name: </b><span class="text-danger"> *</span></label><input type="text" id="name" name="name" onblur="validate(1)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="contact">Contact: <span class="text-danger"> *</span></label><input type="text" id="contact" name="contact" onblur="validate(2)">
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="email">Email Address: <span class="text-danger"> *</span></label><input type="text" id="email" name="email" onblur="validate(3)">
-                            </div>
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="address">Current Address:  <span class="text-danger"> *</span></label><input type="text" id="address" name="current_address" onblur="validate(4)">
+                                <label class="form-control-label px-3" for="contact"><b style="color: rgb(54, 49, 49)">Contact: </b> <span class="text-danger"> *</span></label><input type="text" id="contact" name="contact" onblur="validate(2)">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3">VEHICLE INFORMATION</label>
-                            </div>
-                        </div>
-                        <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3"for="model">Model of the Car:  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
+                                <label class="form-control-label px-3" for="email"><b style="color: rgb(54, 49, 49)">Email Address: </b> <span class="text-danger"> *</span></label><input type="text" id="email" name="email" onblur="validate(3)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="yom">Year of Manufacture:  <span class="text-danger"> *</span></label><input type="text" id="yom" name="yom" onblur="validate(6)">
+                                <label class="form-control-label px-3" for="address"><b style="color: rgb(54, 49, 49)">Current Address: </b>   <span class="text-danger"> *</span></label><input type="text" id="address" name="current_address" onblur="validate(4)">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3">MAINTENANCE / SERVICE DETAIL</label>
+                                <label class="form-control-label px-3"><b style="color: rgb(54, 49, 49)">VEHICLE INFORMATION </b></label>
                             </div>
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <select id="service" name="service" required class="select">
-                                    @foreach($services as $service)
-                                    <option value="{{ $service->name }}">{{ $service->name }}</option>
-                                    @endforeach
-                                </select>
+                                <label class="form-control-label px-3"for="model"><b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="date">Preferred Date and Time:  <span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
+                                <label class="form-control-label px-3" for="yom"><b style="color: rgb(54, 49, 49)">Year of Manufacture:  </b> <span class="text-danger"> *</span></label><input type="text" id="yom" name="yom" onblur="validate(6)">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"for="specialrequest">Special requests and instructions:<span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
+                                <label class="form-control-label px-3"><b style="color: rgb(54, 49, 49)">MAINTENANCE / SERVICE DETAIL</b></label>                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                {{-- <label class="form-control-label px-3" for="service">Service Name: make this dropdown fls <span class="text-danger"> *</span></label> <input type="text" id="service" name="service" placeholder="" onblur="validate(7)"> --}}
+                                <label class="form-control-label px-3" for="service"><b style="color: rgb(54, 49, 49)">Service Name: </b><span
+                                    class="text-danger"> *</span></label>
+                            <select id="service" name="service" required class="select">
+                                @foreach($services as $service)
+                                <option value="{{ $service->name }}" > {{ $service->name }}</option>
+                                @endforeach
+                            </select>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3" for="date"><b style="color: rgb(54, 49, 49)">Preferred Date and Time:</b><span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3"for="specialrequest"><b style="color: rgb(54, 49, 49)">Special requests and instructions:</b><span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
                             </div>
                         </div>
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6">
-                                <button type="submit" class="btn btn-primary">Submit Request</button>
+                                <button type="submit" class="btn-block btn-primary" style="background: rgba(235, 148, 97, 0.829);" ><b style="color: rgb(54, 49, 49)">Submit Request</b></button>
                             </div>
                         </div>
                     </form>
@@ -220,7 +221,7 @@ button {
 .requestform input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: rgba(235, 148, 97, 0.829);
+  background: rgba(218, 161, 128, 0.829);
   width: 100%;
   border: 0;
   margin: 0 0 15px;
