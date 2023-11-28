@@ -27,7 +27,7 @@
 
         <div class="container brequest">
 
-            <div class="container-fluid brequest1" style="padding:20px">
+            <div class="" style="padding:20px">
                 @if(count($reservations) > 0)
                     @foreach($reservations as $reservation)
                         <div class="container-fluid brequest2">
@@ -39,8 +39,6 @@
                                     <br>
                                     <span style="font-size: 14px;">DATE AND TIME: {{$reservation->created_at}}</span>
                                 </div>
-
-
 
                                 <div class="col text-center mb-4">
                                     <div class="col text-center mb-4">
