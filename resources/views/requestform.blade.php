@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Shopping Cart')
+@section('title', 'Booking Request')
 
 @section('content')
 
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping Cart</title>
+    <title>Booking Request</title>
 
     <link rel="stylesheet" href="Css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -75,7 +75,7 @@
                                 {{-- <label class="form-control-label px-3" for="service">Service Name: make this dropdown fls <span class="text-danger"> *</span></label> <input type="text" id="service" name="service" placeholder="" onblur="validate(7)"> --}}
                                 <label class="form-control-label px-3" for="service">Service Name: <span
                                     class="text-danger"> *</span></label>
-                            <select id="service" name="service" required>
+                            <select id="service" name="service" required class="select">
                                 @foreach($services as $service)
                                 <option value="{{ $service->name }}">{{ $service->name }}</option>
                                 @endforeach
@@ -151,7 +151,11 @@
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="service">Service Name: make this dropdown fls <span class="text-danger"> *</span></label> <input type="text" id="service" name="service" placeholder="" onblur="validate(7)">
+                                <select id="service" name="service" required class="select">
+                                    @foreach($services as $service)
+                                    <option value="{{ $service->name }}">{{ $service->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3" for="date">Preferred Date and Time:  <span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
@@ -190,6 +194,7 @@
         overflow: hidden;
         margin-top: 20px;
         margin-bottom: 20px;
+
     }
 
     /* Add the following styles for a floating effect */
@@ -210,6 +215,30 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.requestform input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: rgba(235, 148, 97, 0.829);
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.select {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: rgb(235, 147, 97);
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 
