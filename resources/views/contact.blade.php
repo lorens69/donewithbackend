@@ -388,9 +388,9 @@
     <div class="card-body d-flex justify-content-left align-items-center  mt-4 p-5 row col-lg-12 ">
         <div class="card " style="background-color: #FFE6C7; max-width:fit-content  " >
             <img src="./img/24_7Contact.png" width="100%" alt="" style="display: mt-5; margin:20px">
-            <p>Phone Number: 09929392781</p>
-            <p>Email Adress: bertology@gmail.com</p>
-            <p>Location Address: Cebu City, Cebu</p>
+            <b>Phone Number: 09929392781</b>
+            <b>Email Adress: bertology@gmail.com</b>
+            <b>Location Address: Cebu City, Cebu</b> <br> <br>
             <button class="btn w-75 text-white p-2 fw-normal m-4 mt-0"
             style="background-color: #454545;">Call us now! </button>
         </div>
@@ -480,10 +480,11 @@
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
                         <div class="map_inner">
-                            <h4>Find Us on Google Map</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quo beatae quasi assumenda, expedita aliquam minima tenetur maiores neque incidunt repellat aut voluptas hic dolorem sequi ab porro, quia error.</p>
+                            <h4>Find Bertology on Google Map</h4>
+                            <p>The following map shows the location of the Bertology physical branch.</p>
+                            <p>Edison St, Cebu City, 6000 Cebu near St.Therese Parish Church</p>
                             <div class="map_bind">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471220.5631094339!2d88.04952462217592!3d22.6757520733225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1596988408134!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d368.7467799359478!2d123.90135984475411!3d10.331640729083794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99926bffe4f69%3A0x7b0fa439840473c9!2sEdison%20St%2C%20Cebu%20City%2C%206000%20Cebu!5e0!3m2!1sen!2sph!4v1701135385878!5m2!1sen!2sph" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                             </div>
                         </div>
                     </div>

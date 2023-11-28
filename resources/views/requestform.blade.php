@@ -72,7 +72,14 @@
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="service">Service Name: make this dropdown fls <span class="text-danger"> *</span></label> <input type="text" id="service" name="service" placeholder="" onblur="validate(7)">
+                                {{-- <label class="form-control-label px-3" for="service">Service Name: make this dropdown fls <span class="text-danger"> *</span></label> <input type="text" id="service" name="service" placeholder="" onblur="validate(7)"> --}}
+                                <label class="form-control-label px-3" for="service">Service Name: <span
+                                    class="text-danger"> *</span></label>
+                            <select id="service" name="service" required>
+                                @foreach($services as $service)
+                                <option value="{{ $service->name }}">{{ $service->name }}</option>
+                                @endforeach
+                            </select>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3" for="date">Preferred Date and Time:  <span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
