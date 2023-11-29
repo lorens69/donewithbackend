@@ -1,142 +1,109 @@
 @extends('layouts.layout')
-
-@section('title', 'Gallery')
-
 @section('content')
 
-@include('partials._header')
-<style>
-    .pagination>li>a,
-    .pagination>li>span {
-        padding: 6px 12px;
-        text-decoration: none;
-        border: 1px solid #ddd;
-        color: #333;
-        border-radius: 3px;
-        background-color: #FFE6C7;
-        /* Add the background color for pagination items */
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .pagination .page-item {
-        margin: 0px 5px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .pagination .page-item:not(.active) .page-link {
-        border: none;
-    }
+        .container {
+            max-width: 80vw;
+            margin: 0 auto;
+        }
 
-    .pagination>.active>a,
-    .pagination>.active>span {
-        color: black;
-        border-color: #FF6000;
-    }
+        .underline {
+            width: 120px;
+            border-bottom: solid 3px #FFA559;
+        }
 
-    .page-link.active,
-    .active>.page-link {
-        background-color: #FFE6C7;
-        /* Add the background color for pagination items */
-        color: black;
-    }
+        .service-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
 
-    /* Hide the "Next" and "Previous" links */
-    .pagination .disabled,
-    .pagination .page-link[rel="next"],
-    .pagination .page-link[rel="prev"] {
-        display: none;
-    }
-</style>
-<div class="containerfluid" style="height:58vh">
-    <div class="container-fluid mt-5" style="width:80vw;">
+        .card {
+            width: calc(33.3333% - 20px); /* Adjust the width for larger screens */
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+            max-height: 350px; /* Adjust the maximum height as needed */
+            object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    @include('partials._header')
+
+    <div class="container mt-5">
         <h1 class="text-start text-uppercase" name="title">Gallery</h1>
-        <label for="title" style="width: 120px;border-bottom: solid 3px #FFA559;"></label>
-
-
-        <div class="d-flex justify-content-end container">
-            <ul class="nav nav-tabs d-none" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#photos" aria-selected="true"
-                        role="tab">Photos</a>
-                </li>
-                <!-- <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="tab" href="#videos" aria-selected="false" tabindex="-1"
-                        role="tab">Videos</a>
-                </li> -->
-                <!-- <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="tab" href="#albums" aria-selected="false" tabindex="-1"
-                        role="tab">Albums</a>
-                </li> -->
-            </ul>
-        </div>
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade show active" id="photos" role="tabpanel">
-                <div class="service-card d-flex mt-5 justify-content-evenly flex-wrap w-100 row">
-                    @foreach($gallerys as $gallery)
-                    <div class="card col-lg-3 m-4 p-0">
-                        <div
-                            class="card-body d-flex justify-content-center align-items-center  flex-column pt-0 ps-0 pe-0 pb-0 ">
-                            <img src="{{{asset('upload/'.$gallery->image)}}}" width="100%" height="100%" alt=""
-                                style="background-color: black;display: inline-block;max-width: fit-content;">
-                            <br>
-
-                            {{$gallery->title}}
-
-                        </div>
-                        <div class="card-body">
-                            {{$gallery->description}}
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-               
-            </div>
-
-            <!-- <div class="tab-pane fade" id="videos" role="tabpanel">
-                <div class="service-card d-flex mt-5 justify-content-evenly flex-wrap w-100 row">
-                    @foreach($gallerys as $gallery)
-                    <div class="card col-lg-3 m-4 p-0">
-                        <div class="card-body d-flex justify-content-center align-items-center  flex-column p-0">
-                            <img src="./img/ShineMasters.png" width="100%" height="100%" alt=""
-                                style="background-color: black;display: inline-block;max-width: fit-content;">
-
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="d-flex align-items-center">
-                    <span style="display: inline-block; border-bottom: 2px solid #FFA559; width: 85%"></span>
-                    <div class="d-inline-flex justify-content-end mt-4">
-                        {{ $gallerys->links() }}
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="tab-pane fade" id="albums" role="tabpanel">
-                <div class="service-card d-flex mt-5 justify-content-evenly flex-wrap w-100 row">
-                @foreach($gallerys as $gallery)
-                    <div class="card col-lg-3 m-4 p-0">
-                        <div
-                            class="card-body d-flex justify-content-center align-items-center  flex-column pt-0 ps-0 pe-0 pb-0 ">
-                            <img src="{{{asset('upload/'.$gallery->image)}}}" width="100%" height="100%" alt=""
-                                style="background-color: black;display: inline-block;max-width: fit-content;">
-                            <br>
-
-
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="d-flex align-items-center">
-                    <span style="display: inline-block; border-bottom: 2px solid #FFA559; width: 85%"></span>
-                    <div class="d-inline-flex justify-content-end mt-4">
-                        {{ $gallerys->links() }}
-                    </div>
-                </div>
-            </div> -->
-        </div>
-
+        <label for="title" class="underline"></label>
     </div>
-</div>
 
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="photos" role="tabpanel">
+            <div class="service-card">
+                @foreach($gallerys as $gallery)
+                <div class="card">
+                    <a href="{{ asset('upload/'.$gallery->image) }}" data-gallery="gallery" class="js-baguettebox">
+                        <img class="card-img-top" src="{{ asset('upload/'.$gallery->image) }}" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{$gallery->title}}</h5>
+                        <p class="card-text">{{$gallery->description}}</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 
-@include('partials._footer')
+    <button onclick="goBack()" class="back-button">Back</button>
+
+    @include('partials._footer')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.js" defer></script>
+    <script>
+        baguetteBox.run('.js-baguettebox', {
+            buttons: true,
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
+
 @endsection
