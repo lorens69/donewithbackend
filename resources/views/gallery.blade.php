@@ -88,8 +88,6 @@
         </div>
     </div>
 
-    <button onclick="goBack()" class="back-button">Back</button>
-
     @include('partials._footer')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.js" defer></script>
