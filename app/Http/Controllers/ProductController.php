@@ -241,6 +241,7 @@ class ProductController extends Controller
             $order->user_id = $cart['user_id'];
             $order->status="pending";
             $order->quantity= $cart["quantity"];
+            $order->DO = now();
             $order->save();
             Cart::where('user_id',$user_id)->delete();
         }
@@ -249,8 +250,8 @@ class ProductController extends Controller
     }
 
     function myOrders() {
-
         $user_id = Auth::id();
+
         $orders = DB::table('orders')
             ->join('products', 'orders.product_id', '=', 'products.id')
             ->where('orders.user_id', $user_id)
@@ -261,13 +262,14 @@ class ProductController extends Controller
             ->where('orders.user_id', $user_id)
             ->sum('products.price');
 
-        // $ordersbydate = DB::table('orders')
-        //     ->select('*')
-        //     ->where('user_id','=',$user_id)
-        //     ->where('created_at','=', '2023-09-27')
-        //     ->get();
+        // Example: Filtering orders by the current date
+        $ordersbydate = DB::table('orders')
+            ->join('products', 'orders.product_id', '=', 'products.id')
+            ->where('orders.user_id', $user_id)
+            ->whereDate('orders.created_at', now()->toDateString()) // Filtering by the current date
+            ->get();
 
-            return view('profile._purchasehistory', ['orders' =>$orders, 'orderstotal' =>$orderstotal])->with('orders', $orders);
+        return view('profile._purchasehistory', ['orders' => $orders, 'orderstotal' => $orderstotal, 'ordersbydate' => $ordersbydate]);
     }
 
     public function increaseQuantity($cartId)

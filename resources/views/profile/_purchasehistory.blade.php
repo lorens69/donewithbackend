@@ -66,7 +66,7 @@
                         <div class="d-flex align-self-center fw-bold">Price: {{$order->price}}</div>
                         <div class="d-flex align-self-center fw-bold">Qty: {{$order->quantity}}</div>
                         <div class="d-flex align-self-center fw-bold">Item Total: {{$order->price * $order->quantity}}</div>
-                        <div class="d-flex align-self-center fw-bold">Date: {{$order->created_at}}</div>
+                        <div class="d-flex align-self-center fw-bold">Date: {{$order->do}}</div>
                         <div class="d-flex align-self-center">
                             <button type="button" class="btn btn-block p-2" style="width:150px; color:orangered;background-color:white;border: 1px solid; border-color:orangered;">{{$order->status}}</button>
                         </div>

@@ -31,6 +31,7 @@ class OrderController extends AdminController
         $grid->column('user_id', __('User id'));
         $grid->column('status', __('Status'));
         $grid->column('quantity', __('quantity'));
+        $grid->column('do', __('Date Ordered'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -52,6 +53,7 @@ class OrderController extends AdminController
         $show->field('user_id', __('User id'));
         $show->field('quantity', __('Quantity'));
         $show->field('status', __('Status'));
+        $show->field('do', __('Date Ordered'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
