@@ -201,7 +201,11 @@
                 <span class="cartbottomtext">TOTAL PRICE:<span class="cartbottomtext2"> {{$totalValue}} </span></span>
             </div>
             <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
+              @if(count($products) > 0)
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
+              @else
+              <button class="btn btn-block btn-lg pay-button" type="button" disabled>CHECKOUT</button>
+              @endif
             </div>
         </div>
 
