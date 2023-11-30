@@ -265,12 +265,20 @@ class ProductController extends Controller
     }
 
     function orderNow() {
-        $user_id = Auth::id();
-        $allCart = Cart::where('user_id', $user_id)->get();
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Check if the user has a contact number and email
+        if (empty($user->contact) || empty($user->email)) {
+            return redirect('product')->with('error', 'Please update your contact number and email address before placing an order.');
+        }
 
         // Check if the user has items in the cart
+        $user_id = $user->id;
+        $allCart = Cart::where('user_id', $user_id)->get();
+
         if ($allCart->isEmpty()) {
-            return redirect()->back()->with('error', 'Your cart is empty. Add items to your cart before placing an order.');
+            return redirect('product')->with('error', 'Your cart is empty. Add items to your cart before placing an order.');
         }
 
         // Process the order
