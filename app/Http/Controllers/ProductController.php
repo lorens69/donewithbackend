@@ -193,6 +193,41 @@ class ProductController extends Controller
 
     }
 
+    function homeaddToCart($productId) {
+
+        if(Auth::check()){
+
+            $user_id = Auth::id();
+
+            $existingCartItem = DB::table('cart')
+            ->where('user_id', $user_id)
+            ->where('product_id', $productId)
+            ->first();
+
+            if ($existingCartItem) {
+                // If the item is already in the cart, increase the quantity
+                DB::table('cart')
+                    ->where('id', $existingCartItem->id)
+                    ->increment('quantity');
+            } else {
+                // If the item is not in the cart, add it with a quantity of 1
+                DB::table('cart')->insert([
+                    'user_id' => $user_id,
+                    'product_id' => $productId,
+                    'quantity' => 1,
+                ]);
+            }
+
+            return redirect()->back()->with('success', 'Orders added to cart');
+
+        } else {
+            // return redirect('/maglogin');
+            return redirect('/maglogin');
+                // return redirect()->back()->with('success', 'Orders added to cart');
+        }
+
+    }
+
     function cartList() {
 
         if(Auth::check()){

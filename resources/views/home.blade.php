@@ -46,7 +46,7 @@
             </div>
             <div class="col-md-2 align-middle">
                 <img class="rounded-circle" src="./img/home/4thBrand.png">
-            </div>  
+            </div>
             <div class="col-md-2 align-middle">
                 <img class="rounded-circle" src="./img/home/5thBrand.png">
             </div>
@@ -166,7 +166,7 @@
 
             </div>
 
-        
+
 
     </section>
     <!-- ------------------------------------------------------------------------------------------ -->
@@ -183,7 +183,7 @@
             <div id="cCarousel-inner">
                 @foreach($randomItems as $items)
 
-                    <article class="cCarousel-item">
+                <article class="cCarousel-item">
                     <img src="./img/product1.png">
                     <div class="infos">
                         <div class="item-info">
@@ -191,10 +191,16 @@
                             <p class="price">{{$items->price}}</p>
                         </div>
                         <div class="icons text-center">
-                        <i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i>
+                            <form action="{{ route('homeaddToCart', ['productId' => $items->id]) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-block" style="background-color: rgba(0, 0, 255, 0); border: none; color: white; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                    <i class="bi bi-cart-plus" style="font-size: 1.5rem;"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
-                    </article>
+                </article>
+
                 @endforeach
             </div>
             </div>
