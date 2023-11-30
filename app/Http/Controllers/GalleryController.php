@@ -12,7 +12,7 @@ class GalleryController extends Controller
     public function showGallery()
     {
     $gallerys = Gallery::all();
-    $perPage = 9;
+    $perPage = 6;
 
     // Create a new collection from the gallerys array
     $gallerysCollection = new Collection($gallerys);

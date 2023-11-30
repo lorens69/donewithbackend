@@ -65,19 +65,6 @@
             <div>
                 <span class="textStyle" name="title">CAR ACCESSORIES</span>
             </div>
-
-
-                {{-- <div class="row d-flex align-items-center md-4 gap-0" style="padding-right:37px;s">
-                    <div class="form-group col-md-8 pe-0">
-                      <input id="exampleFormControlInput5" type="email" placeholder="search product" class="form-control form-control-underlined">
-                    </div>
-                    <div class="form-group col-md-4 pe-0">
-                      <button type="submit" class="btn btnStyle rounded-pill btn-block shadow-sm">Search</button>
-                    </div>
-                </div> --}}
-                {{-- <input type="text" class="w-15" style="border:1px solid #FF6000">
-                <button class="btn btn-sm text-uppercase text-white text-base" style="background-color:#FF6000;padding:10px;width: 100px;border-radius: 0;">Search Service</button> --}}
-
         </div>
         <br>
 

@@ -59,6 +59,20 @@
         .back-button {
             margin-top: 20px;
         }
+
+        @media only screen and (max-width: 767px) {
+        .service-card {
+            justify-content: center;
+        }
+
+        .card {
+            width: 100%;
+            margin: 10px 0; /* Adjust margin as needed */
+        }
+        .service-card {
+            padding: 20px;
+        }
+    }
     </style>
 </head>
 
@@ -85,6 +99,12 @@
                 </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center ">
+        <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%;"> </span>
+        <div class="d-inline-flex justify-content-end mt-4">
+            {{ $gallerys->links() }}
         </div>
     </div>
 
