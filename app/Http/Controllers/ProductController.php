@@ -265,23 +265,29 @@ class ProductController extends Controller
     }
 
     function orderNow() {
-
         $user_id = Auth::id();
         $allCart = Cart::where('user_id', $user_id)->get();
 
+        // Check if the user has items in the cart
+        if ($allCart->isEmpty()) {
+            return redirect()->back()->with('error', 'Your cart is empty. Add items to your cart before placing an order.');
+        }
 
-        foreach($allCart as $cart) {
+        // Process the order
+        foreach ($allCart as $cart) {
             $order = new Order;
             $order->product_id = $cart['product_id'];
             $order->user_id = $cart['user_id'];
-            $order->status="pending";
-            $order->quantity= $cart["quantity"];
+            $order->status = "pending";
+            $order->quantity = $cart["quantity"];
             $order->DO = now();
             $order->save();
-            Cart::where('user_id',$user_id)->delete();
         }
 
-        return redirect ('product')->with('success','Orders complete, find out more accessories!');
+        // Clear the cart after placing the order
+        Cart::where('user_id', $user_id)->delete();
+
+        return redirect('product')->with('success', 'Orders complete, find out more accessories!');
     }
 
     function myOrders() {

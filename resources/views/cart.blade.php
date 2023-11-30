@@ -158,7 +158,7 @@
             <div class="col-md-2 cartheadertext">Total Price</div>
             <div class="col-md-2 p-0 cartheadertext"></div>
         </div>
-
+        @if(count($products) > 0)
         @foreach($products as $cart)
         <div class="d-flex col-12 text-center align-items-center mt-2 justify-content-evenly">
             <div class="d-flex col-md-2 justify-content-center p-0">
@@ -186,6 +186,12 @@
             <div class="d-flex col-md-2 p-0"><a href="/removecart/{{$cart->cart_id}}"><i class="fa-solid fa-trash" style="font-size: 20px;color: #F24E1E;"></i></a></div>
         </div>
         @endforeach
+
+        @else
+            <div class="text-center mt-5">
+                <p style="font-size: 18px; font-weight: bold;">No items on your cart yet.</p>
+            </div>
+        @endif
 
         <div class="d-flex shoptotal text-center">
             <div class="p-2 flex-fill">
