@@ -477,102 +477,221 @@ body {
 /*--------------------------------------------------------------
 # PROFILE INFORMATION
 --------------------------------------------------------------*/
-.profileinfo{
+@media (min-width: 320px) {
+  .profileinfo{
+    padding-top: 23px;
+    padding-bottom: 10px;
+  }
+  .profileinfo .forbutton {
+    color: black;
+    background-color: lightOrange;
+    border-color: darkOrange;
+  }
+  .profileinfo .active, .forbutton:hover{
+    color: orangered;
+    background-color: #FBD3BB;
+    border-color: darkOrange;
+  }
+  .profileinfo .show-grid {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+  .profileinfo .active, .forbutton:hover{
+    color: orangered;
+    background-color: #FBD3BB;
+    border-color: darkOrange;
+  }
+  .profileinfo .show-grid {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+
+  .profileinfo .show-grid .profilepic{
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .show-grid label{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .propic{
+    width: 96px;
+    height: 94px;
+    background-color: #FFE6CF;
+    border: 3px solid;
+    border-color: #FF6000;
+    box-shadow: 0px 0px 6px rgb(60, 61, 61);
+  }
+  .propic img{
+    width: 96px;
+    height: 94px;
+  }
+  .proinfo{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: rgba(245, 205, 181, 0.554);
+
+  }
+  .profileinfo .brequest{
+    height:auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background: rgba(252, 243, 236, 0.00);
+  }
+  .profileinfo .brequest1{
+    margin-top: 30px;
+    padding: 16px;
+    /* border: 1px solid;
+    border-color:#FF6000; */
+    background-color: rgba(211, 192, 182, 0.487);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .profileinfo .phistory3 img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .profileinfo .btnrequest1{
+    width: 165px;
+    color: #ffffff;
+    background-color: #FF6000;
+    border-color: #FF6000;
+  }
+  .profileinfo .btnrequest2 {
+    width: 165px;
+    color: #ffffff;
+    background-color: #FF6000;
+    border-color: #FF6000;
+  }
+  .profileinfo .btnrequest3{
+    width: 165px;
+    color: #FF6000;
+    background-color: #ffffff;
+    border-color: #FF6000;
+  }
+  .profileinfo .phistory1{
+    width: auto;
+    height: auto;
+  }
+  
+  
+
+}
+@media (min-width:768px) {
+  .profileinfo{
     padding-top: 47px;
     padding-bottom: 50px;
-}
-
-.profileinfo .forbutton {
-  color: black;
-  background-color: lightOrange;
-  border-color: darkOrange;
-}
-.profileinfo .active, .forbutton:hover{
-  color: orangered;
-  background-color: #FBD3BB;
-  border-color: darkOrange;
-}
-.profileinfo .show-grid {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  gap: 10px;
-}
-
-.profileinfo .show-grid .profilepic{
-  border: 2px solid;
-  border-color: #000000;
-  border-radius: 15px;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.show-grid label{
-  font-weight: bold;
-  font-size: 14px;
-}
-.propic{
-  width: 96px;
-  height: 94px;
-  background-color: #FFE6CF;
-  border: 3px solid;
-  border-color: #FF6000;
-  box-shadow: 0px 0px 6px rgb(60, 61, 61);
-}
-.propic img{
-  width: 96px;
-  height: 94px;
-}
-.proinfo{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border: 2px solid;
-  border-color:#FF6000;
-  border-radius: 15px;
-}
-.profileinfo .brequest{
-  height:auto;
-  margin-top: 20px;
-  border-radius: 10px;
-  border: 2px solid #000;
-  background: rgba(252, 243, 236, 0.00);
-
-}
-@media (min-width: 320px) and (max-width:425px) {
-  .profileinfo .brequest1 {
-    background-color: #007bff;
-    margin: 0px;
   }
-}
 
-@media (min-width: 426px) {
-  .profileinfo .brequest1 {
+  .profileinfo .forbutton {
+    color: black;
+    background-color: lightOrange;
+    border-color: darkOrange;
+    height: 50px;
+    font-size: 18px;
+  }
+  .profileinfo .active, .forbutton:hover{
+    color: orangered;
+    background-color: #FBD3BB;
+    border-color: darkOrange;
+  }
+  .profileinfo .show-grid {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+
+  .profileinfo .show-grid .profilepic{
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .show-grid label{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .propic{
+    width: 96px;
+    height: 94px;
+    background-color: #FFE6CF;
+    border: 3px solid;
+    border-color: #FF6000;
+    box-shadow: 0px 0px 6px rgb(60, 61, 61);
+  }
+  .propic img{
+    width: 96px;
+    height: 94px;
+  }
+  .proinfo{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 2px solid;
+    border-color:#FF6000;
+    border-radius: 15px;
+  }
+  .profileinfo .brequest{
+    height:auto;
+    padding-top:20px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: rgba(252, 243, 236, 0.00);
+  }
+  .profileinfo .brequest1{
+    margin-top: 10px;
+    padding: 16px;
+    /* border: 1px solid;
+    border-color:#FF6000; */
     background-color: rgba(211, 192, 182, 0.487);
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    padding:20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-}
-.profileinfo .brequest2{
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: 2px solid;
-  border-color:#FF6000;
-  border-radius: 10px;
+  .profileinfo .phistory3 img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .profileinfo .btnrequest1{
+    width: 165px;
+    color: #ffffff;
+    background-color: #FF6000;
+    border-color: #FF6000;
+  }
+  .profileinfo .btnrequest2 {
+    width: 165px;
+    color: #ffffff;
+    background-color: #FF6000;
+    border-color: #FF6000;
+  }
+  .profileinfo .btnrequest3{
+    width: 165px;
+    color: #FF6000;
+    background-color: #ffffff;
+    border-color: #FF6000;
+  }
+  .profileinfo .phistory1{
+    width: auto;
+    height: auto;
+    margin:30px;
+  }
 
+  
 }
-.profileinfo .btnrequest1{
-  width: 165px;
-  color: #ffffff;
-  background-color: #FF6000;
-  border-color: #FF6000;
-}
-.profileinfo .btnrequest2{
-  width: 165px;
-  color: #FF6000;
-  background-color: #ffffff;
-  border-color: #FF6000;
-}
+
+
+
 .profileinfo .phistory{
   height:auto;
   margin-top: 20px;
@@ -581,12 +700,7 @@ body {
   background: rgba(252, 243, 236, 0.00);
    */
 }
-.profileinfo .phistory1{
-  width: auto;
-  height: auto;
-  margin:30px;
 
-}
 .profileinfo .phistory2{
   margin-top: 10px;
   border: 2px solid;
@@ -598,81 +712,15 @@ body {
   padding: 16px;
   /* border: 1px solid;
   border-color:#FF6000; */
-  background-color: rgba(211, 192, 182, 0.487);
+  background-color: rgba(245, 205, 181, 0.554);
 
 }
-.profileinfo .phistory3 img{
-  margin-top: 10px;
-  margin-bottom: 10px;
 
-}
-.profileinfo .btnrequest1{
-  width: 165px;
-  color: #ffffff;
-  background-color: #FF6000;
-  border-color: #FF6000;
-}
-.profileinfo .btnrequest3{
-  width: 165px;
-  color: #FF6000;
-  background-color: #ffffff;
-  border-color: #FF6000;
-}
 
 /*--------------------------------------------------------------
 # Shopping Cart
 --------------------------------------------------------------*/
-.shopcart{
 
-  margin: 50px 50px 50px 50px;
-  height: auto;
-  padding-bottom: 20px;
-  border-color: rgba(0, 0, 0, 0.24);
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-}
-.shoptitle{
-  float: left;
-  margin: 20px;
-  margin-left: 90px;
-}
-.shopheaders{
-  padding: 10px;
-  margin-top: 30px;
-  border: 1px solid;
-  border-radius: 5px;
-  border-color: #FF6000;
-  color:#FF6000;
-}
-.cartheadertext{
-  font-weight: 600;
-  font-size: 18px;
-}
-.carttext{
-  font-weight: 500;
-  font-size: 14px;
-}
-.cartbottomtext{
-  color:#222;
-  font-weight: 600;
-}
-.cartbottomtext2{
-  color:#FF6000;
-  font-weight: 600;
-}
-.cartquantitybutton{
-  background-color: #d85d38; 
-  border: 4px double #cccccc; 
-  border-radius:5px;
-  width: 33px;
-  height: 33px;
-  font-size: 15px;
-}
-.productimage{
-  width:70px;
-  height: 70px;
-}
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #007bff;
   border-color: #007bff;
@@ -681,20 +729,21 @@ body {
 .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-.shopitems{
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.shoptotal{
-  margin-top: 40px;
-  padding: 10px;
-  border: 1px solid;
-  border-radius: 5px;
-  border-color: #FF6000;
-  color:#FF6000;
-}
 
-@media (min-width: 20px) and (max-width:425px) {
+
+.ordermodaltext{
+  font-size: 16px;
+}
+@media (min-width: 320px){
+  .shopcart{
+    margin: 50px 50px 50px 50px;
+    height: auto;
+    padding-bottom: 20px;
+    /* border-color: rgba(0, 0, 0, 0.24);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px; */
+  }
   .cartheadertext{
     font-weight: 600;
     font-size: 14px;
@@ -723,23 +772,148 @@ body {
     width:40px;
     height: 40px;
   }
+  .carttext{
+    font-size:12px;
+  }
+  .ordermodaldetails{
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .ordermodaltext{
+    font-size: 10px;
+  }
+  .modal-body {
+    padding: 0px 0px;
+  }
+  .ordersummarybuttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px;
+  }
+  .shoptotal{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #FF6000;
+    color:#FF6000;
+  }
+  .shopheaders{
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #FF6000;
+    color:#FF6000;
+  }
 }
-@media (min-width: 426px) and (max-width:768px) {
-  .cartheadertext{
-    font-weight: 600;
+@media (min-width:20px) {
+  .ordermodaldetails{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+@media (min-width: 768px){
+  .shoptitle{
+    float: left;
+    margin: 20px;
+    margin-left: 90px;
+  }
+  .shopheaders{
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #FF6000;
+    color:#FF6000;
+  }
+  
+  .shopcart{
+    margin: 50px 50px 50px 50px;
+    height: auto;
+    padding-bottom: 20px;
+    border-color: rgba(0, 0, 0, 0.24);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+  }
+  .ordermodaldetails{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .ordermodaltext{
     font-size: 16px;
   }
+  .cartheadertext{
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .carttext{
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .cartbottomtext{
+    color:#222;
+    font-weight: bold;
+  }
+  .cartbottomtext2{
+    color:#FF6000;
+    font-weight: bold;
+  }
+  .cartquantitybutton{
+    background-color: #d85d38; 
+    border: 4px double #cccccc; 
+    border-radius:5px;
+    width: 33px;
+    height: 33px;
+    font-size: 15px;
+  }
+  .productimage{
+    width:70px;
+    height: 70px;
+  }
+  .shopitems{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .shoptotal{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #FF6000;
+    color:#FF6000;
+  }
+  .ordermodaldetails{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  .ordersummarybuttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 36px;
+  }
+  
 }
 
-@media (min-width: 426px) {
-  .profileinfo .brequest1 {
-    background-color: rgba(211, 192, 182, 0.487);
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    padding:20px;
-  }
-}
 
 /*--------------------------------------------------------------
 # PRODUCTS PAGE

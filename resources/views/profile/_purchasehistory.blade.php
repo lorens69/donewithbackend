@@ -36,10 +36,10 @@
     @include('partials._header')
     <div class="container profileinfo">
 
-        <div class="d-flex flex-column flex-sm-row btn-group btn-group-lg bd-highlight" role="group" aria-label="Basic example">
-            <button type="button" class="btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
-            <button type="button" class="btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('showuserreservations')}}'">BOOKING REQUESTS</button>
-            <button type="button" class="btn forbutton active mb-2 mb-sm-0 me-sm-2">ORDERS AND PURCHASES </button>
+        <div class="d-flex col-12 row-cols-auto btn-group bd-highlight" role="group" aria-label="Basic example">
+            <button type="button" class="col-4 btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('mydetails')}}'">PROFILE</button>
+            <button type="button" class="col-4 btn forbutton mb-2 mb-sm-0 me-sm-2" onclick="window.location.href='{{route('showuserreservations')}}'">BOOKING REQUESTS</button>
+            <button type="button" class="col-4 btn forbutton active mb-2 mb-sm-0 me-sm-2">ORDERS AND PURCHASES </button>
         </div>
 
 
@@ -52,21 +52,21 @@
                 @foreach ( $orders as $order)
                 @csrf
                 <div style="margin:20px" class="row phistory3">
-                    <div>
+                    {{-- <div>
                         <i class="bi bi-circle-fill"></i>
                         <span >Tracker (sample: Arrive tomorrow)</span>
-                    </div>
+                    </div> --}}
 
                     <div class="item-container d-flex flex-row justify-content-evenly" id="item-container" name="item-container">
                         <div class="">
                             <img src="{{asset('upload/'.$order->image)}}" alt="" style="width:100px; height:100px;">
                         </div>
 
-                        <div class="d-flex align-self-center fw-bold">Product: {{$order->name}}</div>
-                        <div class="d-flex align-self-center fw-bold">Price: {{$order->price}}</div>
-                        <div class="d-flex align-self-center fw-bold">Qty: {{$order->quantity}}</div>
-                        <div class="d-flex align-self-center fw-bold">Item Total: {{$order->price * $order->quantity}}</div>
-                        <div class="d-flex align-self-center fw-bold">Date: {{$order->created_at}}</div>
+                        <div class="d-flex align-self-center">Product:<span style="color: orangered;">{{$order->name}}</span></div>
+                        <div class="d-flex align-self-center">Price: <span style="color: orangered;">{{$order->price}}</span></div>
+                        <div class="d-flex align-self-center">Quantity: <span style="color: orangered;">{{$order->quantity}}</span> </div>
+                        <div class="d-flex align-self-center">Item Total: <span style="color: orangered;">{{$order->price * $order->quantity}}</span></div>
+                        <div class="d-flex align-self-center">Date: <span style="color: orangered;">{{$order->created_at}}</span></div>
                         <div class="d-flex align-self-center">
                             <button type="button" class="btn btn-block p-2" style="width:150px; color:orangered;background-color:white;border: 1px solid; border-color:orangered;">{{$order->status}}</button>
                         </div>
