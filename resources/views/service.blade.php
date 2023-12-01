@@ -63,17 +63,13 @@
         border-color: #FF6000;
     }
     .cardStyle{
-        width: 210px;
-        height: auto;
-        background-color: white;
+        width: 244px;
+        height: 323px;
         border-radius: 10px;
-        border-style: solid;
-        border-color: black;
-        border-width: 2px;
-
+        box-shadow: rgba(245, 205, 181, 0.554) 0px -23px 25px 0px inset, rgba(245, 205, 181, 0.554) 0px -36px 30px 0px inset, rgba(245, 205, 181, 0.554) 0px -79px 40px 0px inset, rgba(245, 205, 181, 0.554) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
     }
     .cardtitle{
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 600;
         margin: 2px;
         padding-left: 14px;
@@ -85,6 +81,23 @@
         font-size: 13px;
         width: 180px;
         padding: 8px;
+    }
+    
+    @media(min-width:768px){
+        .servicessearch{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1px;
+
+        }
+
+    }
+    @media (min-width:320px) and (max-width:767px){
+        .servicessearch{
+            display: none;
+        }
+
     }
 
     @media screen and (max-width:599px) {
@@ -135,7 +148,7 @@
             @foreach($services as $service)
             <div class=" cardStyle col-lg-3 m-4 p-0">
                 <div class="card-body d-flex  align-items-start flex-column pt-0 ps-0 pe-0 ">
-                    <img src="{{asset('upload/'.$service->image)}}" alt="" class="img-fluid" style="border-radius:10px; display: inline-block; width:210px; height:150px; margin-bottom:7px;"/>
+                    <img src="{{asset('upload/'.$service->image)}}" alt="" class="img-fluid" style="border-radius:10px; display: inline-block; width:fix-content; height:170px; margin-bottom:7px;"/>
                     <h5 class="cardtitle text-start" >{{ $service['name'] }}</h5>
                     <p class="cardtitle text-start " style="color: #FF6000;">Price: Php {{ number_format($service['price']) }}</p>
 
