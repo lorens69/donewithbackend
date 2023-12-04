@@ -131,14 +131,54 @@
   background-color: #F24E1E;
   color: white;
 }
-.ordersummarybtn{
-  background-color:#de704f;
-  color: white;
+
+@media (min-width: 320px){
+  .ordersummarybtn{
+    background-color:#de704f;
+    color: white;
+    width: 124px;
+  }
+  .ordersummarybtn:hover{
+    background-color: #F24E1E;
+    color: white;
+    border: #342f2f 1px solid;
+  }
 }
-.ordersummarybtn:hover{
-  background-color: #F24E1E;
-  color: white;
-  border: #342f2f 1px solid;
+@media (min-width: 768px){
+  .ordersummarybtn{
+    background-color:#de704f;
+    color: white;
+    width: 280px;
+  }
+  .ordersummarybtn:hover{
+    background-color: #F24E1E;
+    color: white;
+    border: #342f2f 1px solid;
+  }
+
+@media (min-width: 320px){
+  .ordersummarybtn{
+    background-color:#de704f;
+    color: white;
+    width: 124px;
+  }
+  .ordersummarybtn:hover{
+    background-color: #F24E1E;
+    color: white;
+    border: #342f2f 1px solid;
+  }
+}
+@media (min-width: 768px){
+  .ordersummarybtn{
+    background-color:#de704f;
+    color: white;
+    width: 280px;
+  }
+  .ordersummarybtn:hover{
+    background-color: #F24E1E;
+    color: white;
+    border: #342f2f 1px solid;
+  }
 }
 
 </style>
@@ -164,21 +204,22 @@
             <div class="d-flex col-md-2 justify-content-center p-0">
               <img class="rounded productimage" src="{{asset('upload/'.$cart->image)}}">
             </div>
-            <div class="d-flex col-md-2 align-items-center">
-                <span class="p-2 carttext">{{ $cart->name }}</span>
-            </div>
+            <div class="d-flex col-md-2 carttext justify-content-center">{{ $cart->name }}</div>
+            <div class="d-flex col-md-2 carttext justify-content-center">{{ $cart->name }}</div>
             <div class="d-flex col-md-2 carttext justify-content-center p-0">{{ number_format($cart->price) }}</div>
             <div class="d-flex col-md-2 justify-content-center align-items-center">
                 {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
                 <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                   @csrf
-                  <button class="d-flex cartquantitybutton text-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
+                  <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
+                  <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
               </form>
                 <span class="d-flex carttext text-center p-2">{{$cart->quantity}}</span>
 
                 <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
                   @csrf
-                  <button class="cartquantitybutton" type="submit"><i class="fa-solid fa-plus"></i></button>
+                  <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
+                  <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
               </form>
                 {{-- <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i> --}}
             </div>
@@ -233,43 +274,65 @@
             <span style="font-family: 'Raleway', sans-serif; font-size: 20px;">Thank you for your order!</span>
           </div>
           @foreach($products as $cart)
-          <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px;">
-              <div class="col-md-2">
-                <div class="mr-1"><img class="rounded" src="{{asset('upload/'.$cart->image)}}" width="70" height="70"></div>
+          <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px; padding-top:5px; padding-bottom:5px;">
+              <div class="col-md-2 p-0">
+                <div class="mr-1">
+                  <img class="productimage rounded" src="{{asset('upload/'.$cart->image)}}">
+                </div>
+          <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px; padding-top:5px; padding-bottom:5px;">
+              <div class="col-md-2 p-0">
+                <div class="mr-1">
+                  <img class="productimage rounded" src="{{asset('upload/'.$cart->image)}}">
+                </div>
               </div>
               <div class="d-flex col-md-2 align-items-center">
-                <span class="col-md-4 fw-semibold">{{$cart->quantity}}</span>
+                <span class="col-md-4 carttext">{{$cart->quantity}}</span>
+                <span class="col-md-4 carttext">{{$cart->quantity}}</span>
             </div>
-              <div class="col-md-2 align-items-center">
-                  <span class="p-2 flex-fil fw-semibold" style="font-size: 14px;">{{ $cart->name }}</span>
-              </div>
-              <div class="col-md-2 ms-auto fw-semibold">{{$cart->price * $cart->quantity}}</div>
+              <div class="col-md-2 justify-content-center carttext">{{ $cart->name }}</div>
+              <div class="col-md-2 ms-auto carttext">{{$cart->price * $cart->quantity}}</div>
+              <div class="col-md-2 justify-content-center carttext">{{ $cart->name }}</div>
+              <div class="col-md-2 ms-auto carttext">{{$cart->price * $cart->quantity}}</div>
           </div>
           @endforeach
-          <div class="mt-4 mb-4 d-flex" style="gap: 60px;">
+          <div class="ordermodaldetails">
+          <div class="ordermodaldetails">
             <div class="me-auto d-flex flex-column">
-              <span class="">Billed To:</span>
-              <span class="fw-bold">FullName: {{auth()->user()->name}}</span>
-              <span class="fw-bold">Address: {{auth()->user()->current_address}}</span>
-              <span class="fw-bold">Contact: {{auth()->user()->contact}}</span>
+              <span class="ordermodaltext fw-bold">Billed To:</span>
+              <span class="fw-bold ordermodaltext">FullName: {{auth()->user()->name}}</span>
+              <span class="fw-bold ordermodaltext">Address: {{auth()->user()->current_address}}</span>
+              <span class="fw-bold ordermodaltext">Contact: {{auth()->user()->contact}}</span>
+              <span class="ordermodaltext fw-bold">Billed To:</span>
+              <span class="fw-bold ordermodaltext">FullName: {{auth()->user()->name}}</span>
+              <span class="fw-bold ordermodaltext">Address: {{auth()->user()->current_address}}</span>
+              <span class="fw-bold ordermodaltext">Contact: {{auth()->user()->contact}}</span>
 
             </div>
             <div class="d-flex flex-column align-items-end">
-              <span class="fw-semibold">Total Items: </span>
-              <span class="fw-semibold">Mode of Payment:</span>
-              <span class="fw-bold fs-5">Total Amount: </span>
+              <span class="fw-semibold ordermodaltext">Total Items: </span>
+              <span class="fw-semibold ordermodaltext">Mode of Payment:</span>
+              <span class="fw-bold ordermodaltext">Total Amount: </span>
+              <span class="fw-semibold ordermodaltext">Total Items: </span>
+              <span class="fw-semibold ordermodaltext">Mode of Payment:</span>
+              <span class="fw-bold ordermodaltext">Total Amount: </span>
             </div>
             <div class="d-flex flex-column align-items-end">
-              <span class="fw-semibold">{{ $totalitem }}</span>
-              <span class="fw-semibold">Cash On delivery (COD)</span>
-              <span class="fw-bold fs-5">{{$totalValue}}</span>
+              <span class="fw-semibold ordermodaltext">{{ $totalitem }}</span>
+              <span class="fw-semibold ordermodaltext">COD</span>
+              <span class="fw-bold ordermodaltext">{{$totalValue}}</span>
+              <span class="fw-semibold ordermodaltext">{{ $totalitem }}</span>
+              <span class="fw-semibold ordermodaltext">COD</span>
+              <span class="fw-bold ordermodaltext">{{$totalValue}}</span>
             </div>
 
           </div>
         </div>
-        <div class="d-flex justify-content-evenly m-5">
-          <button type="submit" class="btn w-25 ordersummarybtn">CONFIRM</button>
-          <button type="button" class="btn w-25 ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>
+        <div class="ordersummarybuttons">
+          <button type="submit" class="btn ordersummarybtn">CONFIRM</button>
+          <button type="button" class="btn ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>
+        <div class="ordersummarybuttons">
+          <button type="submit" class="btn ordersummarybtn">CONFIRM</button>
+          <button type="button" class="btn ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>
         </div>
 
         </form>
