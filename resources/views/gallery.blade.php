@@ -84,6 +84,7 @@
         <label for="title" class="underline"></label>
     </div>
 
+    @if(!$gallerys)
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="photos" role="tabpanel">
             <div class="service-card">
@@ -101,6 +102,13 @@
             </div>
         </div>
     </div>
+
+    @else
+        <div class="d-flex justify-content-center">
+            <img class="img-thumbnail" src="./img/illustrations/noproducts.png" alt="fiksur" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+        </div>
+    @endif
+
     <div class="d-flex align-items-center ">
         <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%;"> </span>
         <div class="d-inline-flex justify-content-end mt-4">
