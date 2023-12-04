@@ -42,7 +42,7 @@
                             <div class="d-flex justify-content-center align-items-center pe-sm-5 mt-4"><button type="button" class="btn btn-md btn-primary btnrequest1" disabled>{{ $reservation->status }}</button></div>
                             <div class="d-flex justify-content-center align-items-center pe-sm-5 my-2 mb-4 ">
                                 @if($reservation->status === 'pending')
-                                        <form action="{{ route('showuserreservations.cancel', $reservation->id) }}" method="post">
+                                        <form actionq="{{ route('showuserreservations.cancel', $reservation->id) }}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-md btn-warning btnrequest2">Cancel Booking</button>
                                         </form>

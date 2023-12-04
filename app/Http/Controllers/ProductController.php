@@ -270,7 +270,7 @@ class ProductController extends Controller
 
         // Check if the user has a contact number and email
         if (empty($user->contact) || empty($user->email)) {
-            return redirect('product')->with('error', 'Please update your contact number and email address before placing an order.');
+            return redirect('userdetails')->with('error', 'Please update your contact number and email address before placing an order.');
         }
 
         // Check if the user has items in the cart
