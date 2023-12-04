@@ -184,7 +184,7 @@
                 @foreach($randomItems as $items)
 
                 <article class="cCarousel-item">
-                    <img src="./img/product1.png">
+                    <img src="{{asset('upload/'.$items->image)}}">
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{$items->name}}</h3>
