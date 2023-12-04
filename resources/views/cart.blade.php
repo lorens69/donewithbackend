@@ -180,6 +180,7 @@
     border: #342f2f 1px solid;
   }
 }
+}
 
 </style>
 <body>
@@ -205,20 +206,17 @@
               <img class="rounded productimage" src="{{asset('upload/'.$cart->image)}}">
             </div>
             <div class="d-flex col-md-2 carttext justify-content-center">{{ $cart->name }}</div>
-            <div class="d-flex col-md-2 carttext justify-content-center">{{ $cart->name }}</div>
             <div class="d-flex col-md-2 carttext justify-content-center p-0">{{ number_format($cart->price) }}</div>
             <div class="d-flex col-md-2 justify-content-center align-items-center">
                 {{-- <i class="fa-regular fa-square-minus" style="font-size: 20px;"></i> --}}
                 <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                   @csrf
                   <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
-                  <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
               </form>
                 <span class="d-flex carttext text-center p-2">{{$cart->quantity}}</span>
 
                 <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
                   @csrf
-                  <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
                   <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
               </form>
                 {{-- <i class="fa-regular fa-square-plus" style="font-size: 20px;"></i></i> --}}
@@ -241,8 +239,7 @@
             <div class="p-2 flex-fill">
                 <span class="cartbottomtext">TOTAL PRICE:<span class="cartbottomtext2"> {{$totalValue}} </span></span>
             </div>
-            <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px;">
-              @if(count($products) > 0)
+            <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px; height:fit-content;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
               @else
               <button class="btn btn-block btn-lg pay-button" type="button" disabled>CHECKOUT</button>
@@ -274,11 +271,7 @@
             <span style="font-family: 'Raleway', sans-serif; font-size: 20px;">Thank you for your order!</span>
           </div>
           @foreach($products as $cart)
-          <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px; padding-top:5px; padding-bottom:5px;">
-              <div class="col-md-2 p-0">
-                <div class="mr-1">
-                  <img class="productimage rounded" src="{{asset('upload/'.$cart->image)}}">
-                </div>
+
           <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px; padding-top:5px; padding-bottom:5px;">
               <div class="col-md-2 p-0">
                 <div class="mr-1">
@@ -287,15 +280,14 @@
               </div>
               <div class="d-flex col-md-2 align-items-center">
                 <span class="col-md-4 carttext">{{$cart->quantity}}</span>
-                <span class="col-md-4 carttext">{{$cart->quantity}}</span>
+
             </div>
               <div class="col-md-2 justify-content-center carttext">{{ $cart->name }}</div>
               <div class="col-md-2 ms-auto carttext">{{$cart->price * $cart->quantity}}</div>
-              <div class="col-md-2 justify-content-center carttext">{{ $cart->name }}</div>
-              <div class="col-md-2 ms-auto carttext">{{$cart->price * $cart->quantity}}</div>
+
           </div>
           @endforeach
-          <div class="ordermodaldetails">
+
           <div class="ordermodaldetails">
             <div class="me-auto d-flex flex-column">
               <span class="ordermodaltext fw-bold">Billed To:</span>
@@ -327,9 +319,7 @@
 
           </div>
         </div>
-        <div class="ordersummarybuttons">
-          <button type="submit" class="btn ordersummarybtn">CONFIRM</button>
-          <button type="button" class="btn ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>
+
         <div class="ordersummarybuttons">
           <button type="submit" class="btn ordersummarybtn">CONFIRM</button>
           <button type="button" class="btn ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>
