@@ -184,7 +184,7 @@
                 @foreach($randomItems as $items)
 
                 <article class="cCarousel-item">
-                    <img src="./img/product1.png">
+                    <img src="{{asset('upload/'.$items->image)}}">
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{$items->name}}</h3>
@@ -209,7 +209,7 @@
     <!-- ------------------------------------------------------------------------------------------ -->
 
     <!-- START of Clients Love Section -->
-    <section class="container">
+    <section class="container" id="CL">
     <span class="text-uppercase" style="font-size: 26px;">Clients Love</span>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%;  border-width: 5px;">
         <div class="container testimonial-inner">
@@ -253,6 +253,15 @@
 </div>
 @include('sweetalert::alert')
 </body>
+
+<style>
+    @media (max-width: 768px) {
+
+        #CL {
+            display: none;
+        }
+    }
+</style>
 
 </html>
 @include('partials._footer')
