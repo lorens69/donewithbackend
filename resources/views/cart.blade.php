@@ -241,9 +241,6 @@
             </div>
             <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px; height:fit-content;">
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
-              @else
-              <button class="btn btn-block btn-lg pay-button" type="button" disabled>CHECKOUT</button>
-              @endif
             </div>
         </div>
 
