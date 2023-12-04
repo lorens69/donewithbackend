@@ -29,7 +29,7 @@ function loginPost(Request $request) {
         'password'=> 'required'
     ]);
 
-    Alert::success('Log In Successfully', 'Success Message');
+    Alert::success('Log In Successfully', 'Order Accessories and Book for our Services Now!');
 
     $credentials = $request->only('email','password');
 
