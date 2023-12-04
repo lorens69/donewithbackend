@@ -149,7 +149,7 @@
     bottom: 0;
     width: 50px;
     height: 1px;
-    background: #ff7300;
+    background: #f36e01;
     margin: 2px 0;
 }
 
@@ -171,7 +171,7 @@
     margin: 0;
 }
 .sec-title-style1 .text.clr-yellow p{
-    color: #ff7300;
+    color: #ff8420;
 }
 .sec-title-style1 .text .decor-left{
     position: relative;
@@ -291,7 +291,7 @@
 .single-contact-address-box {
     position: relative;
     display: block;
-    background: #4e4c4c;
+    background: #272626;
     padding: 85px 30px 77px;
 }
 .single-contact-address-box .icon-holder{
@@ -317,7 +317,7 @@
 }
 
 .single-contact-address-box.main-branch {
-    background: #f09630;
+    background: #ec8003;
     padding: 53px 30px 51px;
     margin-top: -20px;
     margin-bottom: -20px;
@@ -383,16 +383,16 @@
 
     <div class="d-flex flex-row-reverse" >
 
-    <div class="container-fluid mt-2 p-5" style="width:90%;">
+    <div class="container-fluid mt-2 p-5" style="width:100%;">
 
     <div class="card-body d-flex justify-content-left align-items-center  mt-4 p-5 row col-lg-12 ">
-        <div class="card " style="background-color: #FFE6C7; max-width:fit-content  " >
-            <img src="./img/24_7Contact.png" width="100%" alt="" style="display: mt-5; margin:20px">
-            <b>Phone Number: 09929392781</b>
-            <b>Email Adress: bertology@gmail.com</b>
-            <b>Location Address: Cebu City, Cebu</b> <br> <br>
+        <div class="card " style="background-color: #FFE6C7; max-width:fit-content" >
+            <img src="./img/24_7Contact.png" width="100%" alt="" style="display: mt-5; margin:10px">
+            <p>Phone Number: <b>09617590889</b></p>
+            <p>Email Address: <b>umaranshobi2424@gmail.com</b></p>
+            <p>Location Address: <b>Edison St, Cebu City, 6000 Cebu near St.Therese Parish Church</b></p>
             <button class="btn w-75 text-white p-2 fw-normal m-4 mt-0"
-            style="background-color: #454545;">Call us now! </button>
+            style="background-color: #454545;" > Call anytime! </button>
         </div>
 
         <div class="card " style="background-color: #FFE6C7; max-width:fit-content " >
@@ -408,7 +408,7 @@
                         <div class="title">Contact Us</div>
                         <div class="text"><div class="decor-left"><span></span></div><p>Quick Contact</p><div class="decor-right"><span></span></div></div>
                         <div class="bottom-text">
-                            <p>Fixyman is proud to be the name that nearly 1 million homeowners have trusted since 1996 for home improvement and repair, providing virtually any home repair.</p>
+                            <p>Bertology takes pride in being the trusted name that has served numerous vehicle owners in Cebu City since 2015. Our dedicated team has earned the confidence of our customers by providing top-notch services for car accessories maintenance, enhancement, and repairs. We are committed to delivering high-quality service, ensuring the satisfaction of every individual who entrusts their vehicle to Bertology.</p>
                         </div>
                     </div>
                             <div class="contact-address-box row">
@@ -419,13 +419,14 @@
                                             <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span>
                                         </span>
                                     </div>
-                                    <h3>Lorem Ipsum</h3>
-                                    <h2>Lorem Ipsum is simply dummy</h2>
+                                    <h3>Special Thanks To</h3>
+                                    <h2>Website Development</h2>
+                                    <img src="/img/maelstrom2.png" style="height: 80px;width:200px">
                                 </div>
                                 <!--End Single Contact Address Box-->
                                 <!--Start Single Contact Address Box-->
                                 <div class="col-sm-4 single-contact-address-box main-branch">
-                                    <h3>Lorem Ipsum</h3>
+                                    <h3>Bertology</h3>
                                     <div class="inner">
                                         <ul>
                                             <li>
@@ -433,15 +434,15 @@
                                                     <h4>Address:</h4>
                                                 </div>
                                                 <div class="text">
-                                                    <p>Lorem Ipsum, 40C, Lorem Ipsum dummy,<br> Lorem Ipsum, Ch 98054</p>
+                                                    <p>Edison St, Cebu City, 6000 Cebu near St.Therese Parish Church</p>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="title">
-                                                    <h4>Ph & Fax:</h4>
+                                                    <h4>Phone<br> Email:</h4>
                                                 </div>
                                                 <div class="text">
-                                                    <p>+123 456 789 <br> test@info.com</p>
+                                                    <p>09617590889 / umaranshobi2424@gmail.com</p>
                                                 </div>
                                             </li>
                                             <li>
@@ -449,7 +450,7 @@
                                                     <h4>Office Hrs:</h4>
                                                 </div>
                                                 <div class="text">
-                                                    <p>Mon-Fri: 9:30am - 6:30pm<br> Sat-Sun: Closed</p>
+                                                    <p>Mon-Sat 10am - 6:00 pm <br>Sun: Closed</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -463,8 +464,8 @@
                                             <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
                                         </span>
                                     </div>
-                                    <h3>Lorem Ipsum</h3>
-                                    <h2>Lorem Ipsum is simply dummy</h2
+                                    <h3>24/7 Service</h3>
+                                    <img src="/img/berto.png" style="height: 70%;width:70%">
                                 </div>
                                 <!--End Single Contact Address Box-->
                     </div>
