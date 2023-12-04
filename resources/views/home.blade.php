@@ -11,7 +11,7 @@
  <link rel="stylesheet" href="Css/style.css">
  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- <script src="\resources\js\app.js"></script>
+ <script src="\resources\js\app.js" defer></script>
 </head>
 <body>
 <div class="container-fluid p-0 homecontainer1">

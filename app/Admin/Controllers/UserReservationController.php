@@ -95,6 +95,7 @@ class UserReservationController extends AdminController
 
     function usersendrequest (Request $request) {
 
+  
         $user_id = Auth::id();
         $request->validate([
             'contact' => 'required',
@@ -114,17 +115,27 @@ class UserReservationController extends AdminController
         $data['date'] = $request->date;
         $data['special_instructions'] = $request->special_instructions;
         $form = UserReservation::create($data);
+    
 
-        if(!$form){
-
+        if ($request->has('contact') && $request->has('current_address') && $request->has('model') && $request->has('yom') && $request->has('service') && $request->has('date')) {
+            return redirect()->back()->with('success', 'Your reservation has been sent successfully! Please wait for our staffs to call you.');
+        }elseif (!$form) {
             return redirect()->back()->with('error', 'Submission Failed, please check your inputs.');
-
         }
+           
+        
+        
 
-        return redirect()->back()->with('success', 'Your reservation has been sent successfully! Please wait for our staffs to call you.');
+        // if(!$form){
+
+        //     return redirect()->back()->with('error', 'Submission Failed, please check your inputs.');
+
+        // }else{
+        //     return redirect()->back()->with('success', 'Your reservation has been sent successfully! Please wait for our staffs to call you.');
+        // }
 
     }
-
+   
     function showreservations() {
 
         $user_id = Auth::id();

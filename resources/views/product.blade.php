@@ -71,7 +71,7 @@
 
         @csrf
 
-        <div class="d-flex w-100 justify-content-between product-items-container" style="margin-bottom:31px; margin-top:-40px;">
+        <div class="d-flex w-100 justify-content-start product-items-container" style="margin-bottom:31px; margin-top:-40px;">
             <div class="accordion mt-5 me-5 w-25" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -120,6 +120,7 @@
                 </div>
             </div>
 
+            @if(count($products) > 0)
             <div class="service-card card d-flex flex-row mt-5 justify-content-start flex-wrap w-75 row p-4 gap-3" >
                 @foreach($showproduct as $product)
 
@@ -146,8 +147,13 @@
                     </div>
                 </article>
                 @endforeach
+                @else
+                <div class="d-flex justify-content-center">
+                    <img class="img-thumbnail" src="./img/illustrations/noproducts.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+                </div>
+                @endif
             </div>
-
+            
         </div>
         <div class="d-flex align-items-center ">
             <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%;"> </span>
