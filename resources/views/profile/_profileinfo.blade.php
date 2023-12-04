@@ -107,4 +107,5 @@
 </html>
 
 @include('partials._footer')
+@include('sweetalert::alert')
 @endsection

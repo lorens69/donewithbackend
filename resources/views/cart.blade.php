@@ -234,7 +234,11 @@
                 <span class="cartbottomtext">TOTAL PRICE:<span class="cartbottomtext2"> {{$totalValue}} </span></span>
             </div>
             <div class="flex-fill fw-bold" style="background-color: #F24E1E; color:white; border-radius:2px; height:fit-content;">
+              @if(count($products) > 0)
               <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn">CHECKOUT</button>
+              @else
+              <button class="btn btn-block btn-lg pay-button" type="button" id="myBtn" disabled> CHECKOUT</button>
+              @endif
             </div>
         </div>
     </div>
@@ -266,7 +270,7 @@
             <span style="font-family: 'Raleway', sans-serif; font-size: 20px;">Thank you for your order!</span>
           </div>
           @foreach($products as $cart)
-          
+
           <div class="d-flex shopitems col-12 text-center align-items-center" style="background-color: #a39f9f39; margin:2px; padding-top:5px; padding-bottom:5px;">
               <div class="col-md-2 p-0">
                 <div class="mr-1">
@@ -275,20 +279,16 @@
               </div>
               <div class="d-flex col-md-2 align-items-center">
                 <span class="col-md-4 carttext">{{$cart->quantity}}</span>
-      
+
             </div>
               <div class="col-md-2 justify-content-center carttext">{{ $cart->name }}</div>
               <div class="col-md-2 ms-auto carttext">{{$cart->price * $cart->quantity}}</div>
-              
+
           </div>
           @endforeach
-         
+
           <div class="ordermodaldetails">
             <div class="me-auto d-flex flex-column">
-              <span class="ordermodaltext fw-bold">Billed To:</span>
-              <span class="fw-bold ordermodaltext">FullName: {{auth()->user()->name}}</span>
-              <span class="fw-bold ordermodaltext">Address: {{auth()->user()->current_address}}</span>
-              <span class="fw-bold ordermodaltext">Contact: {{auth()->user()->contact}}</span>
               <span class="ordermodaltext fw-bold">Billed To:</span>
               <span class="fw-bold ordermodaltext">FullName: {{auth()->user()->name}}</span>
               <span class="fw-bold ordermodaltext">Address: {{auth()->user()->current_address}}</span>
@@ -299,14 +299,8 @@
               <span class="fw-semibold ordermodaltext">Total Items: </span>
               <span class="fw-semibold ordermodaltext">Mode of Payment:</span>
               <span class="fw-bold ordermodaltext">Total Amount: </span>
-              <span class="fw-semibold ordermodaltext">Total Items: </span>
-              <span class="fw-semibold ordermodaltext">Mode of Payment:</span>
-              <span class="fw-bold ordermodaltext">Total Amount: </span>
             </div>
             <div class="d-flex flex-column align-items-end">
-              <span class="fw-semibold ordermodaltext">{{ $totalitem }}</span>
-              <span class="fw-semibold ordermodaltext">COD</span>
-              <span class="fw-bold ordermodaltext">{{$totalValue}}</span>
               <span class="fw-semibold ordermodaltext">{{ $totalitem }}</span>
               <span class="fw-semibold ordermodaltext">COD</span>
               <span class="fw-bold ordermodaltext">{{$totalValue}}</span>
@@ -314,7 +308,7 @@
 
           </div>
         </div>
-        
+
         <div class="ordersummarybuttons">
           <button type="submit" class="btn ordersummarybtn">CONFIRM</button>
           <button type="button" class="btn ordersummarybtn" onclick="window.location.href='{{route('product')}}'" >MORE ITEMS</button>

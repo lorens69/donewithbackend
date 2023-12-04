@@ -51,7 +51,7 @@ class ProductController extends Controller
     $showproduct = Product::all();
 
       // Set the number of items per page (e.g., 9 items per page)
-    $perPage = 9;
+    $perPage = 7;
 
     // Create a new collection from the services array
     $servicesCollection = new Collection($showproduct);
@@ -270,7 +270,7 @@ class ProductController extends Controller
 
         // Check if the user has a contact number and email
         if (empty($user->contact) || empty($user->email)) {
-            return redirect('product')->with('error', 'Please update your contact number and email address before placing an order.');
+            return redirect('userdetails')->with('error', 'Please update your contact number and email address before placing an order.');
         }
 
         // Check if the user has items in the cart
