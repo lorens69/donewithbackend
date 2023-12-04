@@ -29,7 +29,7 @@
 
             <div class="container-fluid" style="padding-left:20px;padding-right:20px;padding-bottom:20px;">
                 @if(count($reservations) > 0)
-                @foreach($reservations as $reservation)  
+                @foreach($reservations as $reservation)
                     <div class="container-fluid brequest1" >
                         <div class="d-flex flex-column justify-content-center ">
                             <div class="d-flex" style="font-size: 16px; font-weight:bold;">SERVICE NAME: {{$reservation->service_name}}</div>
