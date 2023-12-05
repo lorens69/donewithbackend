@@ -185,6 +185,13 @@ body {
     letter-spacing:1px;
     width: 185px;
   }
+  .homebuttons:hover{
+    background-color: #fdf4ed;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, #FF6000 0px -3px 0px inset;
+    font-size:18px; 
+    color:#FF6000;
+    letter-spacing:1px;
+  }
 }
 @media(min-width:768px){
   .homebackground{
@@ -222,6 +229,13 @@ body {
     background-color: #FF6000; 
     font-size:18px; 
     color:white;
+    letter-spacing:1px;
+  }
+  .homebuttons:hover{
+    background-color: #fdf4ed;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, #FF6000 0px -3px 0px inset;
+    font-size:18px; 
+    color:#FF6000;
     letter-spacing:1px;
   }
 }
