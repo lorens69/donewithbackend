@@ -93,16 +93,16 @@ class Reservation extends AdminController
     }
 
     function sendrequest (Request $request) {
-        $request->validate([
-            'name'=> 'required',
-            'contact' => 'required',
-            'email'=> 'required',
-            'current_address' => 'required',
-            'model' => 'required',
-            'yom' => 'required',
-            'service' => 'required',
-            'date' => 'required',
-        ]);
+        // $request->validate([
+        //     'name'=> 'required',
+        //     'contact' => 'required',
+        //     'email'=> 'required',
+        //     'current_address' => 'required',
+        //     'model' => 'required',
+        //     'yom' => 'required',
+        //     'service' => 'required',
+        //     'date' => 'required',
+        // ]);
 
         $data['name'] = $request->name;
         $data['contact'] = $request->contact;

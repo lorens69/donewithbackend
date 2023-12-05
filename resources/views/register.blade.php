@@ -62,7 +62,7 @@
 </body>
 
 <style>
-    @media (max-width: 768px) {
+    @media (min-width: 320px) and (max-width: 768px) {
         .registerlogo {
             display: none;
         }
@@ -74,6 +74,15 @@
 
         .registermaincon {
             height: 70%;
+        }
+        .Registerpage {
+            display: flex;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            margin-top: 50px;
+            margin-bottom: -36px;
+            height: 119vh;
         }
     }
 </style>
