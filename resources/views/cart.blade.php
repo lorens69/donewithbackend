@@ -190,12 +190,12 @@
 </style>
 <body>
     @include('partials._header')
+    @if(count($products) > 0)
     <div class="container shopcart">
         <div class="ms-5 mt-3">
             <h6 style="font-size: 20px;">Shopping Cart</h6>
             <hr class="hr" style= "width: 100px; background-color:#FF6000; opacity:100%; border-width: 5px;">
         </div>
-
         <div class="d-flex shopheaders col-12 text-center">
             <div class="col-md-2 p-0 cartheadertext"></div>
             <div class="col-md-2 cartheadertext">Product Name</div>
@@ -204,7 +204,7 @@
             <div class="col-md-2 cartheadertext">Total Price</div>
             <div class="col-md-2 p-0 cartheadertext"></div>
         </div>
-        @if(count($products) > 0)
+        
         @foreach($products as $cart)
         <div class="d-flex col-12 text-center align-items-center mt-2 justify-content-evenly">
             <div class="d-flex col-md-2 justify-content-center p-0">
@@ -231,12 +231,6 @@
         </div>
         @endforeach
 
-        @else
-            <div class="text-center mt-5">
-                <p style="font-size: 18px; font-weight: bold;">No items on your cart yet.</p>
-            </div>
-        @endif
-
         <div class="d-flex shoptotal text-center">
             <div class="p-2 flex-fill">
                 <span class="cartbottomtext">ITEM(S):<span class="cartbottomtext2"> {{ $totalitem }} </span></span>
@@ -252,9 +246,13 @@
               @endif
             </div>
         </div>
-
-
     </div>
+
+    @else
+            <div class="text-center mt-5">
+                <img class="img-thumbnail" src="./img/illustrations/noitemscart.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+            </div>
+    @endif
 
     <!-- Trigger/Open The Modal -->
     {{-- <button id="myBtn">Open Modal</button> --}}
