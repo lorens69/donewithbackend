@@ -15,8 +15,8 @@ php artisan route:cache
 echo "Running migrations..."
 php artisan migrate --force
 
-composer require realrashid/sweet-alert
-php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
+# composer require realrashid/sweet-alert
+# php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
 # composer require open-admin-org/open-admin
 # php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider"
 # php artisan admin:install
