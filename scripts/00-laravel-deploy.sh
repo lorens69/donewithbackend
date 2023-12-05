@@ -17,11 +17,11 @@ php artisan migrate --force
 
 composer require realrashid/sweet-alert
 php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
-composer require open-admin-org/open-admin
-php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider"
-php artisan admin:install --force
-composer require open-admin-ext/helpers
-php artisan admin:import helpers --force
+# composer require open-admin-org/open-admin
+# php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider"
+# php artisan admin:install
+# composer require open-admin-ext/helpers
+# php artisan admin:import helpers
 
 
 
