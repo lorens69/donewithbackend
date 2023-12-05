@@ -12,6 +12,8 @@ php artisan admin:install
 composer require open-admin-ext/helpers
 php artisan admin:import helpers
 
+
+
 echo "DONE DOWNLOADING PRE REQUISITES! OPEN VS CODE NOW! - lorens"
 
 exit 1
