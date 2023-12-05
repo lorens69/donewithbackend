@@ -13,66 +13,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 
 
-<style>
-    @media screen and (max-width:599px) {
-        .products-container{
-        width: 98%!important;
-        margin: auto;
-        }
-        .products-header{
-            display: flex;
-            flex-direction: column;
-        }
-        .products-header button{
-            display: block!important;
-            margin: 25px auto;
-        }
-        .textStyle{
-            display: block;
-            text-align: center;
-        }
-        .product-items-container{
-            flex-direction: column;
-            align-items: center;
 
-        }
-        .accordion{
-            width:50%!important;
-            margin: 25px auto!important;
-        }
-        .service-card{
-            width: 90%;
-            margin: auto;
-        }
-        .product-item{
-            width:80%!important;
-            margin:auto;
 
-        }
-    }
-</style>
-<body style="min-height:52.3vh">
+<body>
 
     @include('partials._header')
-
 
     <div class="container-fluid mt-5 products-container" style="width:90%;">
         <div class="d-flex justify-content-between mt-2 products-header">
             <div>
-                <span class="textStyle" name="title">CAR ACCESSORIES</span>
+                <span class="textStyle fs-2" name="title" style="font-family: 'Raleway', sans-serif; ">CAR ACCESSORIES</span>
             </div>
         </div>
         <br>
-
-
         @csrf
 
-        <div class="d-flex w-100 justify-content-between product-items-container" style="margin-bottom:31px; margin-top:-40px;">
-            <div class="accordion mt-5 me-5 w-25" id="accordionExample">
+        @if(count($products) > 0)
+        <div class="product-items-container">
+            <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class=" filterTextStyle p-2 accordion-button bg-white" type="button" data-bs-toggle="collapse"
@@ -99,7 +62,7 @@
                                         Security and Safety
                                     </label>
                                 </a>
-                                <a href="{{route('sortby2')}}" class="form-check">
+                                <a href="{{route('sortby2')}}" class="d-flex form-check justify-content-left">
                                     <label class="ms-3 m-1" for="audioEntertainment" style="font-size: 14px; font-weight:200; letter-spacing:1px;color:#333;">
                                         Audio and Entertainment
                                     </label>
@@ -114,16 +77,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item ">
-
-
-                </div>
+                
             </div>
 
-            <div class="service-card card d-flex flex-row mt-5 justify-content-start flex-wrap w-75 row p-4 gap-3" >
+            
+            <div class="service-card row-cols-auto" >
                 @foreach($showproduct as $product)
 
-                <article class="product-item">
+                <article class="product-item col-6">
+
                         <img src="{{asset('upload/'.$product->image)}}" width="100%" height="100%" alt="fiksur">
                         <br>
                     <div class="infos">
@@ -146,8 +108,13 @@
                     </div>
                 </article>
                 @endforeach
+                @else
+                <div class="d-flex justify-content-center">
+                    <img class="img-thumbnail" src="./img/illustrations/noproducts.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+                </div>
+                @endif
             </div>
-
+            
         </div>
         <div class="d-flex align-items-center ">
             <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%;"> </span>

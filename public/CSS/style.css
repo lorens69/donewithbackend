@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Bayon', sans-serif;
+    background-color: white;
 }
 
 .Loginpage {
@@ -137,18 +138,93 @@ body {
 .welcomeback a:link{
   text-decoration: none;
 }
+
 /*--------------------------------------------------------------
 # Home header
 --------------------------------------------------------------*/
 .homecontainer1{
   height: auto;
 }
-.homebackground{
-  background: url(./img/landingpage.jpg);
-  background-size: cover;
-  background-position: center;
-}
 
+@media(min-width:320px) and (max-width:767px) {
+  .homebackground{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 16px;
+    border-radius:10px;
+    letter-spacing:1px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    width: fit-content;
+  }
+  .hometitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bolder;
+  }
+  .hometext{
+    display: flex;
+    justify-content: center;
+    font-size:17px;
+    text-align: center;
+  }
+  .homeheaderbuttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 50px; */
+    margin-bottom: 50px;
+    gap:40px;
+  }
+  .homebuttons{
+    background-color: #FF6000; 
+    font-size:16px; 
+    color:white;
+    letter-spacing:1px;
+    width: 185px;
+  }
+}
+@media(min-width:768px){
+  .homebackground{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 20px;
+    border-radius:10px;
+    letter-spacing:1px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    gap: 12px;
+  }
+    .hometitle{
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: bolder;
+  }
+  .hometext{
+    font-size:25px;
+  }
+  .homeletterSpace{
+    margin-left: 15px;
+  }
+
+  .homeheaderbuttons{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    gap:40px;
+  }
+  .homebuttons{
+    background-color: #FF6000; 
+    font-size:18px; 
+    color:white;
+    letter-spacing:1px;
+  }
+}
 /*--------------------------------------------------------------
 # Partners
 --------------------------------------------------------------*/
@@ -981,7 +1057,7 @@ body {
 
 .accordion-body .form-check {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     padding-left: 0px;
     height:40px;
@@ -1077,4 +1153,95 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: orangered;
+}
+
+@media (min-width: 320px) and (max-width:767px){
+
+  .product-items-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom:31px; 
+      margin-top:-40px;
+  }
+  .accordion{
+      margin-top: 33px;
+      margin-right: auto;
+
+  }
+  .product-item {
+    margin: 4px;
+    width: 219px;
+    height: 241px;
+    border: 1px solid;
+    border-color: #FF6000;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: column;
+}
+  .service-card{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 75%;
+    padding: 20px;
+    gap:13px;
+  }
+
+}
+
+@media (min-width:768px) {
+  .products-container{
+  width: 98%!important;
+  margin: auto;
+  }
+  .products-header{
+      display: flex;
+      flex-direction:row;
+  }
+  .products-header button{
+      display: block!important;
+      margin: 25px auto;
+  }
+  .textStyle{
+      display: block;
+      text-align: center;
+  }
+  .product-items-container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom:31px; 
+      margin-top:-40px;
+  }
+  .accordion{
+      width: 265px;
+      margin-bottom: auto;
+      margin-top: 47px;
+
+  }
+  .service-card{
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      margin-top: 26px;
+      justify-content: start;
+      flex-wrap: wrap;
+      width: 75%;
+      padding: 20px;
+      gap:13px;
+  }
+  .product-item{
+      margin:auto;
+
+  }
+  
 }
