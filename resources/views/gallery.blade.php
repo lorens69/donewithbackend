@@ -105,7 +105,7 @@
 
     @else
         <div class="d-flex justify-content-center">
-            <img class="img-thumbnail" src="./img/illustrations/noproducts.png" alt="fiksur" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+            <img class="img-thumbnail" src="./img/illustrations/nophotos.png" alt="fiksur" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
         </div>
     @endif
 

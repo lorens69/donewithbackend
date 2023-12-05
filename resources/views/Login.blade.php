@@ -51,13 +51,25 @@
 </body>
 
 <style>
-    @media (max-width: 768px) {
+    @media (min-width: 320px) and (max-width: 768px) {
         .logo {
             display: none;
+        }
+        .Loginpage {
+            display: flex;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            margin-top: 66px;
+            margin-bottom: 30px;
+            width: 58vw;
+            height: 610px;
         }
 
         .welcomeback {
             width: 300px;
+            padding-top:30px;
+            padding-bottom:30px;
             height: auto;
         }
 

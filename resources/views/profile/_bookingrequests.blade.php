@@ -54,9 +54,9 @@
                     </div>
                 @endforeach
                 @else
-                    <div class="text-center mt-5">
-                        <p style="font-size: 18px; font-weight: bold;">No reservations or booking requests yet.</p>
-                    </div>
+                <div class="d-flex justify-content-center">
+                    <img class="img-thumbnail" src="./img/illustrations/norequests.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+                </div>
                 @endif
                 </>
             </div>

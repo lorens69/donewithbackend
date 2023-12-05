@@ -18,14 +18,17 @@
     @include('partials._header')
 
     <div class="h-50 mt-sm-5 ms-sm-5 me-sm-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">
-        <div class="container bg-white h-50 w-75 bg-opacity-25 ms-sm-5 mt-sm-5 my-5 pb-3 text-uppercase text-white d-flex  flex-column justify-content-evenly" style="border-radius:10px;letter-spacing:1px;">
-           <h4 style="padding-top:14px;">We offer you </h3>
-            <h1 class="fw-bolder display-3"><span style="color: #FF6000;"> trustworthy </span>auto refurbishing</h1>
-           <h4 class="fs-5">let us be your trusted partner in maintaining the health and reliability of your vehicle </h4>
+        <div class="container homebackground bg-black bg-opacity-25 text-uppercase text-white">
+           <h4 class="hometext" style="padding-top:14px;">We offer you </h3>
+            <div class="display-3 hometitle">
+                <span style="color: #FF6000;"> trustworthy</span>
+                <span class="homeletterSpace">auto refurbishing</span>
+            </div>
+           <h4 class="hometext" style="padding-top:14px;">let us be your trusted partner in maintaining the health and reliability of your vehicle </h4>
         </div>
-        <div class="container h-50 w-75 me-0 ms-5 my-5 d-flex align-items-center justify-content-start gap-5">
-            <div class="btn w-sm-25" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
-            <div class="btn w-sm-25" style="background-color: #FF6000; font-size:18px; color:white;letter-spacing:1px;" onclick="window.location.href='{{route('product')}}'">Order Parts</div>
+        <div class="homeheaderbuttons">
+            <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
+            <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('product')}}'">Order Parts</div>
         </div>
     </div>
 
