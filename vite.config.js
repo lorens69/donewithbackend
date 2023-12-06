@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         laravel([
             'resources/js/app.js',
-            'resources/js/style.css',
+            'public/CSS/style.css',
         ]),
     ],
     resolve: {
