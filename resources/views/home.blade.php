@@ -119,9 +119,9 @@
             </div>
         </div>
 
-        <div class="position-absolute top-0 end-0">
+        <div class="position-absolute top-0 end-0 ">
             <div class="row">
-                <div class="col-md-2">
+                <div>
                     <img class="techimg" src="./img/technician.png" alt="">
                 </div>
             </div>
@@ -140,7 +140,7 @@
         </div>
 
             <div class="servicesOffered1">
-                <div class="row row-cols-auto row-gap-2">
+                <div class="container d-flex justify-content-evenly row row-cols-auto row-gap-2">
                     <div class="col card">
                         <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
                         <div class="card-body">
