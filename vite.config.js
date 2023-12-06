@@ -7,9 +7,6 @@ export default defineConfig({
         laravel([
             'resources/css/style.css',
             'resources/js/app.js',
-            'resources/js/bootstrap.js',
-            'resources/sass/_variable.scss',
-            'resources/sass/app.scss',
         ]),
     ],
     resolve: {
