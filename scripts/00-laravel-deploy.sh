@@ -16,16 +16,19 @@ echo "Running migrations..."
 php artisan migrate --force
 
 
-composer require --yes realrashid/sweet-alert
-php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider" --yes
+# SweetAlert
+composer require -n realrashid/sweet-alert
+php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider" --force
 
+# OpenAdmin
+composer require -n open-admin-org/open-admin
+php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider" --force
+php artisan admin:install --force
 
-composer require --yes open-admin-org/open-admin
-php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider" --yes
-php artisan admin:install --yes
+# OpenAdmin Helpers
+composer require -n open-admin-ext/helpers
+php artisan admin:import helpers --force
 
-composer require --yes open-admin-ext/helpers
-php artisan admin:import helpers --yes
 
 
 
