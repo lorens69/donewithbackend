@@ -8,17 +8,13 @@ export default defineConfig({
             'resources/css/style.css',
             'resources/js/app.js',
             'resources/js/bootstrap.js',
-            'resources/sass/_variable.css',
-            'resources/sass/app.css',
+            'resources/sass/_variable.scss',
+            'resources/sass/app.scss',
         ]),
     ],
     resolve: {
         alias: {
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
-            '~@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/css/all.css'),
-            '~jquery': path.resolve(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
-            '~jquery-ui': path.resolve(__dirname, 'node_modules/jquery-ui-dist/jquery-ui.js'),
-            '~jquery-ui-css': path.resolve(__dirname, 'node_modules/jquery-ui-dist/jquery-ui.css'),
         }
     },
 });
