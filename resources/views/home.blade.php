@@ -37,7 +37,7 @@
     <section class="container partners" >
     <h1 class="text-uppercase display-sm-3">Our Trusted Brands</h1>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%; border-width: 5px;">
-        <div class="row row-cols-auto" style="justify-content: space-evenly;">
+        <div class="row row-cols-auto" style="justify-content: space-evenly; margin:auto;">
             <div class="col-md-2 align-middle">
                 <img class="rounded-circle" src="./img/home/1stBrand.png">
             </div>

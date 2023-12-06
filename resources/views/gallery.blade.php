@@ -84,7 +84,7 @@
         <label for="title" class="underline"></label>
     </div>
 
-    @if(!$gallerys)
+    @if($gallerys)
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="photos" role="tabpanel">
             <div class="service-card">

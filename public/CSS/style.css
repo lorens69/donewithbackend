@@ -5,8 +5,8 @@
 
 body {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: -1px;
+    padding: 0px;
     font-family: 'Bayon', sans-serif;
     background-color: white;
 }
@@ -447,10 +447,10 @@ body {
     margin: auto;
   }
   #cCarousel #prev {
-    left: -20px;
+    left: -4px;
   }
   #cCarousel #next {
-    right: -18px;
+    right: -5px;
   }
   
 #cCarousel {
@@ -463,7 +463,6 @@ body {
   position: absolute;
   top: 128px;
   display: flex;
-  width: 45px;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
