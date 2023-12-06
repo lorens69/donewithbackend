@@ -15,13 +15,18 @@ php artisan route:cache
 echo "Running migrations..."
 php artisan migrate --force
 
-composer require realrashid/sweet-alert
-php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
-composer require open-admin-org/open-admin
-php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider"
-php artisan admin:install
-composer require open-admin-ext/helpers
-php artisan admin:import helpers
+
+composer require --yes realrashid/sweet-alert
+php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider" --yes
+
+
+composer require --yes open-admin-org/open-admin
+php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider" --yes
+php artisan admin:install --yes
+
+composer require --yes open-admin-ext/helpers
+php artisan admin:import helpers --yes
+
 
 
 
