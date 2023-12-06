@@ -8,7 +8,7 @@
     <title>@yield('title', 'Default Title')</title>
     <script src="https://kit.fontawesome.com/2ecaabd2c2.js" crossorigin="anonymous"></script>
   
-    @vite(['resources/js/app.js'])
+    @vite(['public/js/app.js'])
 </head>
 
 <body>

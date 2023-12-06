@@ -11,7 +11,7 @@
  <link rel="stylesheet" href="Css/style.css">
  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- <script src="\resources\js\app.js" defer></script>
+ <script src="\public\js\app.js" defer></script>
 </head>
 <body>
 <div class="container-fluid p-0 homecontainer1">
@@ -119,9 +119,9 @@
             </div>
         </div>
 
-        <div class="position-absolute top-0 end-0">
+        <div class="position-absolute top-0 end-0 ">
             <div class="row">
-                <div class="col-md-2">
+                <div>
                     <img class="techimg" src="./img/technician.png" alt="">
                 </div>
             </div>
@@ -140,7 +140,7 @@
         </div>
 
             <div class="servicesOffered1">
-                <div class="row row-cols-auto row-gap-2">
+                <div class="container d-flex justify-content-evenly row row-cols-auto row-gap-2">
                     <div class="col card">
                         <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
                         <div class="card-body">
