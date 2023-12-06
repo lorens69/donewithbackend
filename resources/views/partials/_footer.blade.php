@@ -5,11 +5,10 @@ style="background-color: #1E1B1B;height: 30vh; font-family: 'Raleway', sans-seri
   <div class="container w-25 h-100  d-flex flex-column justify-content-center mt-auto mb-auto  ">
     <div class="d-flex position-relative justify-content-center  ">
       <img src="/img/ShineMasters.png" height="80px" width="100px">
-      <span
-        style="border-right: 1px solid white;margin-left: 20px;margin-right: 20px;border-right-width: 2px; height: 100px;" id="standingline" name="standingline"></span>
-      <h2 class="text-uppercase mt-auto mb-auto" id="mael" name="mael">maelstorm </h2><img src="/img/maelstorm.png" id="mael2" name="mael2" width="100px"
-        height="80px" style="position: absolute;right: 0;">
-
+      <span style="border-right: 1px solid white;margin-left: 20px;margin-right: 20px;border-right-width: 2px; height: 100px;" id="standingline" name="standingline"></span>
+      <div>
+        <img src="/img/maelstrom2ndlogo.png" height="80px" width="auto">
+      </div>
     </div>
     <h5 class="mb-0 mt-4 text-center">
       Get your car accessories installed now for free!
