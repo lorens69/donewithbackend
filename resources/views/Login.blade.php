@@ -17,13 +17,14 @@
         <div class="loginmaincon">
             <div class="logo">
                 <img src="img/logo.png" width="150px" height="150px" style="margin-top: 33px;">
-                <h1 class="login">Log In</h1>
                 <img src="img/car-service.png" width="240px" height="50%">
             </div>
 
             <div class="welcomeback">
 
-
+                <div>
+                    <h3 style="font-size: 40px;">Login</h3> <br>
+                </div>
                 <form action="{{ route('login.post') }}" method="POST">
 
                     @csrf
