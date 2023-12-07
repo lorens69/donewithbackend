@@ -49,7 +49,7 @@ function registerPost (Request $request) {
     $data['name'] = $request->name;
     $data['email'] = $request->email;
     $data['password'] = Hash::make($request->password);
-    $user = user::create($data);
+    $user = User::create($data);
 
     if(!$user){
         return redirect(route('register'))->with('error', 'Registration Failed! Please input the right information.');
