@@ -68,7 +68,7 @@
         width: 244px;
         height: 323px;
         border-radius: 10px;
-        box-shadow: rgba(245, 205, 181, 0.554) 0px -23px 25px 0px inset, rgba(245, 205, 181, 0.554) 0px -36px 30px 0px inset, rgba(245, 205, 181, 0.554) 0px -79px 40px 0px inset, rgba(245, 205, 181, 0.554) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
+        box-shadow: rgba(245, 205, 181, 0.554) 0px -23px 25px 0px inset, rgba(245, 205, 181, 0.554) 0px -36px 30px 0px inset, rgba(245, 205, 181, 0.554) 0px -79px 40px 0px inset, rgba(245, 205, 181, 0.554) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
     .cardtitle{
         font-size: 16px;
@@ -85,7 +85,7 @@
         width: 180px;
         padding: 8px;
     }
-    
+
 
     @media (min-width:180px) and (max-width:320px) {
         .servicessearch{
@@ -136,7 +136,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-        } 
+        }
 
     }
     @media(min-width:768px){
@@ -154,7 +154,7 @@
             display: flex;
             margin-top: 20px;
             flex-wrap: wrap;
-        } 
+        }
     }
     </style>
 <body>

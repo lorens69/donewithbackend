@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Landing Page')
+@section('title', 'Bertology')
 
 @section('content')
 
