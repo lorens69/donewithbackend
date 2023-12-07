@@ -15,7 +15,7 @@
 
   </div>
 
-  <div class="container  h-100 d-flex flex-column justify-content-center m-auto align-items-center  " style="width: fit-content;">
+  <div class="container  h-100 d-flex flex-column justify-content-center m-auto align-items-center mt-2 mb-2  " style="width: fit-content;">
     <h4 class="fw-bold ">Useful Links</h4>
     <div class="usefullinks">
       <h6>Home</h6>
