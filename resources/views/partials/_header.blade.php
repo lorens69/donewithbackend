@@ -9,10 +9,13 @@
       background-color: #FF6000; /* Set the color of the underline */
       transform: translateX(-50%); /* Center the underline under the text */
     }
+    @media(min-width:180px) and (max-width:320px){
+
+    }
   </style>
 
   <header style="background-color: #1E1B1B; position: sticky; top: 0; z-index: 5; font-family: 'Raleway', sans-serif;">
-    <nav class="navbar navbar-expand-lg navbar-dark m-0">
+    <nav class="navbar navbar-expand-sm navbar-dark m-0">
       <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="#"><img src="./img/bertologylogo.png" alt="" width="70px" height="50px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"

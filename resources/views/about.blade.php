@@ -16,7 +16,12 @@
 </head>
 
 <style>
-@media screen and (max-width: 599px) {
+@media (min-width:180px) and (max-width: 599px) {
+    .content{
+        text-align: center; 
+        width: 45%;
+        letter-spacing:1px; 
+    }
 .mission-container{
     display: flex;
     flex-direction:column;
@@ -61,21 +66,59 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 10px; 
     height:auto;
-    margin:46px; 
     width:fit-content;
+    margin-bottom: 44px;
 }
 .founder-container h5{
     margin: 0 auto!important;
     width: 90%!important;
 }
 .founderheader{
-    font-size:40px; 
+    font-size:35px; 
     letter-spacing:1px; 
     margin-top:37px; 
     margin-left:17px;
-
+}
+.founderimage{
+    width:211px;
+    height:197px;
+}
 
 }
+@media (min-width:600px){
+    .content{
+        text-align: justify; 
+        width: 45%;
+        letter-spacing:1px; 
+    }
+    .founder-container{
+    display: flex;
+    flex-direction: column;
+    border: #FF6000 2px solid;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px; 
+    height:auto;
+    width:fit-content;
+}
+.founder-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 23px;
+
+}
+.founderheader{
+    font-size:35px; 
+    letter-spacing:1px; 
+    margin-top:37px; 
+    margin-left:17px;
+}
+.founderimage{
+    width:211px;
+    height:197px;
+}
+
 }
 
 </style>
@@ -104,7 +147,7 @@
     <div class="container-fluid h-50 d-flex bg-opacity-75 text-white text-uppercase justify-content-evenly align-items-center mission-container"
     style="background-image:url(./img/about/AboutPageBg1.png);">
         <h1 class="m-sm-5" style="font-size:54px;"><span class="text-black" style="text-decoration: underline orange;">Our</span> Mission</h1>
-        <h5 class="text-white m-5 pt-sm-5 lh-base" style="text-align: justify; width: 45%; letter-spacing:1px;">
+        <h5 class="text-white m-5 pt-sm-5 lh-base content">
             At Bertology Car Accessories, our mission is to fuel the automotive passion of enthusiasts by providing unparalleled enhancements for their vehicles. We are dedicated to delivering top-notch products and services that not only elevate the aesthetics of vehicles but also enhance their functionality.
         </h5>
     </div>
@@ -113,7 +156,7 @@
     <div class="container-fluid d-flex justify-content-between align-items-center vision-container"
         style="height: 50vh; background-image:url(./img/about/AboutPageBg2.png);">
         <h1 class="text-center m-5 text-white tounhide" style=" font-size:54px;display: none;"><span style="text-decoration: underline #FF6000;color: #FF6000;">Our</span> Vision</h1>
-        <h5 class="text-white m-5 lh-base" style="text-align: justify; width: 45%;letter-spacing:1px; ">
+        <h5 class="text-white m-5 lh-base content">
             Bertology envisions being the go-to destination for discerning automobile enthusiasts, setting the standard for innovation and excellence in the car accessories industry. We aspire to continuously evolve, adapting to the dynamic needs of our tech-savvy audience while remaining true to our commitment to quality and uniqueness.
         </h5>
         <h1 class="text-center m-5 text-white w-50 tohide" style=" font-size:54px;"><span style="text-decoration: underline #FF6000;color: #FF6000;">Our</span> Vision</h1>
@@ -123,10 +166,9 @@
     {{-- Meet the Founder --}}
     <div class="container-fluid mt-sm-3 d-flex flex-column" style="height: auto;">
         <h1 class="text-uppercase text-black fw-bolder founderheader "><span style="text-decoration: underline #FF6000 5px;">Meet</span> the founder</h1>
-        <div class="container-fluid d-flex justify-content-evenly align-items-center founder-container  "
-            style="border: #FF6000 2px solid; border-radius: 10px; height:auto; margin:46px; width:fit-content;">
-            <div class="d-flex flex-column justify-content-center" style="height: 98%; padding-top:15px; padding-bottom:15px;">
-                <img src="./img/about/founderPicture.png" width="300px" name="Nilbert" style="border-radius: 5px;">
+        <div class="container-fluid founder-container  ">
+            <div class="d-flex flex-column justify-content-center" style="align-items:center;height: 98%; padding-top:15px; padding-bottom:15px;">
+                <img class="founderimage" src="./img/about/founderPicture.png" name="Nilbert" style="border-radius: 5px;">
                 <label for="Nilbert" class="text-uppercase text-center fw-bolder mt-3" style="color: #FF6000;padding:6px; background-color:white;border-color:black; border-width:2px; border-style:solid; border-radius:5px;">Nilbert M.
                     Umaran / Head technician</label>
             </div>

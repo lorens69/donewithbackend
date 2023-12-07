@@ -51,7 +51,7 @@ class ProductController extends Controller
     $showproduct = Product::all();
 
       // Set the number of items per page (e.g., 9 items per page)
-    $perPage = 5;
+    $perPage = 2;
 
     // Create a new collection from the services array
     $servicesCollection = new Collection($showproduct);

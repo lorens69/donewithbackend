@@ -15,7 +15,7 @@
 
   </div>
 
-  <div class="container  h-100 d-flex flex-column justify-content-center m-auto align-items-center mt-2 mb-2  " style="width: fit-content;">
+  <div class="container d-flex flex-column justify-content-center m-auto align-items-center mt-2 mb-2  " style="width: fit-content;">
     <h4 class="fw-bold ">Useful Links</h4>
     <div class="usefullinks">
       <h6>Home</h6>
@@ -31,14 +31,75 @@
 
     <h3>Connect with us now</h3>
     <div class="brand d-flex">
-      <i class="fa-brands fa-facebook" style="color: #FF6000;font-size: 35px;margin: 10px;"></i>
-      <i class="fa-brands fa-facebook-messenger" style="color: #FF6000;font-size: 35px;margin: 10px;"></i>
+      <i class="fa-brands fa-facebook footericons"></i>
+      <i class="fa-brands fa-facebook-messenger footericons"></i>
     </div>
 
   </div>
 
   <style>
-    @media(min-width:320px) and (max-width:767px){
+     @media(min-width:180px) and (max-width:320px){
+
+      .footer {
+        text-align: center;
+      }
+
+      .footer h2 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+      }
+
+      .footer h5 {
+        font-size: 9px;
+      }
+      .footer h4 {
+        font-size: 13px;
+      }
+      .footer h6 {
+        font-size: 11px;
+        margin-bottom:4px;
+      }
+
+      .footer h3 {
+        font-size: 14px;
+      }
+      .footericons{
+        color: #FF6000;
+        font-size: 20px;
+        margin: 10px;
+      }
+
+      #mael {
+        display: none;
+      }
+
+      #mael2 {
+        display: none;
+      }
+
+      #standingline {
+       display: none;
+      }
+      .maelstromlogo{
+        display: none;
+      }
+      .footerbackground{
+        background-color: #1E1B1B;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-family: 'Raleway', sans-serif;
+      }
+      .usefullinks{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+    }
+    @media(min-width:321px) and (max-width:767px){
       .footer {
         text-align: center;
       }
@@ -46,6 +107,11 @@
       .footer img {
         width: 80%;
         max-width: 150px;
+      }
+      .footericons{
+        color: #FF6000;
+        font-size: 35px;
+        margin: 10px;
       }
 
       .footer h2 {
@@ -100,6 +166,11 @@
         background-color: #1E1B1B;
         height: 30vh; 
         font-family: 'Raleway', sans-serif;
+      }
+      .footericons{
+        color: #FF6000;
+        font-size: 35px;
+        margin: 10px;
       }
       .usefullinks{
         width: 203px;
