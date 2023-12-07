@@ -27,6 +27,8 @@
     flex-direction:column;
     justify-content: center!important;
     align-items: center!important;
+    padding-top:20px;
+    padding-bottom:20px;
 }
 .mission-container h1{
     margin-top: 52px;
@@ -42,6 +44,8 @@
     flex-direction: column;
     justify-content: center!important;
     align-items: center!important;
+    padding-top:20px;
+    padding-bottom:20px;
 }
 .vision-container h1{
     margin: 0!important;
@@ -144,7 +148,7 @@
 
     {{-- Our Mission --}}
 
-    <div class="container-fluid h-50 d-flex bg-opacity-75 text-white text-uppercase justify-content-evenly align-items-center mission-container"
+    <div class="container-fluid d-flex bg-opacity-75 text-white text-uppercase justify-content-evenly align-items-center mission-container"
     style="background-image:url(./img/about/AboutPageBg1.png);">
         <h1 class="m-sm-5" style="font-size:54px;"><span class="text-black" style="text-decoration: underline orange;">Our</span> Mission</h1>
         <h5 class="text-white m-5 pt-sm-5 lh-base content">
@@ -154,7 +158,7 @@
 
     {{-- Our Vision --}}
     <div class="container-fluid d-flex justify-content-between align-items-center vision-container"
-        style="height: 50vh; background-image:url(./img/about/AboutPageBg2.png);">
+        style="background-image:url(./img/about/AboutPageBg2.png);">
         <h1 class="text-center m-5 text-white tounhide" style=" font-size:54px;display: none;"><span style="text-decoration: underline #FF6000;color: #FF6000;">Our</span> Vision</h1>
         <h5 class="text-white m-5 lh-base content">
             Bertology envisions being the go-to destination for discerning automobile enthusiasts, setting the standard for innovation and excellence in the car accessories industry. We aspire to continuously evolve, adapting to the dynamic needs of our tech-savvy audience while remaining true to our commitment to quality and uniqueness.
