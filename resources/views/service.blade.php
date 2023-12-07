@@ -69,7 +69,6 @@
         height: 323px;
         border-radius: 10px;
         box-shadow: rgba(245, 205, 181, 0.554) 0px -23px 25px 0px inset, rgba(245, 205, 181, 0.554) 0px -36px 30px 0px inset, rgba(245, 205, 181, 0.554) 0px -79px 40px 0px inset, rgba(245, 205, 181, 0.554) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
-        box-shadow: rgba(245, 205, 181, 0.554) 0px -23px 25px 0px inset, rgba(245, 205, 181, 0.554) 0px -36px 30px 0px inset, rgba(245, 205, 181, 0.554) 0px -79px 40px 0px inset, rgba(245, 205, 181, 0.554) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
     }
     .cardtitle{
         font-size: 16px;
@@ -87,24 +86,11 @@
         padding: 8px;
     }
     
-    @media(min-width:768px){
-        .servicessearch{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 1px;
 
-        }
-
-    }
-    @media (min-width:320px) and (max-width:767px){
+    @media (min-width:180px) and (max-width:320px) {
         .servicessearch{
             display: none;
         }
-
-    }
-
-    @media screen and (max-width:599px) {
         .services-container {
             width: 98%!important;
 
@@ -115,7 +101,7 @@
         }
         .services-header .textStyle{
             display: block;
-            text-align: center;
+            text-align: left;
         }
         .services-header button{
             display: block!important;
@@ -123,15 +109,63 @@
         }
 
     }
+
+    @media (min-width:321px) and (max-width:767px) {
+        .servicessearch{
+            display: none;
+        }
+        .services-container {
+            width: 98%!important;
+
+        }
+        .services-container .services-header{
+            display:flex;
+            justify-content: left;
+        }
+        .services-header .textStyle{
+            display: block;
+            text-align: left;
+        }
+        .services-header button{
+            display: block!important;
+            margin:25px auto;
+        }
+        .servicecardcontent{
+            display: flex;
+            margin-top: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        } 
+
+    }
+    @media(min-width:768px){
+        .servicessearch{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1px;
+
+        }
+        .services-container .services-header{
+            display:flex;
+        }
+        .servicecardcontent{
+            display: flex;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        } 
+    }
     </style>
 <body>
     @include('partials._header')
 
-    <div class="container-fluid mt-5 services-container" style="width:80vw;min-height:52.3vh">
+    <div class="container-fluid mt-sm-5 services-container" style="width:80vw;min-height:52.3vh">
 
-        <div class="d-flex justify-content-between mt-2 services-header">
+        <div class=" mt-2 services-header">
             <div>
                 <span class="textStyle" name="title">CAR SERVICES</span>
+                <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%; border-width: 5px;">
             </div>
 
 
@@ -148,7 +182,7 @@
 
         </div>
 
-        <div class=" d-flex mt-3 justify-content-between flex-wrap  w-100">
+        <div class="servicecardcontent w-100">
             @foreach($services as $service)
             <div class=" cardStyle col-lg-3 m-4 p-0">
                 <div class="card-body d-flex  align-items-start flex-column pt-0 ps-0 pe-0 ">

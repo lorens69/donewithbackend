@@ -27,7 +27,8 @@
     <div class="container-fluid mt-5 products-container" style="width:90%;">
         <div class="d-flex justify-content-between mt-2 products-header">
             <div>
-                <span class="textStyle fs-2" name="title" style="font-family: 'Raleway', sans-serif; ">CAR ACCESSORIES</span>
+                <span class="textStyle" name="title" style="font-family: 'Bayon', sans-serif;">CAR ACCESSORIES</span>
+                <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%; border-width: 5px;">
             </div>
         </div>
         <br>
@@ -77,16 +78,16 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
-            
+
             <div class="service-card row-cols-auto" >
                 @foreach($showproduct as $product)
 
-                <article class="product-item col-6">
+                <article class="product-item">
 
-                        <img src="{{asset('upload/'.$product->image)}}" width="100%" height="100%" alt="fiksur">
+                        <img src="{{asset('upload/'.$product->image)}}" width="217px" height="150px" alt="fiksur">
                         <br>
                     <div class="infos">
                         <div class="item-info">
@@ -102,7 +103,7 @@
                                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
                                 @endauth
 
-                                <button class="btn btn-block"><i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i></button>
+                                <button class="btn btn-block" style="margin: 3px;padding: 15px;background-color:#FF6000;"><i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i></button>
                             </form>
                         </div>
                     </div>
@@ -113,13 +114,6 @@
                     <img class="img-thumbnail" src="./img/illustrations/noproducts.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
                 </div>
                 @endif
-            </div>
-            
-        </div>
-        <div class="d-flex align-items-center ">
-            <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%;"> </span>
-            <div class="d-inline-flex justify-content-end mt-4">
-                {{ $products->links() }}
             </div>
         </div>
 

@@ -11,7 +11,7 @@
  <link rel="stylesheet" href="Css/style.css">
  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- <script src="\resources\js\app.js" defer></script>
+ <script src="\public\js\app.js" defer></script>
 </head>
 <body>
 <div class="container-fluid p-0 homecontainer1">
@@ -37,7 +37,7 @@
     <section class="container partners" >
     <h1 class="text-uppercase display-sm-3">Our Trusted Brands</h1>
     <hr class="hr m-1" style= "width: 100px; color:#FF6000; opacity:100%; border-width: 5px;">
-        <div class="row row-cols-auto" style="justify-content: space-evenly;">
+        <div class="row row-cols-auto" style="justify-content: space-evenly; margin:auto;">
             <div class="col-md-2 align-middle">
                 <img class="rounded-circle" src="./img/home/1stBrand.png">
             </div>
@@ -119,9 +119,9 @@
             </div>
         </div>
 
-        <div class="position-absolute top-0 end-0">
+        <div class="position-absolute top-0 end-0 ">
             <div class="row">
-                <div class="col-md-2">
+                <div>
                     <img class="techimg" src="./img/technician.png" alt="">
                 </div>
             </div>
@@ -140,7 +140,7 @@
         </div>
 
             <div class="servicesOffered1">
-                <div class="row row-cols-auto row-gap-2">
+                <div class="container d-flex justify-content-evenly row row-cols-auto row-gap-2">
                     <div class="col card">
                         <img src="./img/usephoto3.webp" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -187,7 +187,7 @@
                 @foreach($randomItems as $items)
 
                 <article class="cCarousel-item">
-                    <img src="{{asset('upload/'.$items->image)}}">
+                    <img src="{{asset('upload/'.$items->image)}}" width="100%" height="100%">
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{$items->name}}</h3>
@@ -196,7 +196,7 @@
                         <div class="icons text-center">
                             <form action="{{ route('homeaddToCart', ['productId' => $items->id]) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-block" style="background-color: rgba(0, 0, 255, 0); border: none; color: white; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                <button type="submit" class="btn btn-block" style="padding: 10px; border-radius:9px;background-color: #FF6000;">
                                     <i class="bi bi-cart-plus" style="font-size: 1.5rem;"></i>
                                 </button>
                             </form>
@@ -258,10 +258,16 @@
 </body>
 
 <style>
-    @media (max-width: 768px) {
+    @media (min-width: 180px) and (max-width:767px) {
 
         #CL {
             display: none;
+        }
+    }
+    @media (min-width: 768px) {
+
+        #CL {
+            margin-top:44px;
         }
     }
 </style>

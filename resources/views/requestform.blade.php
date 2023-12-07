@@ -97,15 +97,6 @@
                             </div>
                         </div>
                     </form>
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                 </div>
             </div>
 
@@ -114,7 +105,7 @@
                 <div class="requestform">
                     <h5 class="text-center mb-4" style="font-size: 30px;color: rgb(54, 49, 49)"> BERTOLOGY CAR SERVICE REQUEST FORM</h5>
                     <form action="{{ route('request.post') }}" method="POST">
-                       
+
                         @csrf
 
                         <div class="row justify-content-between text-left">
@@ -184,15 +175,6 @@
                             </div>
                         </div>
                     </form>
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                 </div>
             </div>
             @endif

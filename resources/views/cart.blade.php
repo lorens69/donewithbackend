@@ -204,7 +204,7 @@
             <div class="col-md-2 cartheadertext">Total Price</div>
             <div class="col-md-2 p-0 cartheadertext"></div>
         </div>
-        
+
         @foreach($products as $cart)
         <div class="d-flex col-12 text-center align-items-center mt-2 justify-content-evenly">
             <div class="d-flex col-md-2 justify-content-center p-0">
@@ -250,7 +250,7 @@
 
     @else
             <div class="text-center mt-5">
-                <img class="img-thumbnail" src="./img/illustrations/noitemscart.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
+                <img class="img-thumbnail" src="./img/illustrations/noitemscart.png" style="width: 500px; height:500px; margin-bottom:40px; border:none;">
             </div>
     @endif
 

@@ -29,7 +29,7 @@ class GalleryController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
-        $grid->column('image', __('Image'));
+        $grid->column('image')->image();
         $grid->column('album_type', __('Album type'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
