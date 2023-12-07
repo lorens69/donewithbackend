@@ -187,7 +187,7 @@
                 @foreach($randomItems as $items)
 
                 <article class="cCarousel-item">
-                    <img src="{{asset('upload/'.$items->image)}}">
+                    <img src="{{asset('upload/'.$items->image)}}" width="100%" height="100%">
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{$items->name}}</h3>
@@ -196,7 +196,7 @@
                         <div class="icons text-center">
                             <form action="{{ route('homeaddToCart', ['productId' => $items->id]) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-block" style="background-color: rgba(0, 0, 255, 0); border: none; color: white; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                <button type="submit" class="btn btn-block" style="padding: 10px; border-radius:9px;background-color: #FF6000;">
                                     <i class="bi bi-cart-plus" style="font-size: 1.5rem;"></i>
                                 </button>
                             </form>
@@ -258,10 +258,16 @@
 </body>
 
 <style>
-    @media (max-width: 768px) {
+    @media (min-width: 180px) and (max-width:767px) {
 
         #CL {
             display: none;
+        }
+    }
+    @media (min-width: 768px) {
+
+        #CL {
+            margin-top:44px;
         }
     }
 </style>

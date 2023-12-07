@@ -10,7 +10,17 @@ body {
     font-family: 'Bayon', sans-serif;
     background-color: white;
 }
+@media(min-width:180px) and (max-width:320){
+  body {
+    box-sizing: border-box;
+    margin: -1px;
+    padding: 0px;
+    font-family: 'Bayon', sans-serif;
+    background-color: white;
+    width: auto;
+}
 
+}
 .Loginpage {
     display: flex;
     justify-content: center;
@@ -147,21 +157,44 @@ body {
 .homecontainer1{
   height: auto;
 }
-@media (min-width:200px) and (max-width:319px){
+@media (min-width:180px) and (max-width:320px){
+  .homebackground{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 16px;
+    border-radius:10px;
+    letter-spacing:1px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    width: fit-content;
+  }
+  .hometitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bolder;
+  }
+  .hometext{
+    display: flex;
+    justify-content: center;
+    font-size:15px;
+    text-align: center;
+  }
   .homeheaderbuttons{
     display: flex;
     align-items: center;
     justify-content: center;
     /* margin-left: 50px; */
     margin-bottom: 50px;
-    gap:40px;
+    gap:20px;
   }
   .homebuttons{
     background-color: #FF6000; 
-    font-size:12px; 
+    font-size:10px; 
     color:white;
     letter-spacing:1px;
-    width: 150px;
+    width: 138px;
   }
   .homebuttons:hover{
     background-color: #fdf4ed;
@@ -172,7 +205,7 @@ body {
   }
 }
 
-@media(min-width:320px) and (max-width:767px) {
+@media(min-width:321px) and (max-width:767px) {
   .homebackground{
     display: flex;
     flex-direction: column;
@@ -377,7 +410,7 @@ body {
   height: 180px;
 }
   
-@media (min-width: 200px) and (max-width:767px){
+@media (min-width: 180px) and (max-width:767px){
   .servicesOffered1{
     display: flex;
     margin-top: -78px;
@@ -396,6 +429,7 @@ body {
   }
   .cardTitle{
     text-transform: uppercase;
+    text-align: center;
     font-size: 14px;
   }
   .servicesOffered .card-text{
@@ -431,7 +465,125 @@ body {
 /*--------------------------------------------------------------
 # Popular Items
 --------------------------------------------------------------*/
-@media (min-width:200px) and (max-width:767px){
+@media(min-width:180px) and (max-width:320px){
+  .popularItems{
+    margin-top:34px;
+  }
+  #carousel-vp {
+    height: 225px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+  }
+  #cCarousel #prev {
+    font-size: 16px;
+    left: -4px;
+  }
+  #cCarousel #next {
+    font-size: 16px;
+    right: -5px;
+  }
+  
+#cCarousel {
+  position: relative;
+  margin: auto;
+  margin-left: -1px;
+}
+
+#cCarousel .arrow {
+  position: absolute;
+  top: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  font-size: 26px;
+  color:#FF6000;
+  cursor: pointer;
+}
+
+
+
+#cCarousel #cCarousel-inner {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 12px;
+  padding-left: 11px;
+}
+
+.cCarousel-item {
+  width: 133px;
+  border: 1px solid;
+  border-color: #FF6000;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cCarousel-item img {
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  max-height: 100px;
+  color: white;
+  background-color: #FBD3BB;
+}
+
+.cCarousel-item .infos {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  color: black;
+}
+
+.cCarousel-item .infos .item-info{
+  width: 58%;
+}
+
+.cCarousel-item .infos .icons{
+  background-color: #FF6000;
+  border-radius: 5px;
+}
+
+.cCarousel-item .infos .item-info .title {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  padding-top: 5px;
+}
+
+.cCarousel-item .infos .item-info .description {
+  font-size: 12px;
+  color: black;
+}
+
+.cCarousel-item .infos .item-info .price {
+  font-size: 14px;
+  font-weight: bold;
+  color: orangered;
+}
+
+.cCarousel-item .infos button {
+  background: #222;
+  padding: 10px 30px;
+  border-radius: 15px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+}
+
+@media (min-width:321px) and (max-width:767px){
   .popularItems{
     margin-top:12px;
   }
@@ -640,8 +792,6 @@ body {
 }
 
 .cCarousel-item .infos .icons{
-  width: 30%;
-  background-color: #FF6000;
   border-radius: 5px;
 }
 
@@ -1284,6 +1434,7 @@ body {
     height: 241px;
     border: 1px solid;
     border-color: #FF6000;
+    box-shadow: rgba(241, 239, 237, 0.554) 0px -23px 25px 0px inset, rgba(214, 212, 210, 0.554) 0px -36px 30px 0px inset, rgba(244, 242, 241, 0.554) 0px -79px 40px 0px inset, rgba(245, 205, 181, 0.554) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -1300,7 +1451,6 @@ body {
     background-color: #FBD3BB;
 }
 .product-item .infos {
-    padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1311,14 +1461,15 @@ body {
     width: 58%;
 }
 
-.product-item .infos .icons{
+/* .product-item .infos .icons{
     width: 30%;
     background-color: #FF6000;
     border-radius: 5px;
-}
+} */
 
 .product-item .infos .item-info .title {
     font-size: 14px;
+    letter-spacing: 1px;
     font-weight: bold;
     color: black;
     padding-top: 5px;
@@ -1334,8 +1485,38 @@ body {
     font-weight: bold;
     color: orangered;
 }
+@media (min-width: 180px) and (max-width:320px){
 
-@media (min-width: 320px) and (max-width:767px){
+  .product-items-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom:31px; 
+      margin-top:-40px;
+  }
+  .accordion{
+      margin-top: 33px;
+      margin-right: auto;
+
+  }
+  .product-item {
+    margin: 4px;
+    margin-bottom:35px;
+    width: 219px;
+    height: 241px;
+    border: 1px solid;
+    border-color: #FF6000;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: column;
+}
+ 
+
+}
+@media (min-width: 321px) and (max-width:767px){
 
   .product-items-container{
       display: flex;
@@ -1415,9 +1596,8 @@ body {
       margin-top: 26px;
       justify-content: start;
       flex-wrap: wrap;
-      width: 75%;
       padding: 20px;
-      gap:13px;
+      row-gap:38px;
   }
   .product-item{
       margin:auto;
