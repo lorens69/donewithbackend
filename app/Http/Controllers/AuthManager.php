@@ -20,7 +20,7 @@ function maglogin() {
 }
 
 function register() {
-    return view('register');
+    return view('Register');
 }
 
 function loginPost(Request $request) {
