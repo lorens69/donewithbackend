@@ -103,7 +103,7 @@ Route::get('/product', [ProductController::class, 'showProducts'])->name('produc
 
 
 Route::get('/register', function () {
-    return view('Register');
+    return view('register');
 })->name('register');
 
 
