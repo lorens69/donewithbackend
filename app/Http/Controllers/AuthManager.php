@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\user;
 // use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,7 +49,7 @@ function registerPost (Request $request) {
     $data['name'] = $request->name;
     $data['email'] = $request->email;
     $data['password'] = Hash::make($request->password);
-    $user = User::create($data);
+    $user = user::create($data);
 
     if(!$user){
         return redirect(route('register'))->with('error', 'Registration Failed! Please input the right information.');
