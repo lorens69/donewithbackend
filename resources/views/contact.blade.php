@@ -385,7 +385,7 @@
 
     <div class="container-fluid mt-2 p-20px" style="width:100%;">
 
-    <div class="card-body d-flex justify-content-left align-items-center  mt-4 p-5 row col-lg-12 ">
+    <div class="card-body d-flex justify-content-left align-items-center  mt-4 row col-lg-12 ">
         <div class="card " style="background-color: #FFE6C7; max-width:fit-content" >
             <img src="./img/24_7Contact.png" width="100%" alt="" style="display: mt-5; margin:10px">
             <p>Phone Number: <b>09617590889</b></p>
