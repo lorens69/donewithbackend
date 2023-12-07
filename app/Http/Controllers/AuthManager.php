@@ -16,7 +16,7 @@ class AuthManager extends Controller
 
 
 function maglogin() {
-    return view('login');
+    return view('Login');
 }
 
 function register() {
