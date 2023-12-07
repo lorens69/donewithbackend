@@ -78,10 +78,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
-            
+
             <div class="service-card row-cols-auto" >
                 @foreach($showproduct as $product)
 
@@ -114,13 +114,6 @@
                     <img class="img-thumbnail" src="./img/illustrations/noproducts.png" style="width: 300px; height:300px; margin-bottom:40px; border:none;">
                 </div>
                 @endif
-            </div>
-            
-        </div>
-        <div class="d-flex align-items-center ">
-            <span style="display: inline-block; border-bottom:2px solid #FFA559;width:85%;"> </span>
-            <div class="d-inline-flex justify-content-end mt-4">
-                {{ $products->links() }}
             </div>
         </div>
 
