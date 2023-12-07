@@ -23,7 +23,9 @@
 
             <div class="welcomeback">
 
-
+                <div>
+                    <h3 style="font-size: 40px;">Register</h3> <br>
+                </div>
                 <form action="{{ route('register.post') }}" method="POST">
 
 
@@ -73,7 +75,7 @@
         }
 
         .registermaincon {
-            height: 70%;
+            height: 80%;
         }
         .Registerpage {
             display: flex;
