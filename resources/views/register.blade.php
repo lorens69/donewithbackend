@@ -17,14 +17,13 @@
         <div class="registermaincon">
             <div class="registerlogo">
                 <img src="img/logo.png" width="190px" height="150px" style="margin-top: 33px;">
-                <h1 class="login">Register</h1>
                 <img src="img/car-service.png" width="240px" height="250px">
             </div>
 
             <div class="welcomeback">
 
                 <div>
-                    <h3 style="font-size: 40px;">Register</h3> <br>
+                    <h3 style="font-size: 40px;" class="rtext">Register</h3> <br>
                 </div>
                 <form action="{{ route('register.post') }}" method="POST">
 
@@ -68,10 +67,10 @@
         .registerlogo {
             display: none;
         }
-
         .welcomeback {
             width: 300px;
             height: auto;
+            margin: 0;
         }
 
         .registermaincon {
@@ -82,8 +81,8 @@
             justify-content: center;
             top: 50%;
             left: 50%;
-            margin-top: 50px;
-            margin-bottom: -36px;
+            /* margin-top: 50px;
+            margin-bottom: -36px; */
             height: 119vh;
         }
     }

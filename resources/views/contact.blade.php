@@ -383,7 +383,7 @@
 
     <div class="d-flex flex-row-reverse" >
 
-    <div class="container-fluid mt-2 p-5" style="width:100%;">
+    <div class="container-fluid mt-2 p-20px" style="width:100%;">
 
     <div class="card-body d-flex justify-content-left align-items-center  mt-4 p-5 row col-lg-12 ">
         <div class="card " style="background-color: #FFE6C7; max-width:fit-content" >
