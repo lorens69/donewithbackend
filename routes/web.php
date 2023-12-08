@@ -7,10 +7,7 @@ use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\GalleryController;
-
-use App\Http\Controllers\UserController;
-use Doctrine\DBAL\Logging\Middleware;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UuserController;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Services;
@@ -74,8 +71,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/removecart/{id}', [ProductController::class, 'removeCart'])->name('removeCart');
     Route::post('/ordernow', [ProductController::class, 'orderNow'])->name('ordernow');
     Route::get('/myorder', [ProductController::class, 'myOrders'])->name('myOrders');
-    Route::get('/userdetails', [UserController::class, 'showuserdetails'])->name('mydetails');
-    Route::get('/updateprofile/{id}', [UserController::class, 'updateprofile']);
+    Route::get('/userdetails', [UuserController::class, 'showuserdetails'])->name('mydetails');
+    Route::get('/updateprofile/{id}', [UuserController::class, 'updateprofile']);
     // routes/web.php
 
 Route::post('/cart/{cartId}/increase', [ProductController::class, 'increaseQuantity'])->name('cart.increase');

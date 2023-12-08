@@ -22,4 +22,5 @@ Route::group([
     $router->resource('orders', OrderController::class);
     $router->resource('user-reservations', UserReservationController::class);
     $router->resource('galleries', GalleryController::class);
+    $router->resource('uusers', Uuser::class);
 });
