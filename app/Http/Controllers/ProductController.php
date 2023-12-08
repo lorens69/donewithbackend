@@ -165,7 +165,7 @@ class ProductController extends Controller
             $user_id = Auth::id();
 
             $existingCartItem = DB::table('cart')
-            ->where('uyser_id', $user_id)
+            ->where('user_id', $user_id)
             ->where('product_id', $productId)
             ->first();
 
