@@ -165,7 +165,7 @@ class ProductController extends Controller
             $user_id = Auth::id();
 
             $existingCartItem = DB::table('cart')
-            ->where('uuser_id', $user_id)
+            ->where('uyser_id', $user_id)
             ->where('product_id', $productId)
             ->first();
 
@@ -177,7 +177,7 @@ class ProductController extends Controller
             } else {
                 // If the item is not in the cart, add it with a quantity of 1
                 DB::table('cart')->insert([
-                    'uuser_id' => $user_id,
+                    'user_id' => $user_id,
                     'product_id' => $productId,
                     'quantity' => 1,
                 ]);
@@ -200,7 +200,7 @@ class ProductController extends Controller
             $user_id = Auth::id();
 
             $existingCartItem = DB::table('cart')
-            ->where('uuser_id', $user_id)
+            ->where('user_id', $user_id)
             ->where('product_id', $productId)
             ->first();
 
@@ -212,7 +212,7 @@ class ProductController extends Controller
             } else {
                 // If the item is not in the cart, add it with a quantity of 1
                 DB::table('cart')->insert([
-                    'uuser_id' => $user_id,
+                    'user_id' => $user_id,
                     'product_id' => $productId,
                     'quantity' => 1,
                 ]);
@@ -235,13 +235,13 @@ class ProductController extends Controller
             $user_id = Auth::id();
             $products = DB::table('cart')
             ->join('products', 'cart.product_id', '=', 'products.id')
-            ->where('cart.uuser_id', $user_id)
+            ->where('cart.user_id', $user_id)
             ->select('products.*', 'cart.id as cart_id','cart.quantity')
             ->get();
 
             $total = DB::table('cart')
             ->join('products', 'cart.product_id', '=', 'products.id')
-            ->where('cart.uuser_id', $user_id)
+            ->where('cart.user_id', $user_id)
             ->sum('products.price');
 
             $totalValue = 0;
@@ -249,7 +249,7 @@ class ProductController extends Controller
             foreach ($products as $product) {
                 $totalValue += $product->price * $product->quantity;
             }
-            $totalitem = DB::table('cart')->where('uuser_id', $user_id)->sum('quantity');
+            $totalitem = DB::table('cart')->where('user_id', $user_id)->sum('quantity');
 
             return view('cart', ['products'=>$products, 'total' =>$total, 'totalitem'=>$totalitem, 'totalValue'=>$totalValue])->with('products', $products);
 
@@ -285,7 +285,7 @@ class ProductController extends Controller
         foreach ($allCart as $cart) {
             $order = new Order;
             $order->product_id = $cart['product_id'];
-            $order->user_id = $cart['uuser_id'];
+            $order->user_id = $cart['user_id'];
             $order->status = "pending";
             $order->quantity = $cart["quantity"];
             $order->DO = now();
@@ -293,7 +293,7 @@ class ProductController extends Controller
         }
 
         // Clear the cart after placing the order
-        Cart::where('uuser_id', $user_id)->delete();
+        Cart::where('user_id', $user_id)->delete();
 
         return redirect('product')->with('success', 'Orders complete, find out more accessories!');
     }
@@ -303,18 +303,18 @@ class ProductController extends Controller
 
         $orders = DB::table('orders')
             ->join('products', 'orders.product_id', '=', 'products.id')
-            ->where('orders.uuser_id', $user_id)
+            ->where('orders.user_id', $user_id)
             ->get();
 
         $orderstotal = DB::table('orders')
             ->join('products', 'orders.product_id', '=', 'products.id')
-            ->where('orders.uuser_id', $user_id)
+            ->where('orders.user_id', $user_id)
             ->sum('products.price');
 
         // Example: Filtering orders by the current date
         $ordersbydate = DB::table('orders')
             ->join('products', 'orders.product_id', '=', 'products.id')
-            ->where('orders.uuser_id', $user_id)
+            ->where('orders.user_id', $user_id)
             ->whereDate('orders.created_at', now()->toDateString()) // Filtering by the current date
             ->get();
 
