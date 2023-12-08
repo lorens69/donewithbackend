@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-// use Illuminate\Foundation\Auth\User;
+// use App\Models\user;
+use App\Models\Uusers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +16,7 @@ class AuthManager extends Controller
 
 
 function maglogin() {
-    return view('login');
+    return view('Login');
 }
 
 function register() {
@@ -49,7 +49,7 @@ function registerPost (Request $request) {
     $data['name'] = $request->name;
     $data['email'] = $request->email;
     $data['password'] = Hash::make($request->password);
-    $user = user::create($data);
+    $user = Uusers::create($data);
 
     if(!$user){
         return redirect(route('register'))->with('error', 'Registration Failed! Please input the right information.');
