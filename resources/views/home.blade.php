@@ -27,7 +27,7 @@
         </div>
         <div class="homeheaderbuttons">
             <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
-            <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('product')}}'">TEST</div>
+            <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('product')}}'">CAR ACCESSORIES</div>
         </div>
     </div>
 
