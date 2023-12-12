@@ -197,12 +197,12 @@
             </div>
             @endforeach
         </div>
-        {{-- <div class="d-flex align-items-center ">
+        <div class="d-flex align-items-center ">
 
         <div class="d-inline-flex justify-content-end mt-4">
             {{ $services->links() }}
         </div>
-        </div> --}}
+        </div>
 
     </div> <br><br>
     @include('partials._footer')
