@@ -1710,3 +1710,108 @@ body {
   }
   
 }
+
+
+
+/*--------------------------------------------------------------
+# CONTACT US PAGE
+--------------------------------------------------------------*/
+@media (min-width:180px) and (max-width:768px) {
+  .contactTitle{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  .contacttitledef{
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    
+  }
+  .headtext{
+    margin-top: 30px;
+    font-size: 45px;
+  }
+  .contentcontainer{
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .contactbox{
+    width: 238px;
+    height:138px;
+    
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+  .contactmap{
+    display: flex;
+    flex-direction: column;
+    margin-top: 76px;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+  }
+  }
+
+@media (min-width:768px) {
+.contactTitle{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+.contacttitledef{
+  width: 871px;
+  height: auto;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  
+}
+.headtext{
+  margin-top: 30px;
+  font-size: 45px;
+}
+.contentcontainer{
+  margin-top: 77px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.contactbox{
+  width: 238px;
+  height:138px;
+  
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+.contactmap{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+}

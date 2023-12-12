@@ -179,13 +179,10 @@
     color: white;
     border: #342f2f 1px solid;
   }
-<<<<<<< Updated upstream
-=======
 
     }
->>>>>>> Stashed changes
 }
-}
+
 
 </style>
 <body>
