@@ -18,11 +18,21 @@
   <div class="container d-flex flex-column justify-content-center m-auto align-items-center mt-2 mb-2  " style="width: fit-content;">
     <h4 class="fw-bold ">Useful Links</h4>
     <div class="usefullinks">
-      <h6>Home</h6>
-      <h6>Products</h6>
-      <h6>Services</h6>
-      <h6>Gallery</h6>
-      <h6>Contact Us</h6>
+      <h6>
+        <a href="{{ route('home') }}">Home</a>
+      </h6>
+      <h6>
+        <a href="{{ route('product') }}">Products</a>
+      </h6>
+      <h6>
+        <a href="{{ route('service') }}">Services</a>
+      </h6>
+      <h6>
+        <a href="{{ route('gallery') }}">Gallery</a>
+      </h6>
+      <h6>
+        <a href="{{ route('contact') }}">Contact Us</a>
+      </h6>
 
     </div>
   </div>
@@ -96,6 +106,15 @@
         justify-content: center;
         align-items: center;
       }
+      .usefullinks a{
+        text-decoration: none;
+        color: white;
+      }
+      .usefullinks a:hover{
+        text-decoration: none;
+        color: #FF6000;
+      }
+
 
 
     }
@@ -157,6 +176,15 @@
         justify-content: center;
         align-items: center;
       }
+      .usefullinks a{
+        text-decoration: none;
+        color: white;
+      }
+      .usefullinks a:hover{
+        text-decoration: none;
+        color: #FF6000;
+      }
+
 
 
     }
@@ -180,6 +208,15 @@
         justify-content: center;
         align-items: center;
       }
+      .usefullinks a{
+        text-decoration: none;
+        color: white;
+      }
+      .usefullinks a:hover{
+        text-decoration: none;
+        color: #FF6000;
+      }
+
       
 
     }
