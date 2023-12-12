@@ -3,7 +3,7 @@
 
   <div class="container w-25 h-100  d-flex flex-column justify-content-center mt-auto mb-auto  ">
     <div class="d-flex position-relative justify-content-center  ">
-      <img src="/img/ShineMasters.png" height="80px" width="100px">
+      <img class="footerlogo" src="./img/bertologylogo.png">
       <span style="border-right: 1px solid white;margin-left: 20px;margin-right: 20px;border-right-width: 2px; height: 100px;" id="standingline" name="standingline"></span>
       <div class="maelstromlogo">
         <img src="/img/maelstrom2ndlogo.png" height="80px" width="auto">
@@ -53,6 +53,12 @@
       .footer {
         text-align: center;
       }
+      .footerlogo{
+        height: 59px;
+        width: 83px;
+        margin-bottom: 8px;
+      }
+      
 
       .footer h2 {
         font-size: 1.5rem;
@@ -184,6 +190,10 @@
         text-decoration: none;
         color: #FF6000;
       }
+      .footerlogo{
+        height: 80px;
+        width: 100px;
+      }
 
 
 
@@ -215,6 +225,10 @@
       .usefullinks a:hover{
         text-decoration: none;
         color: #FF6000;
+      }
+      .footerlogo{
+        height: 80px;
+        width: 100px;
       }
 
       
