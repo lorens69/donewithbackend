@@ -191,7 +191,7 @@
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{$items->name}}</h3>
-                            <p class="price">{{$items->price}}</p>
+                            <p class="price">Price: Php {{ number_format($product['price']) }}</p>
                         </div>
                         <div class="icons text-center">
                             <form action="{{ route('homeaddToCart', ['productId' => $items->id]) }}" method="POST">
