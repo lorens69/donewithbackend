@@ -160,7 +160,7 @@
 <body>
     @include('partials._header')
 
-    <div class="container-fluid mt-sm-5 services-container" style="width:80vw;min-height:52.3vh">
+    <div class="container-fluid mt-sm-5 services-container" style="width:89vw;min-height:52.3vh">
 
         <div class=" mt-2 services-header">
             <div>
