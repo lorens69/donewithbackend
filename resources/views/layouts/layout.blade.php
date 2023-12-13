@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script src="js/app.js" defer></script>
+    {{-- <script src="js/app.js" defer></script> --}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
