@@ -329,9 +329,10 @@
             <div class="service-card row-cols-auto" >
                 @foreach($showproduct as $product)
 
-                <article class="productitem" id="myBtn">
-
+                <article class="productitem">
+                    <div class="cardimage" id="myBtn">
                         <img src="{{asset('upload/'.$product->image)}}" width="220  px" height="150px" alt="fiksur">
+                    </div>
                         <br>
                     <div class="infos">
                         <div class="item-info">
@@ -423,13 +424,13 @@
         var modal = document.querySelector(".modal");
 
         // Get the button that opens the modal
-        var productitem = document.querySelectorAll(".productitem");
+        var cardimage = document.querySelectorAll(".cardimage");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal
-        productitem.forEach(element => {
+        cardimage.forEach(element => {
             element.onclick= function(v){
                 modal.style.display = "block";
             }
