@@ -46,7 +46,9 @@
             </li>
             <li class="d-flex nav-item position-relative {{ request()->is('cart') ? 'active' : '' }}" style="justify-content: center;margin-right: 15px;">
               <a class="nav-link my-1" href="{{ route('carts') }}"><i class="fa-solid fa-cart-shopping my-1 mx-3" style="font-size: 20px; color: #F24E1E;"></i></a>
-              <span class="cartnumber">1</span>
+              @if(auth()->check())
+              <span class="cartnumber">{{ $cartItemCount }}</span>
+                @endif
             </li>
             @if(Auth::user())
               <li class="nav-item position-relative">
