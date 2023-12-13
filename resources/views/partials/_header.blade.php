@@ -44,9 +44,9 @@
             <li class="nav-item position-relative {{ request()->is('profileinfo') ? 'active' : '' }}">
               <a class="nav-link my-1 mx-4" href="{{ route('mydetails') }}"><i class="fa-solid fa-user" style="font-size: 20px; color: #F24E1E;"></i></a>
             </li>
-            <li class="d-flex nav-item position-relative {{ request()->is('cart') ? 'active' : '' }}">
+            <li class="d-flex nav-item position-relative {{ request()->is('cart') ? 'active' : '' }}" style="justify-content: center;margin-right: 15px;">
               <a class="nav-link my-1" href="{{ route('carts') }}"><i class="fa-solid fa-cart-shopping my-1 mx-3" style="font-size: 20px; color: #F24E1E;"></i></a>
-              <span class="text-white" style="margin-left: -21px;">1</span>
+              <span class="cartnumber">1</span>
             </li>
             @if(Auth::user())
               <li class="nav-item position-relative">
@@ -62,3 +62,17 @@
       </div>
     </nav>
   </header>
+  <style>
+    @media(min-width:180px) and (max-width:425px){
+      .cartnumber{
+        margin-left: -12px;
+        color:white;
+      }
+    }
+    @media(min-width:426px){
+      .cartnumber{
+        margin-left: -21px;
+        color:white;
+      }
+    }
+  </style>
