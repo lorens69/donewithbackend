@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="CSS/style.css">
+    {{-- <link rel="stylesheet" href="CSS/style.css"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
@@ -112,7 +112,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            font-family: 'Raleway', sans-serif; 
+            font-family: 'Raleway', sans-serif;
             font-size: 19px;
 
         }
@@ -131,10 +131,10 @@
             height:auto;
         }
         .infobutton{
-            background-color: #F24E1E; 
-            text-align:center; 
-            color:white; 
-            border-radius:2px; 
+            background-color: #F24E1E;
+            text-align:center;
+            color:white;
+            border-radius:2px;
             height:fit-content;
             width: fit-content;
             margin-bottom: 22px;
@@ -227,7 +227,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            font-family: 'Raleway', sans-serif; 
+            font-family: 'Raleway', sans-serif;
             font-size: 24px;
 
         }
@@ -246,18 +246,18 @@
             height:auto;
         }
         .infobutton{
-            background-color: #F24E1E; 
-            text-align:center; 
-            color:white; 
-            border-radius:2px; 
+            background-color: #F24E1E;
+            text-align:center;
+            color:white;
+            border-radius:2px;
             height:fit-content;
             width: fit-content;
             margin-bottom: 22px;
         }
 
     }
-    
-    
+
+
 
 </style>
 
@@ -378,7 +378,7 @@
             <div class="col-6 modal-body">
                 <span class="close">&times;</span>
                 <div class="productinformation">
-                    
+
                     <div class="d-flex infoname justify-content-center">Name of the product</div>
                     <div class="d-flex infoname2 justify-content-center p-0">Description</div>
                     <div class="d-flex justify-content-center align-items-end gap-4">
@@ -388,7 +388,7 @@
                           <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
                       </form> --}}
                         <span class="d-flex carttext" style="font-size:22px;">2</span>
-        
+
                         {{-- <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
                           @csrf
                           <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
@@ -407,9 +407,9 @@
                             @endif
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
 
             {{-- <div class="modal-footer">
