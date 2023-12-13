@@ -38,6 +38,8 @@
 
         /* Modal Content */
         .modal-content {
+        display:flex;
+        flex-direction:column;
         position: relative;
         background-color: #fefefe;
         margin: auto;
@@ -83,18 +85,59 @@
 
         .modal-header {
         padding: 2px 16px;
+        width: 100%;
         background-color:#F24E1E;
-        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         }
 
         .modal-body {
         padding: 0px 16px;
+        width: 100%;
+        padding-right: 31px;
         }
 
         .modal-footer {
         padding: 2px 16px;
         background-color: #F24E1E;
         color: white;
+        }
+        .iconsize{
+            font-size:30px;
+        }
+        .productinformation{
+            display: flex;
+            height: 226px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            font-family: 'Raleway', sans-serif; 
+            font-size: 19px;
+
+        }
+        .infoname{
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-top: 20px;
+            font-size: 17px;
+        }
+        .infoname2{
+            font-weight: 900;
+            font-size: 14px;
+        }
+        .infoimage{
+            width:200px;
+            height:auto;
+        }
+        .infobutton{
+            background-color: #F24E1E; 
+            text-align:center; 
+            color:white; 
+            border-radius:2px; 
+            height:fit-content;
+            width: fit-content;
+            margin-bottom: 22px;
         }
 
     }
@@ -198,6 +241,19 @@
             font-size: 18px;
             margin-top: -46px;
         }
+        .infoimage{
+            width:300px;
+            height:auto;
+        }
+        .infobutton{
+            background-color: #F24E1E; 
+            text-align:center; 
+            color:white; 
+            border-radius:2px; 
+            height:fit-content;
+            width: fit-content;
+            margin-bottom: 22px;
+        }
 
     }
     
@@ -273,7 +329,7 @@
             <div class="service-card row-cols-auto" >
                 @foreach($showproduct as $product)
 
-                <article class="productitem" id="myBtn" value="{{auth()->user()->id}}">
+                <article class="productitem" id="myBtn">
 
                         <img src="{{asset('upload/'.$product->image)}}" width="220  px" height="150px" alt="fiksur">
                         <br>
@@ -313,8 +369,8 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <div class="col-6 modal-header" style="padding:20px; width:fit-content;">
-                <img src="./img/product1.png" alt="" width="300px" height="100%">
+            <div class="col-6 modal-header">
+                <img class="infoimage" src="./img/product1.png" alt="">
              {{-- <h2>Modal Header</h2> --}}
             </div>
 
@@ -325,7 +381,7 @@
                     <div class="d-flex infoname justify-content-center">Name of the product</div>
                     <div class="d-flex infoname2 justify-content-center p-0">Description</div>
                     <div class="d-flex justify-content-center align-items-end gap-4">
-                        <i class="fa-regular fa-square-minus" style="font-size: 30px;"></i>
+                        <i class="fa-regular fa-square-minus iconsize"></i>
                         {{-- <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                           @csrf
                           <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
@@ -336,13 +392,13 @@
                           @csrf
                           <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
                       </form> --}}
-                        <i class="fa-regular fa-square-plus" style="font-size: 30px;"></i></i>
+                        <i class="fa-regular fa-square-plus iconsize"></i></i>
                     </div>
                     <div class="d-flex col-12">
                         <div class="d-flex col-6">
                             <span>Php 1000</span>
                         </div>
-                        <div class="col-6 fw-bold" style="background-color: #F24E1E; text-align:center; color:white; border-radius:2px; height:fit-content;">
+                        <div class="col-6 fw-bold infobutton">
                             @if(count($products) > 0)
                             <button class="btn btn-block pay-button" style="color:white;" type="button" id="myBtn">ADD TO CART</button>
                             @else
