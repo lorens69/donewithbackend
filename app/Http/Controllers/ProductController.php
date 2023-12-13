@@ -269,7 +269,7 @@ class ProductController extends Controller
         $user = Auth::user();
 
         // Check if the user has a contact number and email
-        if (empty($user->contact) || empty($user->email)) {
+        if (empty($user->contact) && empty($user->email)) {
             return redirect('userdetails')->with('error', 'Please update your contact number and email address before placing an order.');
         }
 
@@ -341,6 +341,5 @@ class ProductController extends Controller
         return view('home')->with('randomItems', $randomItems);
 
     }
-
 
 }

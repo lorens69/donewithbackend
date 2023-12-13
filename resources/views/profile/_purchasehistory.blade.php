@@ -66,7 +66,7 @@
                         <div class="d-flex align-self-center">Price: <span style="color: orangered;">{{$order->price}}</span></div>
                         <div class="d-flex align-self-center">Quantity: <span style="color: orangered;">{{$order->quantity}}</span> </div>
                         <div class="d-flex align-self-center">Item Total: <span style="color: orangered;">{{$order->price * $order->quantity}}</span></div>
-                        <div class="d-flex align-self-center">Date: <span style="color: orangered;">{{$order->do}}</span></div>
+                        <div class="d-flex align-self-center">Date: <span style="color: orangered;">{{ \Carbon\Carbon::parse($order->do)->format('m-d-Y') }}</span></div>
                         <div class="d-flex align-self-center">
                             <button type="button" class="btn btn-block p-2" style="width:150px; color:orangered;background-color:white;border: 1px solid; border-color:orangered;">{{$order->status}}</button>
                         </div>
