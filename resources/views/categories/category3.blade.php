@@ -37,7 +37,7 @@
         @if(count($products) > 0)
         <div class="product-items-container">
             <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
+                <div>
                     <h2 class="accordion-header" id="headingOne">
                         <button class=" filterTextStyle p-2 accordion-button bg-white" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -85,7 +85,7 @@
             <div class="service-card row-cols-auto" >
                 @foreach($sort3 as $product)
 
-                <article class="product-item">
+                <article class="productitem">
 
                         <img src="{{asset('upload/'.$product->image)}}" width="217px" height="150px" alt="fiksur">
                         <br>

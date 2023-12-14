@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
@@ -119,8 +120,11 @@
         .infoname{
             font-weight: 900;
             text-transform: uppercase;
-            margin-top: 20px;
-            font-size: 17px;
+            font-size: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 18px;
         }
         .infoname2{
             font-weight: 900;
@@ -235,6 +239,10 @@
             font-weight: 900;
             text-transform: uppercase;
             font-size: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 80px;
         }
         .infoname2{
             font-weight: 900;
@@ -281,7 +289,7 @@
         @if(count($products) > 0)
         <div class="product-items-container">
             <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
+                <div>
                     <h2 class="accordion-header" id="headingOne">
                         <button class=" filterTextStyle p-2 accordion-button bg-white" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -330,28 +338,28 @@
                 @foreach($showproduct as $product)
 
                 <article class="productitem">
-                    <div class="cardimage" id="myBtn">
-                        <img src="{{asset('upload/'.$product->image)}}" width="220  px" height="150px" alt="fiksur">
-                    </div>
-                        <br>
-                    <div class="infos">
-                        <div class="item-info">
-                            <h3 class="title">{{ $product['name'] }}</h3>
-                            <p class="price">Price: Php {{ number_format($product['price']) }}</p>
+                        <div class="cardimage <?php echo $product['name']; ?>" id="myBtn">
+                            <img src="{{asset('upload/'.$product->image)}}" width="220  px" height="150px" alt="fiksur">
                         </div>
-                        <div class="icons text-center">
-                            <form action="{{ route('addToCart', ['productId' => $product->id]) }}" method="POST">
-                                @csrf
-                                {{-- <input type="hidden" name="product_id" value="{{ $product['id'] }}"> --}}
-
-                                @auth
-                                <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-                                @endauth
-
-                                <button class="btn btn-block" style="margin: 3px;padding: 15px;background-color:#FF6000;"><i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i></button>
-                            </form>
+                            <br>
+                        <div class="infos">
+                            <div class="item-info">
+                                <h3 class="title">{{ $product['name'] }}</h3>
+                                <p class="price">Price: Php {{ number_format($product['price']) }}</p>
+                            </div>
+                            <div class="icons text-center">
+                                <form action="{{ route('addToCart', ['productId' => $product->id]) }}" method="POST">
+                                    @csrf
+                                    {{-- <input type="hidden" name="product_id" value="{{ $product['id'] }}"> --}}
+    
+                                    @auth
+                                    <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                                    @endauth
+    
+                                    <button class="btn btn-block" style="margin: 3px;padding: 15px;background-color:#FF6000;"><i class="bi bi-cart-plus" style="font-size: 1.5rem; color: white;"></i></button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
                 </article>
                 @endforeach
                 @else
@@ -364,14 +372,14 @@
     </div>
 
 
-    @foreach($showproduct as $product)
+   
     <!-- Modal content -->
     <div id="myModal-{{$product->id}}" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
             <div class="col-6 modal-header">
-                <img class="infoimage" src="./img/product1.png" alt="">
+                <img class="infoimage" src="" id="productImage" alt="">
              {{-- <h2>Modal Header</h2> --}}
             </div>
 
@@ -379,75 +387,128 @@
                 <span class="close">&times;</span>
                 <div class="productinformation">
                     
-                    <div class="d-flex infoname justify-content-center">Name of the product</div>
-                    <div class="d-flex infoname2 justify-content-center p-0">Description</div>
+                    <div class="d-flex infoname justify-content-center"><span id="productName"></span></</div>
+                    <div class="d-flex infoname2 justify-content-center p-0"><span id="productdescription">Description</span></div>
                     <div class="d-flex justify-content-center align-items-end gap-4">
-                        <i class="fa-regular fa-square-minus iconsize"></i>
+                        <i id="productDecrease" class="fa-regular fa-square-minus iconsize"></i>
                         {{-- <form method="post" action="{{ route('cart.decrease', ['cartId' => $cart->cart_id]) }}">
                           @csrf
                           <button class="d-flex cartquantitybutton align-items-center" type="submit" @if($cart->quantity == 1) disabled @endif><i class="fa-solid fa-minus"></i></button>
                       </form> --}}
-                        <span class="d-flex carttext" style="font-size:22px;">2</span>
+                        <span id="productQuantity" class="d-flex carttext" style="font-size:22px;">0</span>
         
                         {{-- <form method="post" action="{{ route('cart.increase', ['cartId' => $cart->cart_id]) }}">
                           @csrf
                           <button class="cartquantitybutton align-items-center" type="submit"><i class="fa-solid fa-plus"></i></button>
                       </form> --}}
-                        <i class="fa-regular fa-square-plus iconsize"></i></i>
+                        <i id="productIncrease" class="fa-regular fa-square-plus iconsize"></i></i>
                     </div>
-                    <div class="d-flex col-12">
+                    <div class="d-flex col-12 gap-sm-4">
                         <div class="d-flex col-6">
-                            <span>Php 1000</span>
+                            <span id="productPrice"></span>
                         </div>
                         <div class="col-6 fw-bold infobutton">
                             @if(count($products) > 0)
-                            <button class="btn btn-block pay-button" style="color:white;" type="button" id="myBtn">ADD TO CART</button>
+                            <button class="btn btn-block pay-button" style="color:white;" type="button" id="productAddtoCart">ADD TO CART</button>
                             @else
-                            <button class="btn btn-block pay-button" type="button" id="myBtn" disabled> ADD TO CART</button>
+                            <button class="btn btn-block pay-button" type="button" id="productAddtoCartDisabled" disabled> ADD TO CART</button>
                             @endif
                         </div>
-                    </div>
-                    
-                </div>
-                
+                    </div>      
+                </div>          
             </div>
-
-            {{-- <div class="modal-footer">
-                <p>BERTOLOGY</p>
-            </div> --}}
         </div>
+        
 
     </div>
 
     <script>
-        // Get the modal
-        var modal = document.querySelector(".modal");
+        $(document).ready(function() {
+            // Get the modal
+            var modal = $(".modal");
 
-        // Get the button that opens the modal
-        var cardimage = document.querySelectorAll(".cardimage");
+            // Get the button that opens the modal
+            var cardimage = $(".cardimage");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+            // Get the <span> element that closes the modal
+            var span = $(".close").eq(0);
 
-        // When the user clicks the button, open the modal
-        cardimage.forEach(element => {
-            element.onclick= function(v){
-                modal.style.display = "block";
-            }
-        });
+            // When the user clicks the button, open the modal
+            cardimage.each(function() {
+                $(this).click(function() {
+                var setProductIncrease = $('#productIncrease');
+                var setProductDecrease = $('#productDecrease');
+                var setProductQuantity = $('#productQuantity');
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-            modal.style.display = "none";
-            }
-        }
-        </script>
-    @endforeach
+                let productQuantity = 0;
+                setProductQuantity.text(productQuantity)
+                
+                var productName = $(this).find('.pname').val();
+                var imageSrc = $(this).find('img').attr('src');
+                var title = $(this).siblings('.infos').find('.title').text();
+                var price = $(this).siblings('.infos').find('.price').text();
+
+                var setProductName = $('#productName');
+                var setProductPrice = $('#productPrice');
+                var setProductDescription = $('#productdescription');
+                var setProductImage = $('#productImage');
+
+                // Log the data to the console
+                // console.log('Product Name:', productName);
+                // console.log('Image Source:', imageSrc);
+                // console.log('Title:', title);
+                // console.log('Price:', price);
+
+                // Set the data to the respective elements
+                setProductName.text(productName);
+                setProductPrice.text(price);
+                setProductDescription.text(title);
+                setProductImage.attr('src', imageSrc);
+
+                // Perform any other actions with the data
+                // ...
+                modal.css("display", "block");
+
+                
+
+                setProductIncrease.click(function(){
+                    productQuantity++;
+                    setProductQuantity.text(productQuantity)
+                })
+                setProductDecrease.click(function(){
+                    if(productQuantity <= 0){
+                        return ;
+                    }
+                    --productQuantity;
+                    setProductQuantity.text(productQuantity)
+                })
+
+                // Create an object to hold the data
+                var data = {
+                productName: productName,
+                imageSrc: imageSrc,
+                title: title,
+                price: price
+            };
+            
+        
+    });
+
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.click(function() {
+    modal.css("display", "none");
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  $(window).click(function(event) {
+    if (event.target === modal[0]) {
+      modal.css("display", "none");
+    }
+  });
+});
+    </script>
 
     @include('sweetalert::alert')
 </body>
