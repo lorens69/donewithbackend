@@ -10,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="CSS/style.css">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- 
+
 </head>
+
 <body>
 <div class="container-fluid p-0 homecontainer1">
     @include('partials._header')
@@ -27,7 +28,7 @@
         </div>
         <div class="homeheaderbuttons">
             <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('requestform')}}'">Schedule Appointment</div>
-            <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('product')}}'">Order Parts</div>
+            <div class="col-2 btn homebuttons" onclick="window.location.href='{{route('product')}}'">CAR ACCESSORIES</div>
         </div>
     </div>
 
@@ -190,7 +191,7 @@
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{$items->name}}</h3>
-                            <p class="price">{{$items->price}}</p>
+                            <p class="price">Price: Php {{ number_format($items->price) }}</p>
                         </div>
                         <div class="icons text-center">
                             <form action="{{ route('homeaddToCart', ['productId' => $items->id]) }}" method="POST">
@@ -316,10 +317,75 @@
 
 @include('sweetalert::alert')
 </body>
+<script>
+
+
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
+
+    let carouselVp = document.querySelector("#carousel-vp");
+
+    let cCarouselInner = document.querySelector("#cCarousel-inner");
+    let carouselInnerWidth = cCarouselInner.getBoundingClientRect().width;
+
+    let leftValue = 0;
+
+    // Variable used to set the carousel movement value (card's width + gap)
+    const totalMovementSize =
+      parseFloat(
+        document.querySelector(".cCarousel-item").getBoundingClientRect().width,
+        10
+      ) +
+      parseFloat(
+        window.getComputedStyle(cCarouselInner).getPropertyValue("gap"),
+        10
+      );
+
+    prev.addEventListener("click", () => {
+      if (!leftValue == 0) {
+        leftValue -= -totalMovementSize;
+        cCarouselInner.style.left = leftValue + "px";
+      }
+    });
+
+    next.addEventListener("click", () => {
+      const carouselVpWidth = carouselVp.getBoundingClientRect().width;
+      if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth) {
+        leftValue -= totalMovementSize;
+        cCarouselInner.style.left = leftValue + "px";
+      }
+    });
+
+    const mediaQuery510 = window.matchMedia("(max-width: 510px)");
+    const mediaQuery770 = window.matchMedia("(max-width: 770px)");
+
+    mediaQuery510.addEventListener("change", mediaManagement);
+    mediaQuery770.addEventListener("change", mediaManagement);
+
+    let oldViewportWidth = window.innerWidth;
+
+    function mediaManagement() {
+      const newViewportWidth = window.innerWidth;
+
+      if (leftValue <= -totalMovementSize && oldViewportWidth < newViewportWidth) {
+        leftValue += totalMovementSize;
+        cCarouselInner.style.left = leftValue + "px";
+        oldViewportWidth = newViewportWidth;
+      } else if (
+        leftValue <= -totalMovementSize &&
+        oldViewportWidth > newViewportWidth
+      ) {
+        leftValue -= totalMovementSize;
+        cCarouselInner.style.left = leftValue + "px";
+        oldViewportWidth = newViewportWidth;
+      }
+    }
+
+    </script>
 
 
 <style>
-    
+
     @media (min-width: 180px) and (max-width:767px) {
 
         #CL {
@@ -333,6 +399,8 @@
         }
     }
 </style>
+
+
 
 </html>
 @include('partials._footer')
