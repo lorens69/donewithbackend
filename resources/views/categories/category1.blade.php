@@ -82,17 +82,18 @@
         }
 
         .modal-header {
-        padding: 2px 16px;
-        width: 100%;
-        background-color:#F24E1E;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+            width: 100%;
+            height: 164px;
+            background-color: #F24E1E;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
 
         .modal-body {
         padding: 0px 16px;
         width: 100%;
+        height: auto;
         padding-right: 31px;
         }
 
@@ -106,12 +107,12 @@
         }
         .productinformation{
             display: flex;
-            height: 226px;
+            height: 157px;
+            padding-top: 20px;
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            font-family: 'Raleway', sans-serif; 
-            font-size: 19px;
+            font-family: 'Bayon', sans-serif; 
 
         }
         .infoname{
@@ -119,16 +120,24 @@
             text-transform: uppercase;
             font-size: 22px;
             display: flex;
+            width: 100%;
             flex-direction: column;
             align-items: flex-start;
-            gap: 18px;
+            gap: 0px;
+            
         }
         .infoname2{
             font-weight: 900;
             font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .infoname3{
+            font-weight: 900;
+            font-size: 29px;
+            letter-spacing: 1px;
         }
         .infoimage{
-            width:200px;
+            width:241px;
             height:auto;
         }
         .infobutton{
@@ -164,15 +173,17 @@
         flex-direction: row;
         background-color: #fefefe;
         margin: auto;
+        margin-top: 107px;
         padding: 0;
         border: 1px solid #888;
         width: 50%;
-        height: 400px;
+        height: 284px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
         animation-name: animatetop;
-        animation-duration: 0.4s
+        animation-duration: 0.4s;
+        
         }
 
         /* Add Animation */
@@ -213,8 +224,10 @@
 
         .modal-body {
         padding: 0px 16px;
+        height: auto;
         display: flex;
         flex-direction: column;
+        font-family: 'Bayon', sans-serif;
         }
 
         .modal-footer {
@@ -228,23 +241,29 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            font-family: 'Raleway', sans-serif; 
+            font-family: 'Bayon', sans-serif;
             font-size: 24px;
-
         }
         .infoname{
             font-weight: 900;
             text-transform: uppercase;
-            font-size: 22px;
+            font-size: 37px;
             display: flex;
+            width: 100%;
             flex-direction: column;
             align-items: flex-start;
-            gap: 53px;
+            gap: 29px;
+            
         }
         .infoname2{
             font-weight: 900;
-            font-size: 18px;
-            margin-top: -46px;
+            font-size: 19px;
+            letter-spacing: 1px;
+        }
+        .infoname3{
+            font-weight: 900;
+            font-size: 29px;
+            letter-spacing: 1px;
         }
         .infoimage{
             width:300px;
@@ -268,7 +287,6 @@
 
 
 
-
 <body>
 
     @include('partials._header')
@@ -283,7 +301,7 @@
         <br>
         @csrf
 
-        @if(count($products) > 0)
+        
         <div class="product-items-container">
             <div class="accordion" id="accordionExample">
                 <div >
@@ -330,7 +348,7 @@
 
             </div>
 
-
+            @if(count($sort1) > 0)
             <div class="service-card row-cols-auto" >
                 @foreach($sort1 as $product)
                 <article class="productitem">
@@ -341,7 +359,8 @@
                     <div class="infos">
                         <div class="item-info">
                             <h3 class="title">{{ $product->name }}</h3>
-                            <p class="price">Price: Php {{ number_format($product->price) }}</p>
+                            <p class="description" hidden>{{ $product->description}}</p>
+                            <p class="price">Php {{ number_format($product->price) }}</p>
                             <p class="id" hidden>{{ $product ->id }}</p>
                         </div>
                         <div class="icons text-center">
@@ -386,24 +405,24 @@
                     <div class="productinformation">
                         
                         <div class="d-flex infoname justify-content-center"><span id="productName"></span></</div>
-                        <div class="d-flex infoname2 justify-content-center p-0"><span id="productdescription">Description</span></div>
+                        <div class="d-flex infoname2 justify-content-center p-0"><span id="productDescription"></span></div>
                         <div><span id="productID" hidden></span></div>
-                        <div class="d-flex justify-content-center align-items-end gap-4">
+                        {{-- <div class="d-flex justify-content-center align-items-end gap-4">
                             <i id="productDecrease" class="fa-regular fa-square-minus iconsize"></i>
                             <span id="productQuantity" class="d-flex carttext" style="font-size:22px;">0</span>
                             <i id="productIncrease" class="fa-regular fa-square-plus iconsize"></i></i>
-                        </div>
-                        <div class="d-flex col-12 gap-sm-4">
-                            <div class="d-flex col-6">
+                        </div> --}}
+                        <div class="d-flex col-12 gap-sm-4 infoname3">
+                            <div>
                                 <span id="productPrice"></span>
                             </div>
-                            <div class="col-6 fw-bold infobutton">
+                            {{-- <div class="col-6 fw-bold infobutton">
                                 @if(count($products) > 0)
                                 <button class="btn btn-block pay-button" style="color:white;" type="button" id="productAddtoCart">ADD TO CART</button>
                                 @else
                                 <button class="btn btn-block pay-button" type="button" id="productAddtoCartDisabled" disabled> ADD TO CART</button>
                                 @endif
-                            </div>
+                            </div> --}}
                         </div>      
                     </div>          
                 </div>
@@ -435,13 +454,13 @@
                 var productName = $(this).find('.pname').val();
                 var imageSrc = $(this).find('img').attr('src');
                 var title = $(this).siblings('.infos').find('.title').text();
-                var price = $(this).siblings('.infos').find('.price').text();
+                var description = $(this).siblings('.infos').find('.description').text();
+                var price = $(this).siblings('.infos').find('.price').text()
                 var id = $(this).siblings('.infos').find('.id').text()
-
 
                 var setProductName = $('#productName');
                 var setProductPrice = $('#productPrice');
-                var setProductDescription = $('#productdescription');
+                var setProductDescription = $('#productDescription');
                 var setProductImage = $('#productImage');
                 var setProductID = $('#productID');
 
@@ -454,7 +473,7 @@
                 // Set the data to the respective elements
                 setProductName.text(title);
                 setProductPrice.text(price);
-                // setProductDescription.text(title);
+                setProductDescription.text(description);
                 setProductImage.attr('src', imageSrc);
                 setProductID.text(id);
 
@@ -479,28 +498,29 @@
                 // Create an object to hold the data
                 var data = {
                 productName: productName,
+                description: description,
                 imageSrc: imageSrc,
                 title: title,
-                price: price
+                price: price,
+                id: id
             };
             
-            // Send data using AJAX
-            
+        
             });
 
         });
 
-        // When the user clicks on <span> (x), close the modal
-        span.click(function() {
-            modal.css("display", "none");
-        });
+            // When the user clicks on <span> (x), close the modal
+            span.click(function() {
+                modal.css("display", "none");
+            });
 
-        // When the user clicks anywhere outside of the modal, close it
-        $(window).click(function(event) {
-            if (event.target === modal[0]) {
-            modal.css("display", "none");
-            }
-        });
+            // When the user clicks anywhere outside of the modal, close it
+            $(window).click(function(event) {
+                if (event.target === modal[0]) {
+                modal.css("display", "none");
+                }
+            });
         });
     </script>
     <br><br>
