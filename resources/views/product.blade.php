@@ -47,6 +47,7 @@
         padding: 0;
         border: 1px solid #888;
         width: 80%;
+        height: 450px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
@@ -172,7 +173,7 @@
         padding: 0;
         border: 1px solid #888;
         width: 50%;
-        height: 284px;
+        height: auto;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
