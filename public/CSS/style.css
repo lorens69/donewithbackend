@@ -1499,12 +1499,13 @@ body {
     text-decoration: none;
     color:white;
 }
-.accordion-body .form-check:hover {
+.accordion-body .active, .form-check:hover {
     background-color: #FFA559;
     border: #ddd 1px solid;
     border-radius: 4px;
     border-bottom: #333 1px solid;
 }
+
 .accordion-body .form-check * {
     margin: 15px;
 }
@@ -1536,7 +1537,9 @@ body {
     margin: 4px;
     width: 219px;
     height: 241px;
-    box-shadow: rgb(245 205 181 / 43%) 0px -23px 25px 0px inset, #fbebe2e0 0px -36px 30px 0px inset, #fbd3bb00 0px -79px 40px 0px inset, rgb(245 205 181) 0px 2px 1px, #ff6000 0px 4px 2px, rgb(0 0 0 / 41%) 0px 8px 4px, rgb(0 0 0 / 0%) 0px 16px 8px, #f9fafb00 0px 32px 16px;
+    background-color: #fbd3bb40;
+    box-shadow: #ff6000 -2px 1px 4px, #ff6000 1px 8px 4px -3px, #fbd3bb -1px -16px 20px 0px inset;
+    /* box-shadow: rgb(245 205 181 / 43%) 0px -23px 25px 0px inset, #fbebe2e0 0px -36px 30px 0px inset, #fbd3bb00 0px -79px 40px 0px inset, rgb(245 205 181) 0px 2px 1px, #ff6000 0px 4px 2px, rgb(0 0 0 / 41%) 0px 8px 4px, rgb(0 0 0 / 0%) 0px 16px 8px, #f9fafb00 0px 32px 16px; */
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -1767,7 +1770,7 @@ body {
   }
   }
 
-@media (min-width:768px) {
+@media (min-width:769px) {
 .contactTitle{
   display: flex;
   justify-content: center;

@@ -4,9 +4,9 @@
 ## local machine commands
 composer install
 npm install
-composer require realrashid/sweet-alert
 cp .env.example .env
 php artisan key:generate
+composer require realrashid/sweet-alert
 php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
 composer require open-admin-org/open-admin
 php artisan vendor:publish --provider="OpenAdmin\Admin\AdminServiceProvider"
