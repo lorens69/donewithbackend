@@ -44,6 +44,7 @@
         padding: 0;
         border: 1px solid #888;
         width: 80%;
+        height: 450px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
@@ -120,21 +121,13 @@
             text-transform: uppercase;
             font-size: 22px;
             display: flex;
-            width: 100%;
             flex-direction: column;
             align-items: flex-start;
-            gap: 0px;
-            
+            gap: 11px;
         }
         .infoname2{
             font-weight: 900;
             font-size: 14px;
-            letter-spacing: 1px;
-        }
-        .infoname3{
-            font-weight: 900;
-            font-size: 29px;
-            letter-spacing: 1px;
         }
         .infoimage{
             width:241px;
@@ -177,7 +170,7 @@
         padding: 0;
         border: 1px solid #888;
         width: 50%;
-        height: 284px;
+        height: auto;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
@@ -224,8 +217,8 @@
 
         .modal-body {
         padding: 0px 16px;
-        display: flex;
         height: auto;
+        display: flex;
         flex-direction: column;
         font-family: 'Bayon', sans-serif;
         }
@@ -284,7 +277,6 @@
     
 
 </style>
-
 
 
 <body>
