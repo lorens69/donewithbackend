@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
     <title>Gallery</title>
+    
     <style>
         body {
             font-family: 'Arial', sans-serif;
