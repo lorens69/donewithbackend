@@ -1,5 +1,3 @@
-import './bootstrap';
-import '../sass/app.scss'
 
 
 const prev = document.querySelector("#prev");

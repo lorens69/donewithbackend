@@ -9,13 +9,14 @@
       background-color: #FF6000; /* Set the color of the underline */
       transform: translateX(-50%); /* Center the underline under the text */
     }
-    
+
   </style>
+
 
   <header style="background-color: #1E1B1B; position: sticky; top: 0; z-index: 5; font-family: 'Raleway', sans-serif;">
     <nav class="navbar navbar-expand-sm navbar-dark m-0">
       <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="#"><img src="./img/bertologylogo.png" alt="" width="70px" height="50px"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img src="./img/bertologylogo.png" alt="" width="70px" height="50px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -44,8 +45,11 @@
             <li class="nav-item position-relative {{ request()->is('profileinfo') ? 'active' : '' }}">
               <a class="nav-link my-1 mx-4" href="{{ route('mydetails') }}"><i class="fa-solid fa-user" style="font-size: 20px; color: #F24E1E;"></i></a>
             </li>
-            <li class="nav-item position-relative {{ request()->is('cart') ? 'active' : '' }}">
-              <a class="nav-link my-1 mx-4" href="{{ route('carts') }}"><i class="fa-solid fa-cart-shopping my-1 mx-4" style="font-size: 20px; color: #F24E1E;"></i></a>
+            <li class="d-flex nav-item position-relative {{ request()->is('cart') ? 'active' : '' }}" style="justify-content: center;margin-right: 15px;">
+              <a class="nav-link my-1" href="{{ route('carts') }}"><i class="fa-solid fa-cart-shopping my-1 mx-3" style="font-size: 20px; color: #F24E1E;"></i></a>
+              @if(auth()->check())
+              <span class="cartnumber">{{ $cartItemCount }}</span>
+                @endif
             </li>
             @if(Auth::user())
               <li class="nav-item position-relative">
@@ -61,3 +65,17 @@
       </div>
     </nav>
   </header>
+  <style>
+    @media(min-width:180px) and (max-width:425px){
+      .cartnumber{
+        margin-left: -12px;
+        color:white;
+      }
+    }
+    @media(min-width:426px){
+      .cartnumber{
+        margin-left: -21px;
+        color:white;
+      }
+    }
+  </style>

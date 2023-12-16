@@ -3,7 +3,7 @@
 
   <div class="container w-25 h-100  d-flex flex-column justify-content-center mt-auto mb-auto  ">
     <div class="d-flex position-relative justify-content-center  ">
-      <img src="/img/ShineMasters.png" height="80px" width="100px">
+      <img class="footerlogo" src="./img/bertologylogo.png">
       <span style="border-right: 1px solid white;margin-left: 20px;margin-right: 20px;border-right-width: 2px; height: 100px;" id="standingline" name="standingline"></span>
       <div class="maelstromlogo">
         <img src="/img/maelstrom2ndlogo.png" height="80px" width="auto">
@@ -18,11 +18,21 @@
   <div class="container d-flex flex-column justify-content-center m-auto align-items-center mt-2 mb-2  " style="width: fit-content;">
     <h4 class="fw-bold ">Useful Links</h4>
     <div class="usefullinks">
-      <h6>Home</h6>
-      <h6>Products</h6>
-      <h6>Services</h6>
-      <h6>Gallery</h6>
-      <h6>Contact Us</h6>
+      <h6>
+        <a href="{{ route('home') }}">Home</a>
+      </h6>
+      <h6>
+        <a href="{{ route('product') }}">Products</a>
+      </h6>
+      <h6>
+        <a href="{{ route('service') }}">Services</a>
+      </h6>
+      <h6>
+        <a href="{{ route('gallery') }}">Gallery</a>
+      </h6>
+      <h6>
+        <a href="{{ route('contact') }}">Contact Us</a>
+      </h6>
 
     </div>
   </div>
@@ -31,9 +41,15 @@
 
     <h3>Connect with us now</h3>
     <div class="brand d-flex">
-      <i class="fa-brands fa-facebook footericons"></i>
-      <i class="fa-brands fa-facebook-messenger footericons"></i>
-    </div>
+ 
+  <a href="https://www.facebook.com/BossbertologyInstaller032402" target="_blank">
+  <i class="fa-brands fa-facebook footericons"></i>
+  </a>
+  <a href="https://www.facebook.com/messages/t/776806005729176" target="_blank">
+  <i class="fa-brands fa-facebook-messenger footericons"></i></a>
+
+</div>
+
 
   </div>
 
@@ -43,6 +59,12 @@
       .footer {
         text-align: center;
       }
+      .footerlogo{
+        height: 59px;
+        width: 83px;
+        margin-bottom: 8px;
+      }
+      
 
       .footer h2 {
         font-size: 1.5rem;
@@ -96,6 +118,15 @@
         justify-content: center;
         align-items: center;
       }
+      .usefullinks a{
+        text-decoration: none;
+        color: white;
+      }
+      .usefullinks a:hover{
+        text-decoration: none;
+        color: #FF6000;
+      }
+
 
 
     }
@@ -157,6 +188,19 @@
         justify-content: center;
         align-items: center;
       }
+      .usefullinks a{
+        text-decoration: none;
+        color: white;
+      }
+      .usefullinks a:hover{
+        text-decoration: none;
+        color: #FF6000;
+      }
+      .footerlogo{
+        height: 80px;
+        width: 100px;
+      }
+
 
 
     }
@@ -180,6 +224,19 @@
         justify-content: center;
         align-items: center;
       }
+      .usefullinks a{
+        text-decoration: none;
+        color: white;
+      }
+      .usefullinks a:hover{
+        text-decoration: none;
+        color: #FF6000;
+      }
+      .footerlogo{
+        height: 80px;
+        width: 100px;
+      }
+
       
 
     }

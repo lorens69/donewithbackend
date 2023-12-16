@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
@@ -179,13 +179,10 @@
     color: white;
     border: #342f2f 1px solid;
   }
-<<<<<<< Updated upstream
-=======
 
     }
->>>>>>> Stashed changes
 }
-}
+
 
 </style>
 <body>
@@ -294,7 +291,7 @@
 
           <div class="ordermodaldetails">
             <div class="me-auto d-flex flex-column">
-              <span class="ordermodaltext fw-bold">Billed To:</span>
+              <span class="ordermodaltext fw-bold">BILLED TO</span>
               <span class="fw-bold ordermodaltext">FullName: {{auth()->user()->name}}</span>
               <span class="fw-bold ordermodaltext">Address: {{auth()->user()->current_address}}</span>
               <span class="fw-bold ordermodaltext">Contact: {{auth()->user()->contact}}</span>

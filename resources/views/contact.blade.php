@@ -1,5 +1,139 @@
 @extends('layouts.layout')
 
+@section('title', 'Contact')
+
+@section('content')
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    @include('partials._header')
+    <div class="container-fluid" style="  height:auto;">
+        <div class="contactTitle">
+            <span class="headtext">CONTACT US</span>
+            <img src="./img/contact/zigzag.png" alt="" width="50px;" height="50px;">
+            <span class="contacttitledef">Bertology takes pride in being the trusted name that has served numerous vehicle owners in Cebu City since 2015. Our dedicated team has earned the confidence of our customers by providing top-notch services for car accessories maintenance, enhancement, and repairs. We are committed to delivering high-quality service, ensuring the satisfaction of every individual who entrusts their vehicle to Bertology.</span>
+        </div>
+        <div class="contentcontainer">
+            <div class="contactbox" style="background-color: #f68b4ec4;">
+                <i class="bi bi-telephone-fill" style="color: white; font-size: xx-large;"></i>
+                <span style="color: white">(+63) 9617590889</span>
+            </div>
+            <div class="contactbox" style="background-color: #f68b4e54;">
+                <i class="bi bi-envelope" style="color: #ff6000; font-size: xx-large;"></i>
+                <span style="color: #ff6000; font-size:14px">umaranshobi2424@gmail.com</span>
+            </div>
+            <div class="contactbox" style="background-color: #f68c4e13;">
+                <i class="bi bi-geo-alt" style="color: #ff6000; font-size: xx-large;"></i>
+                <span style="color: #ff6000; font-size:14px;margin-left:10px; margin-right:5px;">Edison St, Cebu City, 6000 Cebu near St.Therese Parish Church</span>
+            </div>
+        </div>
+        <div class="contactmap">
+            <span class="fs-2">Find Bertology on Google Map</span>
+            <span>The following map shows the location of the Bertology physical branch.</span>
+            <span>Edison St, Cebu City, 6000 Cebu near St.Therese Parish Church</span>
+        </div>
+        <div class="m-sm-5">
+            <section class="map_sec">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <div class="map_inner">
+                                <div class="map_bind">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d368.7467799359478!2d123.90135984475411!3d10.331640729083794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99926bffe4f69%3A0x7b0fa439840473c9!2sEdison%20St%2C%20Cebu%20City%2C%206000%20Cebu!5e0!3m2!1sen!2sph!4v1701135385878!5m2!1sen!2sph" width="100%" height="450" frameborder="0" style="border:0; border-radius:10px; margin-bottom:30px; margin-top:5px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+
+
+
+
+    @include('sweetalert::alert')
+    @include('partials._footer')
+    @endsection
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- @extends('layouts.layout')
+
 @section('title', 'Contact Us')
 
 @section('content')
@@ -510,4 +644,4 @@
 .divcon {
     display:none;
 }
-</style>
+</style> --}}
