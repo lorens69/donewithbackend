@@ -95,19 +95,15 @@ class UserReservationController extends AdminController
 
     function usersendrequest (Request $request) {
 
-  
+
         $user_id = Auth::id();
         $request->validate([
-            'contact' => 'required',
-            'current_address' => 'required',
             'model' => 'required',
             'yom' => 'required',
             'service' => 'required',
             'date' => 'required',
         ]);
         $data['user_id'] = $user_id;
-        $data['contact'] = $request->contact;
-        $data['current_address'] = $request->current_address;
         $data['model'] = $request->model;
         $data['yom'] = $request->yom;
         $data['service_name'] = $request->service;
@@ -115,16 +111,16 @@ class UserReservationController extends AdminController
         $data['date'] = $request->date;
         $data['special_instructions'] = $request->special_instructions;
         $form = UserReservation::create($data);
-    
 
-        if ($request->has('contact') && $request->has('current_address') && $request->has('model') && $request->has('yom') && $request->has('service') && $request->has('date')) {
+
+        if ($request->has('model') && $request->has('yom') && $request->has('service') && $request->has('date')) {
             return redirect()->back()->with('success', 'Your reservation has been sent successfully! Please wait for our staffs to call you.');
         }elseif (!$form) {
             return redirect()->back()->with('error', 'Submission Failed, please check your inputs.');
         }
-           
-        
-        
+
+
+
 
         // if(!$form){
 
@@ -135,7 +131,7 @@ class UserReservationController extends AdminController
         // }
 
     }
-   
+
     function showreservations() {
 
         $user_id = Auth::id();
