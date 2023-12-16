@@ -36,23 +36,6 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"> <b style="color: rgb(54, 49, 49)">CLIENT INFORMATION </b> </label>
-                            </div>
-                        </div>
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="contact"><b style="color: rgb(54, 49, 49)">Contact: </b> <span class="text-danger"> *</span></label><input type="text" id="contact" name="contact" onblur="validate(2)">
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="address"> <b style="color: rgb(54, 49, 49)">Current Address: </b>  <span class="text-danger"> *</span></label><input type="text" id="address" name="current_address" onblur="validate(4)">
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex">
                                 <label class="form-control-label px-3"><b style="color: rgb(54, 49, 49)">VEHICLE INFORMATION </b></label>
                             </div>
                         </div>
@@ -82,13 +65,17 @@
                             </select>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="date"><b style="color: rgb(54, 49, 49)">Preferred Date and Time:</b><span class="text-danger"> *</span></label><input type="date" id="date" name="date" onblur="validate(8)">
+                                <label class="form-control-label px-3" for="date">
+                                    <b style="color: rgb(54, 49, 49)">Preferred Date and Time:</b>
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input type="date" id="date" name="date" onblur="validate(8)" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"for="specialrequest"><b style="color: rgb(54, 49, 49)">Special requests and instructions:</b><span class="text-danger"> *</span></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
+                                <label class="form-control-label px-3"for="specialrequest"><b style="color: rgb(54, 49, 49)">Special requests and instructions:</b></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
                             </div>
                         </div>
                         <div class="row justify-content-end">
@@ -170,7 +157,7 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex">
-                                <label class="form-control-label px-3"for="specialrequest"><b style="color: rgb(54, 49, 49)">Special requests and instructions:</b></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
+                                <label class="form-control-label px-3"for="specialrequest"><b style="color: rgb(54, 49, 49)">Special requests and instructions: (Optional)</b></label> <input type="text" id="special_instructions" name="special_instructions" placeholder="" onblur="validate(9)">
                             </div>
                         </div>
                         <div class="row justify-content-end">
