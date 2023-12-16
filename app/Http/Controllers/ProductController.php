@@ -268,9 +268,9 @@ class ProductController extends Controller
         // Get the authenticated user
         $user = Auth::user();
 
-        // Check if the user has a contact number and email
-        if (empty($user->contact) && empty($user->email)) {
-            return redirect('userdetails')->with('error', 'Please update your contact number and email address before placing an order.');
+        // Check if the user has both contact number and address
+        if (empty($user->contact) || empty($user->current_address)) {
+            return redirect('userdetails')->with('error', 'Please update both your contact number and address before placing an order.');
         }
 
         // Check if the user has items in the cart
@@ -297,6 +297,7 @@ class ProductController extends Controller
 
         return redirect('product')->with('success', 'Orders complete, find out more accessories!');
     }
+
 
     function myOrders() {
         $user_id = Auth::id();
