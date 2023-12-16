@@ -291,7 +291,7 @@
 
           <div class="ordermodaldetails">
             <div class="me-auto d-flex flex-column">
-              <span class="ordermodaltext fw-bold">Billed To:</span>
+              <span class="ordermodaltext fw-bold">BILLED TO</span>
               <span class="fw-bold ordermodaltext">FullName: {{auth()->user()->name}}</span>
               <span class="fw-bold ordermodaltext">Address: {{auth()->user()->current_address}}</span>
               <span class="fw-bold ordermodaltext">Contact: {{auth()->user()->contact}}</span>
