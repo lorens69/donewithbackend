@@ -41,9 +41,15 @@
 
     <h3>Connect with us now</h3>
     <div class="brand d-flex">
-      <i class="fa-brands fa-facebook footericons"></i>
-      <i class="fa-brands fa-facebook-messenger footericons"></i>
-    </div>
+ 
+  <a href="https://www.facebook.com/BossbertologyInstaller032402" target="_blank">
+  <i class="fa-brands fa-facebook footericons"></i>
+  </a>
+  <a href="https://www.facebook.com/messages/t/776806005729176" target="_blank">
+  <i class="fa-brands fa-facebook-messenger footericons"></i></a>
+
+</div>
+
 
   </div>
 
