@@ -269,7 +269,7 @@ class ProductController extends Controller
         $user = Auth::user();
 
         // Check if the user has both contact number and address
-        if (empty($user->contact) || empty($user->address)) {
+        if (empty($user->contact) || empty($user->current_address)) {
             return redirect('userdetails')->with('error', 'Please update both your contact number and address before placing an order.');
         }
 
