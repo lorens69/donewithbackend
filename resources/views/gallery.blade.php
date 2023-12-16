@@ -1,4 +1,6 @@
 @extends('layouts.layout')
+@section('title', 'Gallery')
+
 @section('content')
 
 <!DOCTYPE html>
