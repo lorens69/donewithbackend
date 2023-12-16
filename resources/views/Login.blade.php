@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('content')
+@section('title', 'Login')
 
 <!DOCTYPE html>
 <html lang="en">

@@ -104,14 +104,23 @@
                                 <label class="form-control-label px-3" for="name"><b style="color: rgb(54, 49, 49)">Full Name: </b><span class="text-danger"> *</span></label><input type="text" id="name" name="name" onblur="validate(1)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="contact"><b style="color: rgb(54, 49, 49)">Contact: </b> <span class="text-danger"> *</span></label><input type="text" id="contact" name="contact" onblur="validate(2)">
+                                <label class="form-control-label px-3" for="contact">
+                                    <b style="color: rgb(54, 49, 49)">Contact: </b>
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input type="text" id="contact" name="contact" onblur="validate(2)" pattern="[0-9]{11}" title="Please enter a valid 11-digit number" maxlength="11">
                             </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="email"><b style="color: rgb(54, 49, 49)">Email Address: </b> <span class="text-danger"> *</span></label><input type="text" id="email" name="email" onblur="validate(3)">
+                                <label class="form-control-label px-3" for="email">
+                                    <b style="color: rgb(54, 49, 49)">Email Address: </b>
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input type="email" id="email" name="email" onblur="validate(3)" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address">
                             </div>
+
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3" for="address"><b style="color: rgb(54, 49, 49)">Current Address: </b>   <span class="text-danger"> *</span></label><input type="text" id="address" name="current_address" onblur="validate(4)">
                             </div>
@@ -127,7 +136,7 @@
                                 <label class="form-control-label px-3"for="model"><b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="yom"><b style="color: rgb(54, 49, 49)">Year of Manufacture:  </b> <span class="text-danger"> *</span></label><input type="text" id="yom" name="yom" onblur="validate(6)">
+                                <label class="form-control-label px-3" for="yom"><b style="color: rgb(54, 49, 49)">Year of Manufacture:  </b> <span class="text-danger"> *</span></label><input type="number" id="yom" name="yom" onblur="validate(6)">
                             </div>
                         </div>
 
