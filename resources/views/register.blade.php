@@ -35,10 +35,11 @@
                         <input type="text" class="form-control" name="name">
                       </div>
 
-                    <div class="form-group">
-                      <label>Email address</label>
-                      <input type="email" class="form-control" name="email" >
+                      <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" required>
                     </div>
+
 
                       <div class="form-group">
                         <label >Password</label>
