@@ -44,19 +44,8 @@
                                 <label class="form-control-label px-3"for="model"> <b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                            <label class="form-control-label px-3" for="yom">
-                                <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>
-                                <span class="text-danger"> *</span>
-                            </label>
-                            <input
-                                type="number"
-                                id="yom"
-                                name="yom"
-                                onblur="validate(6)"
-                                max="2025"
-                                class="form-control" />
-                        </div>
-
+                                <label class="form-control-label px-3" for="yom"> <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>  <span class="text-danger"> *</span></label><input type="number" max="9999" id="yom" name="yom" onblur="validate(6)">
+                            </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
@@ -147,19 +136,8 @@
                                 <label class="form-control-label px-3"for="model"><b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="yom">
-                                    <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>
-                                    <span class="text-danger"> *</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    id="yom"
-                                    name="yom"
-                                    onblur="validate(6)"
-                                    max="9999"
-                                    class="form-control" />
-                        </div>
-
+                                <label class="form-control-label px-3" for="yom"><b style="color: rgb(54, 49, 49)">Year of Manufacture:  </b> <span class="text-danger"> *</span></label><input type="number" max="9999" id="yom" name="yom" onblur="validate(6)">
+                            </div>
                         </div>
 
                         <div class="row justify-content-between text-left">
