@@ -44,7 +44,20 @@
                                 <label class="form-control-label px-3"for="model"> <b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="yom"> <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>  <span class="text-danger"> *</span></label><input type="number" max="9999" id="yom" name="yom" maxlength="4" onblur="validate(6)">
+                                <label class="form-control-label px-3" for="yom">
+                                    <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    id="yom"
+                                    name="yom"
+                                    onblur="validate(6)"
+                                    pattern="\d{4}"
+                                    title="Please enter a valid date."
+                                    class="form-control" 
+                                    required 
+                                />
                             </div>
                         </div>
 
@@ -135,8 +148,21 @@
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3"for="model"><b style="color: rgb(54, 49, 49)">Model of the Car: </b>  <span class="text-danger"> *</span></label> <input type="text" id="model" name="model" placeholder="" onblur="validate(5)">
                             </div>
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label class="form-control-label px-3" for="yom"><b style="color: rgb(54, 49, 49)">Year of Manufacture:  </b> <span class="text-danger"> *</span></label><input type="number" maxlength="4" max="9999" id="yom" name="yom" onblur="validate(6)">
+                                <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3" for="yom">
+                                    <b style="color: rgb(54, 49, 49)">Year of Manufacture: </b>
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input
+                                    type="text" 
+                                    id="yom"
+                                    name="yom"
+                                    onblur="validate(6)"
+                                    pattern="\d{4}"
+                                    title="Please enter a valid date."
+                                    class="form-control" 
+                                    required 
+                                />
                             </div>
                         </div>
 
