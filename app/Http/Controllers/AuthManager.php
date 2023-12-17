@@ -47,7 +47,7 @@ function registerPost(Request $request)
         'email' => [
             'required',
             'email',
-            Rule::unique('uusers'),
+            Rule::unique('uuser'),
             'regex:/^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\.com$/',
         ],
         'additional_email' => [
