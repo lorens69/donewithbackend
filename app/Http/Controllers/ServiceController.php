@@ -14,6 +14,6 @@ class ServiceController extends Controller
 
     $services = Services::all();
 
-        return view('service', ['services' => $pagination])->with('service', $services);
+        return view('service')->with('service', $services);
     }
 }
