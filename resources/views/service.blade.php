@@ -187,8 +187,8 @@
             <div class=" cardStyle col-lg-3 m-4 p-0">
                 <div class="card-body d-flex  align-items-start flex-column pt-0 ps-0 pe-0 ">
                     <img src="{{asset('upload/'.$service->image)}}" alt="" class="img-fluid" style="border-radius:10px; display: inline-block; width:fix-content; height:170px; margin-bottom:7px;"/>
-                    <h5 class="cardtitle text-start" >{{ $service['name'] }}</h5>
-                    <p class="cardtitle text-start " style="color: #FF6000;">Price: Php {{ number_format($service['price']) }}</p>
+                    <h5 class="cardtitle text-start" >{{ $service->name }}</h5>
+                    <p class="cardtitle text-start " style="color: #FF6000;">Price: Php {{ number_format($service->price) }}</p>
 
                     <div class="d-flex justify-content-center" style="flex-wrap:wrap; align-self: center">
                         <button class="btn d-flex justify-content-center align-items-center buttonText text-white fw-bold mt-3 mb-3" style="background-color: #FF6000;" onclick="window.location.href='{{route('requestform')}}'">BOOK APPOINTMENT</button>
