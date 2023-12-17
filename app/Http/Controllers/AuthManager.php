@@ -53,7 +53,7 @@ function registerPost(Request $request)
         'additional_email' => [
             'nullable', // Allow the field to be optional
             'email',
-            'regex:/^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\.org$/', // Add the regex for the additional format
+            'regex:/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/', // Add the regex for the additional format
         ],
         'password' => 'required',
     ]);
