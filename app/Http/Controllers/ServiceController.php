@@ -14,6 +14,6 @@ class ServiceController extends Controller
 
     $services = Services::all();
 
-        return view('service')->with('service', $services);
+        return view('service')->with('services', $services);
     }
 }
