@@ -45,15 +45,23 @@
                         You can just change your info directly and hit the button below to update your profile! <br><br>
                     <form action="{{ url('/updateprofile/'.$userdetails[0]->id) }}" method="PUT">
                         @csrf
-                        <label >Username:</label>
-                        <div class="editinfo p-1 bg-light rounded rounded-pill shadow-sm mt-2 mb-4">
-                            <div class="input-group">
-                                <input type="search" value="{{$userdetails[0]->name}}" name="updatename"aria-describedby="button-addon1" class="rounded-pill form-control border-0 bg-light">
-                                <div class="input-group-append">
-                                    {{-- <button id="button-addon1" type="submit" class="btn "><i class="bi bi-pencil"></i></i></button> --}}
+                        <label>Username:</label>
+                            <div class="editinfo p-1 bg-light rounded rounded-pill shadow-sm mt-2 mb-4">
+                                <div class="input-group">
+                                    <input
+                                        type="search"
+                                        value="{{$userdetails[0]->name}}"
+                                        name="updatename"
+                                        aria-describedby="button-addon1"
+                                        class="rounded-pill form-control border-0 bg-light"
+                                        required
+                                    />
+                                    <div class="input-group-append">
+                                        {{-- <button id="button-addon1" type="submit" class="btn "><i class="bi bi-pencil"></i></i></button> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
 
 
                         <label>Email Address:</label>
