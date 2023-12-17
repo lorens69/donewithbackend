@@ -34,7 +34,7 @@
                         <div class="d-flex flex-column justify-content-center ">
                             <div class="d-flex" style="font-size: 16px; font-weight:bold;">SERVICE NAME: {{$reservation->service_name}}</div>
                             <div class="d-flex" style="font-size: 16px; font-weight:bold;">Special Instructions: {{$reservation->special_instructions}}</div>
-                            <div class="d-flex" style="font-size: 14px;">DATE AND TIME: {{$reservation->created_at}}</div>
+                            <div class="d-flex" style="font-size: 14px;">DATE AND TIME REQUESTED: {{$reservation->date}}</div>
 
                         </div>
 
