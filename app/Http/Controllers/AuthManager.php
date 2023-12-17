@@ -47,7 +47,8 @@ function registerPost(Request $request)
         'email' => [
             'required',
             'email',
-         // This checks for the uniqueness of the email in the 'users' table
+            Rule::unique('uuser'),
+            'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
         ],
         'password' => 'required',
     ]);
