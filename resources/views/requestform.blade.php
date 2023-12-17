@@ -54,8 +54,7 @@
                                 name="yom"
                                 onblur="validate(6)"
                                 max="2025"
-                                class="form-control" <!-- Add this class to style the input field -->
-                            />
+                                class="form-control" />
                         </div>
 
                         </div>
@@ -158,8 +157,7 @@
                                     name="yom"
                                     onblur="validate(6)"
                                     max="9999"
-                                    class="form-control" <!-- Add this class to style the input field -->
-                                />
+                                    class="form-control" />
                         </div>
 
                         </div>
