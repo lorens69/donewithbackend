@@ -48,13 +48,24 @@ function registerPost(Request $request)
             'required',
             'email',
             Rule::unique('uuser'),
-            'regex:/^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\.com$/', // This checks for the uniqueness of the email in the 'users' table
+            'regex:/^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\.com$/',
+        ],
+        'additional_email' => [
+            'nullable', // Allow the field to be optional
+            'email',
+            'regex:/^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\.org$/', // Add the regex for the additional format
         ],
         'password' => 'required',
     ]);
 
     $data['name'] = $request->name;
     $data['email'] = $request->email;
+
+    // If additional email is provided, add it to the data array
+    if ($request->has('additional_email')) {
+        $data['additional_email'] = $request->additional_email;
+    }
+
     $data['password'] = Hash::make($request->password);
 
     $user = Uusers::create($data);
@@ -65,6 +76,7 @@ function registerPost(Request $request)
 
     return redirect(route('maglogin'))->with('success', 'Credentials created! You may now proceed to login.');
 }
+
 
 function logout() {
     Session::flush();
