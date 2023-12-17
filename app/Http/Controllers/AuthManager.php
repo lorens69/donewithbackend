@@ -48,7 +48,7 @@ function registerPost(Request $request)
             'required',
             'email',
             Rule::unique('uuser'),
-            'regex:/^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\.com$/',
+            'regex:/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/',
         ],
         'additional_email' => [
             'nullable', // Allow the field to be optional
