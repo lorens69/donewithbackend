@@ -25,18 +25,30 @@ class UuserController extends Controller
 
     public function updateprofile(Request $request, $id) {
         $user_id = Auth::id();
-
-        // $profile = Uusers::find($user_id);
-        // $profile = UuserController::find($user_id);
+        
         $profile = Uusers::find($user_id);
+    
+        // Check if the updated email is different from the current email
+        if ($request->input('updateemail') !== $profile->email) {
+            // If different, check if the email already exists in the database
+            $existingEmail = Uusers::where('email', $request->input('updateemail'))->first();
+    
+            // If email already exists, return with an error message
+            if ($existingEmail) {
+                return redirect()->back()->with('error', 'Email already exists. Please choose a different email address.');
+            }
+        }
+    
+        // Update the profile
         $profile->name = $request->input('updatename');
         $profile->email = $request->input('updateemail');
         $profile->contact = $request->input('updatecontact');
         $profile->current_address = $request->input('updateaddress');
         $profile->update();
-
-        return redirect()->back()->with('sucess', 'Profile updated!');
-     }
+    
+        return redirect()->back()->with('success', 'Profile updated!');
+    }
+    
 
 
 }

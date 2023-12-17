@@ -57,26 +57,43 @@
 
 
                         <label>Email Address:</label>
-                        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                            <div class="input-group">
-                              <input type="search" value="{{$userdetails[0]->email}}" name="updateemail" aria-describedby="button-addon1" class="rounded-pill form-control border-0 bg-light">
-                              <div class="input-group-append">
-                                {{-- <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="bi bi-pencil"></i></i></button> --}}
-                              </div>
+                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                <div class="input-group">
+                                    <input
+                                        type="email"
+                                        value="{{$userdetails[0]->email}}"
+                                        name="updateemail"
+                                        aria-describedby="button-addon1"
+                                        class="rounded-pill form-control border-0 bg-light"
+                                        required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                        title="Enter a valid email address"
+                                    />
+                                    <div class="input-group-append">
+                                        {{-- <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="bi bi-pencil"></i></i></button> --}}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
+                            <label>Contact Number:</label>
+                                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                    <div class="input-group">
+                                        <input
+                                            type="tel"
+                                            value="{{$userdetails[0]->contact}}"
+                                            name="updatecontact"
+                                            aria-describedby="button-addon1"
+                                            class="rounded-pill form-control border-0 bg-light"
+                                            pattern="[0-9]+"
+                                            maxlength="11"
+                                            title="Please enter a valid contact number with a maximum of 11 digits"
+                                        />
+                                        <div class="input-group-append editinfo">
 
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <label>Contact Number:</label>
-                        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                            <div class="input-group">
-                              <input type="search" value="{{$userdetails[0]->contact}}" name="updatecontact" aria-describedby="button-addon1" class="rounded-pill form-control border-0 bg-light">
-                              <div class="input-group-append editinfo">
-
-                              </div>
-                            </div>
-                        </div>
 
                         <label>Current Address:</label>
                         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
