@@ -160,7 +160,7 @@
                                     onblur="validate(6)"
                                     pattern="\d{4}"
                                     title="Please enter a valid date."
-                                    class="form-control" 
+                                   
                                     required 
                                 />
                             </div>
