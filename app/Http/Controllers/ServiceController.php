@@ -44,7 +44,7 @@ class ServiceController extends Controller
     $services = Services::all();
 
       // Set the number of items per page (e.g., 9 items per page)
-    $perPage = 6;
+    $perPage = 10;
 
     // Create a new collection from the services array
     $servicesCollection = new Collection($services);
