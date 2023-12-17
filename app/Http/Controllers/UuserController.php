@@ -34,7 +34,7 @@ class UuserController extends Controller
             'required',
             'email',
             'unique:uusers,email,' . $user_id,
-            'regex:/^[a-zA-Z0-9._%+-]+@(student\.passerellesnumeriques\.org|passerellesnumeriques\.org)$/',
+            'regex:/^[a-zA-Z0-9._%+-]+@(student\.\.org|\.org)$/',
         ],
     ], [
         'updateemail.required' => 'Email is required.',
