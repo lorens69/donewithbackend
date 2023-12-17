@@ -17,7 +17,7 @@
 <div class="container-fluid p-0 homecontainer1">
     @include('partials._header')
 
-    <div class="h-50 mt-sm-5 ms-sm-5 me-sm-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center;">
+    <div class="h-50 mt-sm-5 ms-sm-5 me-sm-5 mb-3 d-flex flex-column" style="background: url(./img/landingpage.jpg);background-size: cover;background-position: center; background-repeat: no-repeat;">
         <div class="container homebackground bg-black bg-opacity-25 text-uppercase text-white">
            <h4 class="hometext" style="padding-top:14px;">We offer you </h3>
             <div class="display-3 hometitle">
