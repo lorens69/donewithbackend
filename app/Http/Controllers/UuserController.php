@@ -24,30 +24,35 @@ class UuserController extends Controller
     }
 
     public function updateprofile(Request $request, $id) {
-        $user_id = Auth::id();
-        
-        $profile = Uusers::find($user_id);
+    $user_id = Auth::id();
     
-        // Check if the updated email is different from the current email
-        if ($request->input('updateemail') !== $profile->email) {
-            // If different, check if the email already exists in the database
-            $existingEmail = Uusers::where('email', $request->input('updateemail'))->first();
-    
-            // If email already exists, return with an error message
-            if ($existingEmail) {
-                return redirect()->back()->with('error', 'Email already exists. Please choose a different email address.');
-            }
-        }
-    
-        // Update the profile
-        $profile->name = $request->input('updatename');
-        $profile->email = $request->input('updateemail');
-        $profile->contact = $request->input('updatecontact');
-        $profile->current_address = $request->input('updateaddress');
-        $profile->update();
-    
-        return redirect()->back()->with('success', 'Profile updated!');
-    }
+    $profile = Uusers::find($user_id);
+
+    // Validate the updated email
+    $request->validate([
+        'updateemail' => [
+            'required',
+            'email',
+            'unique:uusers,email,' . $user_id,
+            'regex:/^[a-zA-Z0-9._%+-]+@(student\.passerellesnumeriques\.org|passerellesnumeriques\.org)$/',
+        ],
+    ], [
+        'updateemail.required' => 'Email is required.',
+        'updateemail.email' => 'Please enter a valid email address.',
+        'updateemail.unique' => 'This email address is already in use. Please choose a different one.',
+        'updateemail.regex' => 'Invalid email format. Please use a valid email address.',
+    ]);
+
+    // Update the profile
+    $profile->name = $request->input('updatename');
+    $profile->email = $request->input('updateemail');
+    $profile->contact = $request->input('updatecontact');
+    $profile->current_address = $request->input('updateaddress');
+    $profile->update();
+
+    return redirect()->back()->with('success', 'Profile updated!');
+}
+
     
 
 
