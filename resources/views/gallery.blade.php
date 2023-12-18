@@ -95,10 +95,10 @@
                     <a href="{{ asset('upload/'.$gallery->image) }}" data-gallery="gallery" class="js-baguettebox">
                         <img class="card-img-top" src="{{ asset('upload/'.$gallery->image) }}" alt="Card image cap">
                     </a>
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                         <h5 class="card-title">{{$gallery->title}}</h5>
                         <p class="card-text">{{$gallery->description}}</p>
-                    </div>
+                    </div> --}}
                 </div>
                 @endforeach
             </div>
